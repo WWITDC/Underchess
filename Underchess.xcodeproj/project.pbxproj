@@ -9,23 +9,33 @@
 /* Begin PBXBuildFile section */
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
 		528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528219B91C6F0D0B003B9307 /* Main.storyboard */; };
-		528219BD1C6F0D0B003B9307 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528219BC1C6F0D0B003B9307 /* Assets.xcassets */; };
-		528219C01C6F0D0B003B9307 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528219BE1C6F0D0B003B9307 /* LaunchScreen.storyboard */; };
-		528219C61C6F0DBB003B9307 /* UCConfigManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219C51C6F0DBB003B9307 /* UCConfigManager.swift */; };
+		528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219C51C6F0DBB003B9307 /* UCSettingsManager.swift */; };
 		528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */; };
 		528219D01C6F0FD9003B9307 /* UCSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219CF1C6F0FD9003B9307 /* UCSplashView.swift */; };
+		528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D11C6FCCA6003B9307 /* UCMainViewController.swift */; };
+		528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
+		528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */; };
+		528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */; };
+		52D268A01C6FFB7F00AA7217 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D2689F1C6FFB7F00AA7217 /* GameKit.framework */; };
+		52D268A31C6FFC2E00AA7217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */; };
+		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		528219B21C6F0D0A003B9307 /* underchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = underchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528219B51C6F0D0A003B9307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528219BA1C6F0D0B003B9307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		528219BC1C6F0D0B003B9307 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
-		528219BF1C6F0D0B003B9307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		528219C11C6F0D0B003B9307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = underchess/Info.plist; sourceTree = "<group>"; };
-		528219C51C6F0DBB003B9307 /* UCConfigManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCConfigManager.swift; sourceTree = "<group>"; };
+		528219C51C6F0DBB003B9307 /* UCSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsManager.swift; sourceTree = "<group>"; };
 		528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashViewController.swift; sourceTree = "<group>"; };
 		528219CF1C6F0FD9003B9307 /* UCSplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashView.swift; sourceTree = "<group>"; };
+		528219D11C6FCCA6003B9307 /* UCMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCMainViewController.swift; sourceTree = "<group>"; };
+		528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaViewController.swift; sourceTree = "<group>"; };
+		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
+		528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsViewController.swift; sourceTree = "<group>"; };
+		52D2689F1C6FFB7F00AA7217 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
+		52D268A21C6FFC2E00AA7217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = underchess/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		52D268A41C7005E300AA7217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +43,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D268A01C6FFB7F00AA7217 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +53,7 @@
 		528219A71C6F06F2003B9307 = {
 			isa = PBXGroup;
 			children = (
+				52D2689F1C6FFB7F00AA7217 /* GameKit.framework */,
 				528219B41C6F0D0A003B9307 /* underchess */,
 				528219C71C6F0ECB003B9307 /* Art */,
 				528219C81C6F0EDC003B9307 /* Support */,
@@ -65,7 +77,6 @@
 				528219CA1C6F0F10003B9307 /* Main Scene */,
 				528219CC1C6F0F30003B9307 /* Game Scene */,
 				528219CB1C6F0F1D003B9307 /* Configuration Scene */,
-				528219C51C6F0DBB003B9307 /* UCConfigManager.swift */,
 				528219B91C6F0D0B003B9307 /* Main.storyboard */,
 			);
 			path = underchess;
@@ -74,7 +85,7 @@
 		528219C71C6F0ECB003B9307 /* Art */ = {
 			isa = PBXGroup;
 			children = (
-				528219BC1C6F0D0B003B9307 /* Assets.xcassets */,
+				52D268A41C7005E300AA7217 /* Assets.xcassets */,
 			);
 			name = Art;
 			sourceTree = "<group>";
@@ -83,7 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				528219C11C6F0D0B003B9307 /* Info.plist */,
-				528219BE1C6F0D0B003B9307 /* LaunchScreen.storyboard */,
+				52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -100,6 +111,7 @@
 		528219CA1C6F0F10003B9307 /* Main Scene */ = {
 			isa = PBXGroup;
 			children = (
+				528219D11C6FCCA6003B9307 /* UCMainViewController.swift */,
 			);
 			name = "Main Scene";
 			sourceTree = "<group>";
@@ -107,6 +119,8 @@
 		528219CB1C6F0F1D003B9307 /* Configuration Scene */ = {
 			isa = PBXGroup;
 			children = (
+				528219C51C6F0DBB003B9307 /* UCSettingsManager.swift */,
+				528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */,
 			);
 			name = "Configuration Scene";
 			sourceTree = "<group>";
@@ -114,8 +128,26 @@
 		528219CC1C6F0F30003B9307 /* Game Scene */ = {
 			isa = PBXGroup;
 			children = (
+				528219D71C6FCD5A003B9307 /* Arena */,
+				528219D81C6FCD64003B9307 /* Podium */,
 			);
 			name = "Game Scene";
+			sourceTree = "<group>";
+		};
+		528219D71C6FCD5A003B9307 /* Arena */ = {
+			isa = PBXGroup;
+			children = (
+				528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */,
+			);
+			name = Arena;
+			sourceTree = "<group>";
+		};
+		528219D81C6FCD64003B9307 /* Podium */ = {
+			isa = PBXGroup;
+			children = (
+				528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */,
+			);
+			name = Podium;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +160,7 @@
 				528219AE1C6F0D0A003B9307 /* Sources */,
 				528219AF1C6F0D0A003B9307 /* Frameworks */,
 				528219B01C6F0D0A003B9307 /* Resources */,
+				528219DB1C6FCDE6003B9307 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -151,6 +184,12 @@
 				TargetAttributes = {
 					528219B11C6F0D0A003B9307 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = X25UPX4XBW;
+						SystemCapabilities = {
+							com.apple.GameCenter = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -177,13 +216,29 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528219C01C6F0D0B003B9307 /* LaunchScreen.storyboard in Resources */,
-				528219BD1C6F0D0B003B9307 /* Assets.xcassets in Resources */,
 				528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */,
+				52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */,
+				52D268A31C6FFC2E00AA7217 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		528219DB1C6FCDE6003B9307 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		528219AE1C6F0D0A003B9307 /* Sources */ = {
@@ -191,9 +246,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */,
-				528219C61C6F0DBB003B9307 /* UCConfigManager.swift in Sources */,
+				528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */,
+				528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */,
 				528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */,
 				528219D01C6F0FD9003B9307 /* UCSplashView.swift in Sources */,
+				528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */,
+				528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */,
+				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,13 +267,12 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		528219BE1C6F0D0B003B9307 /* LaunchScreen.storyboard */ = {
+		52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				528219BF1C6F0D0B003B9307 /* Base */,
+				52D268A21C6FFC2E00AA7217 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = underchess;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -252,6 +310,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
@@ -278,6 +337,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = net.jdnetwork.wwitdc.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -302,6 +362,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -321,6 +382,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = net.jdnetwork.wwitdc.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -346,6 +408,7 @@
 				528219C31C6F0D0B003B9307 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

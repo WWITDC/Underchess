@@ -1,5 +1,5 @@
 //
-//  UCConfigManager.swift
+//  UCSettingsManager.swift
 //  Underchess
 //
 //  Created by Apollonian on 16/2/13.
@@ -12,6 +12,6 @@ func NSUSD() -> NSUserDefaults {
     return NSUserDefaults.standardUserDefaults()
 }
 
-class UCConfigManager {
+class UCSettingsManager {
     
 }

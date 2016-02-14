@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UCSplashView: UIView {
+@IBDesignable class UCSplashView: UIView {
 
     /*
     // Only override drawRect: if you perform custom drawing.
