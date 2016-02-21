@@ -7,11 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		52027A361C722AE300E61D95 /* UCSplashPieceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52027A351C722AE300E61D95 /* UCSplashPieceLayer.swift */; };
+		522CFFC31C795D0B006A6B51 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 522CFFC21C795D0B006A6B51 /* README.md */; };
+		522CFFC51C796316006A6B51 /* zh-Hans.xliff in Resources */ = {isa = PBXBuildFile; fileRef = 522CFFC41C796315006A6B51 /* zh-Hans.xliff */; };
+		525CD97C1C79308100C04862 /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
 		528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528219B91C6F0D0B003B9307 /* Main.storyboard */; };
 		528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219C51C6F0DBB003B9307 /* UCSettingsManager.swift */; };
 		528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */; };
-		528219D01C6F0FD9003B9307 /* UCSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219CF1C6F0FD9003B9307 /* UCSplashView.swift */; };
 		528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D11C6FCCA6003B9307 /* UCMainViewController.swift */; };
 		528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
 		528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */; };
@@ -22,13 +25,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		52027A2D1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		52027A2E1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "underchess/zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		52027A351C722AE300E61D95 /* UCSplashPieceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashPieceLayer.swift; sourceTree = "<group>"; };
+		522CFFC21C795D0B006A6B51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		522CFFC41C796315006A6B51 /* zh-Hans.xliff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "zh-Hans.xliff"; path = "underchess/Underchess/zh-Hans.xliff"; sourceTree = "<group>"; };
+		525CD97B1C79308100C04862 /* UCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCUtility.swift; path = underchess/UCUtility.swift; sourceTree = "<group>"; };
 		528219B21C6F0D0A003B9307 /* underchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = underchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528219B51C6F0D0A003B9307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		528219BA1C6F0D0B003B9307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528219C11C6F0D0B003B9307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = underchess/Info.plist; sourceTree = "<group>"; };
 		528219C51C6F0DBB003B9307 /* UCSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsManager.swift; sourceTree = "<group>"; };
 		528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashViewController.swift; sourceTree = "<group>"; };
-		528219CF1C6F0FD9003B9307 /* UCSplashView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashView.swift; sourceTree = "<group>"; };
 		528219D11C6FCCA6003B9307 /* UCMainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCMainViewController.swift; sourceTree = "<group>"; };
 		528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaViewController.swift; sourceTree = "<group>"; };
 		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +58,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52027A371C7236C700E61D95 /* Sublayers */ = {
+			isa = PBXGroup;
+			children = (
+				52027A351C722AE300E61D95 /* UCSplashPieceLayer.swift */,
+			);
+			name = Sublayers;
+			sourceTree = "<group>";
+		};
 		528219A71C6F06F2003B9307 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +109,9 @@
 		528219C81C6F0EDC003B9307 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				522CFFC21C795D0B006A6B51 /* README.md */,
+				522CFFC41C796315006A6B51 /* zh-Hans.xliff */,
+				525CD97B1C79308100C04862 /* UCUtility.swift */,
 				528219C11C6F0D0B003B9307 /* Info.plist */,
 				52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */,
 			);
@@ -103,7 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */,
-				528219CF1C6F0FD9003B9307 /* UCSplashView.swift */,
+				52027A371C7236C700E61D95 /* Sublayers */,
 			);
 			name = "Splash Scene";
 			sourceTree = "<group>";
@@ -217,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */,
+				522CFFC51C796316006A6B51 /* zh-Hans.xliff in Resources */,
 				52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */,
 				52D268A31C6FFC2E00AA7217 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -236,7 +256,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "";
+			shellScript = "#!/bin/bash\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"$INFOPLIST_FILE\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"$INFOPLIST_FILE\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -247,12 +267,14 @@
 			files = (
 				528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */,
 				528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */,
+				522CFFC31C795D0B006A6B51 /* README.md in Sources */,
+				525CD97C1C79308100C04862 /* UCUtility.swift in Sources */,
 				528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */,
 				528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */,
-				528219D01C6F0FD9003B9307 /* UCSplashView.swift in Sources */,
 				528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */,
 				528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */,
 				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
+				52027A361C722AE300E61D95 /* UCSplashPieceLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +285,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				528219BA1C6F0D0B003B9307 /* Base */,
+				52027A2D1C71772900E61D95 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -271,6 +294,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				52D268A21C6FFC2E00AA7217 /* Base */,
+				52027A2E1C71772900E61D95 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";

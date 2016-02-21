@@ -9,18 +9,44 @@
 import UIKit
 
 class UCSplashViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    private var currentPieceColor = UIColor.randomColor()
+    
+    var preExistingLayers = [CALayer]()
+    
+    override func prefersStatusBarHidden() -> Bool {
+        return true
     }
     
+    func colorForPiece() -> UIColor {
+        print(currentPieceColor)
+        return currentPieceColor
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        preExistingLayers = view.layer.sublayers!
+        animation()
+    }
+    
+    
+    func animation(){
+        var pieces = Array(count: 4, repeatedValue: UCSplashPieceLayer())
+        for piece in pieces{
+            piece.frame = view.frame
+        }
+        view.layer.addSublayer(pieces[0])
+        pieces[0].color = .redColor()
+        pieces[0].percentage = 20
+        view.layer.setNeedsDisplay()
+        pieces[0].animate()
+    }
+    
+    override func didRotateFromInterfaceOrientation(fromInterfaceOrientation: UIInterfaceOrientation) {
+        // Clear All UCSplashPieceLayer
+        view.layer.sublayers = preExistingLayers
+        animation()
+    }
 
     /*
     // MARK: - Navigation

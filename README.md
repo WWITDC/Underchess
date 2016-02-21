@@ -3,19 +3,35 @@ The most **important** part that we are missing is our **Artist** and **Designer
 Feel free to leave feedbacks on the project, our [website](wwitdc.jdnetwork.net), and the **translation**
 
 ---
+# The use of GitHub
+**We the WWITDC use GitHub to store our code is because we are just students and we don't have enough money to make it private. We hope that you will not use to make profit. Thank you very much.**
+
+## About commit
+### For commit messages
+There might be multiple points, so here is an example
+	Explanation in the language you knows the best
+	English Translation (If the one above is not in English)
+	
+	Explanation in the language you knows the best
+	...
+
+---
 # Regulation
 - The default language for this project is **ENGLISH**. You can use Chinese, but it **must** have a translated version at the next line
 - Have prefix of UC which stands for `Underchess`
 - `<##>` is a Xcode mark, which places a place holder with the description text between `#`
-- Every Scene should have a `UC<#Scene#>ViewController.swift` and a `UC<#Scene#>View.swift`
-- Should use frameworks for interface like ones list below:
-	- SpriteKit
-	- SceneKit
-	- Metal
-	- GLKit
-	- GamePlayKit
-	- ReplyKit
-	- ...
+- Every Scene should have a `UC<#SceneName#>ViewController.swift` and a `UC<#SceneName#>View.swift`
+- Use good names for **EVERYTHING**
+	- Should 
+		- Be descriptive, should be almost the same as reading an article that shows what it is about
+	- Should ***NOT***
+		- Be abbreviation, like "ULS" stands for "User Login Scene"
+		- Be Chinese Pinyin, like "denglujiemian"
+		- Be languages *OTHER* than English
+- Common idioms
+	- Don't merge so many sentence into one
+- ...
+- Unless SpriteKit gets to work, the project will use `CA` stuff instead of `SK`
 - Should save data frequently without influencing performance
 - It is okay to use Objective-C **only if that's the only solution**
 - **Last** sentence of **each** paragraph can end without period(`.`) in this project
@@ -65,9 +81,69 @@ Feel free to leave feedbacks on the project, our [website](wwitdc.jdnetwork.net)
 # Plans on Functions
 - [ ] Play with AI
 - [ ] Use In 
-- [ ] History of 
+- [ ] History of Games
 - [ ] Play with another player online
 
+---
+# Localization
+## String
+	func NSLocalizedString(
+			// Identifier
+		key: String,
+			// Where to find the string
+		tableName: String,
+		bundle: NSBundle,
+			// Value for string when it is not found
+		value: String,
+			// Instruction for translators
+		comment: String
+	) -> String
+### Example
+	let localString = NSLocalizedString(
+		"Foo", 
+		comment:"This string is shown when..."
+	)
+### Default
+ `bundle` is `NSBundle.mainBundle()` and `tableName` is `Localizable`
+
+## Formatted String
+*Bad Example*
+	let string = String.localizedSringWithFormat(
+		NSLocalizedString(
+			"Score is %f",
+			comment:"Give the score"
+		), 
+		theNumber
+	)
+
+### Formatters
+- Number
+	- `let formatter = NSNumberFormatter()`
+	- Displaying
+	- `let stringWithFormatToDisplay = formatter.stringFromNumber()`
+	- Parsing
+	- ` formatter.numberStyle = <#NSNumberFormatterStyle#>
+	let parsedNumber = formatter.numberFromString(<#userInputtedString#>)`
+	- DecimalStyle ...
+- Date
+	- ShortStyle
+	- MediumStyle
+	- LongStyle
+	- FullStyle
+	- NoStyle
+- ...
+## Export
+Editor --> Export For Localization
+
+## Debug
+`<#Target#>` --> Edit Scheme --> Duplicate --> Rename to `underchess <#language#>` --> Options --> Application Language
+
+---
+## Customized type 
+**That can be stored in NSUserDefaults*
+	struct Type{
+		static/*Not sure is it is needed*/ let subType1 = <#AnyObject#> /*or other things*/
+	}	
 
 ---
 # Underchess
