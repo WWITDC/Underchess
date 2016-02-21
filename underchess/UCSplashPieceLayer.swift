@@ -12,16 +12,18 @@ class UCSplashPieceLayer: CAShapeLayer {
     
     var color = UIColor.randomColor()
     var percentage = CGFloat(arc4random_uniform(101))
+    var initialCenter = CGPointMake(0, 0)
+    var finalCenter = CGPointMake(0, 0)
     
     var initialPath : UIBezierPath {
-        return UIBezierPath(ovalInRect: CGRectMake(frame.width / 2, frame.height / 2,0,0))
+        return UIBezierPath(ovalInRect: CGRect(origin: initialCenter, size: CGSizeMake(0,0)))
     }
     
     var finalPath : UIBezierPath {
         let sideLength = min(frame.width, frame.height) * percentage / 100
         return UIBezierPath(ovalInRect:
             CGRect(
-                origin: CGPointMake((frame.width - sideLength) / 2, (frame.height - sideLength) / 2),
+                origin: CGPointMake((finalCenter.x - sideLength) / 2, (finalCenter.y - sideLength) / 2),
                 size: CGSizeMake(sideLength, sideLength)
             )
         )

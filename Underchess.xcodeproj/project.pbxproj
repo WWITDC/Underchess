@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		52027A361C722AE300E61D95 /* UCSplashPieceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52027A351C722AE300E61D95 /* UCSplashPieceLayer.swift */; };
-		522CFFC31C795D0B006A6B51 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 522CFFC21C795D0B006A6B51 /* README.md */; };
 		522CFFC51C796316006A6B51 /* zh-Hans.xliff in Resources */ = {isa = PBXBuildFile; fileRef = 522CFFC41C796315006A6B51 /* zh-Hans.xliff */; };
 		525CD97C1C79308100C04862 /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
@@ -267,7 +266,6 @@
 			files = (
 				528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */,
 				528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */,
-				522CFFC31C795D0B006A6B51 /* README.md in Sources */,
 				525CD97C1C79308100C04862 /* UCUtility.swift in Sources */,
 				528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */,
 				528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */,
