@@ -9,6 +9,7 @@ Feel free to leave feedbacks on the project, our [website](wwitdc.jdnetwork.net)
 ## About commit
 ### For commit messages
 There might be multiple points, so here is an example
+
 	Explanation in the language you knows the best
 	English Translation (If the one above is not in English)
 	
