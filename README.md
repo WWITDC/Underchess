@@ -37,10 +37,17 @@ There might be multiple points, so here is an example
 - It is okay to use Objective-C **only if that's the only solution**
 - **Last** sentence of **each** paragraph can end without period(`.`) in this project
 
-# Use of storyboard
-## LaunchScreen.storyboard 
+## Naming System for this project
+	0---1
+	|\ /|
+	| 2 |
+	|/ \|
+	4   3
+
+## Use of storyboard
+### LaunchScreen.storyboard 
 **Critical: Do not make any changes to this file without posting the reason and tell the group members!**
-## Main.sotryboard
+### Main.sotryboard
 1. Initial Scene is called `Splash`.
 2. All other scenes should be present from **code**, **not segues** *(**only if it is necessary**)*
 
@@ -147,14 +154,13 @@ Editor --> Export For Localization
 	}	
 
 ---
-# Underchess
+# Underchess `Board` `Strategy`
 A board game that only have four pieces, and you have a lot of fun if you play it with **someone that has not play it before**.
 
-# Introduction
-`Board` `Strategy`
-## How to play
+## Introduction
+### How to play
 Coming soon
-## Tricks
+### Tricks
 Coming soon
 
 
