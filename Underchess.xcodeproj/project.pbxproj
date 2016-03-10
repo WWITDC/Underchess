@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		52027A361C722AE300E61D95 /* UCSplashPieceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52027A351C722AE300E61D95 /* UCSplashPieceLayer.swift */; };
 		522CFFC51C796316006A6B51 /* zh-Hans.xliff in Resources */ = {isa = PBXBuildFile; fileRef = 522CFFC41C796315006A6B51 /* zh-Hans.xliff */; };
 		525CD97C1C79308100C04862 /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
@@ -18,6 +17,8 @@
 		528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
 		528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */; };
 		528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */; };
+		52CF37701C8DF59F006DD698 /* UCPieceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF376F1C8DF59F006DD698 /* UCPieceLayer.swift */; };
+		52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF37711C8DF6F4006DD698 /* UCStandardView.swift */; };
 		52D268A01C6FFB7F00AA7217 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D2689F1C6FFB7F00AA7217 /* GameKit.framework */; };
 		52D268A31C6FFC2E00AA7217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */; };
 		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
@@ -26,12 +27,11 @@
 /* Begin PBXFileReference section */
 		52027A2D1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		52027A2E1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "underchess/zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		52027A351C722AE300E61D95 /* UCSplashPieceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashPieceLayer.swift; sourceTree = "<group>"; };
 		522CFFC21C795D0B006A6B51 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		522CFFC41C796315006A6B51 /* zh-Hans.xliff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "zh-Hans.xliff"; path = "underchess/Underchess/zh-Hans.xliff"; sourceTree = "<group>"; };
 		525CD97B1C79308100C04862 /* UCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCUtility.swift; path = underchess/UCUtility.swift; sourceTree = "<group>"; };
 		528219B21C6F0D0A003B9307 /* underchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = underchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		528219B51C6F0D0A003B9307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		528219B51C6F0D0A003B9307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = underchess/AppDelegate.swift; sourceTree = "<group>"; };
 		528219BA1C6F0D0B003B9307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528219C11C6F0D0B003B9307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = underchess/Info.plist; sourceTree = "<group>"; };
 		528219C51C6F0DBB003B9307 /* UCSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsManager.swift; sourceTree = "<group>"; };
@@ -40,6 +40,8 @@
 		528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaViewController.swift; sourceTree = "<group>"; };
 		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
 		528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsViewController.swift; sourceTree = "<group>"; };
+		52CF376F1C8DF59F006DD698 /* UCPieceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPieceLayer.swift; sourceTree = "<group>"; };
+		52CF37711C8DF6F4006DD698 /* UCStandardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCStandardView.swift; sourceTree = "<group>"; };
 		52D2689F1C6FFB7F00AA7217 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		52D268A21C6FFC2E00AA7217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = underchess/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D268A41C7005E300AA7217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
@@ -57,14 +59,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52027A371C7236C700E61D95 /* Sublayers */ = {
-			isa = PBXGroup;
-			children = (
-				52027A351C722AE300E61D95 /* UCSplashPieceLayer.swift */,
-			);
-			name = Sublayers;
-			sourceTree = "<group>";
-		};
 		528219A71C6F06F2003B9307 = {
 			isa = PBXGroup;
 			children = (
@@ -87,12 +81,12 @@
 		528219B41C6F0D0A003B9307 /* underchess */ = {
 			isa = PBXGroup;
 			children = (
-				528219B51C6F0D0A003B9307 /* AppDelegate.swift */,
+				52CF376F1C8DF59F006DD698 /* UCPieceLayer.swift */,
+				52CF37711C8DF6F4006DD698 /* UCStandardView.swift */,
 				528219C91C6F0EFF003B9307 /* Splash Scene */,
 				528219CA1C6F0F10003B9307 /* Main Scene */,
 				528219CC1C6F0F30003B9307 /* Game Scene */,
 				528219CB1C6F0F1D003B9307 /* Configuration Scene */,
-				528219B91C6F0D0B003B9307 /* Main.storyboard */,
 			);
 			path = underchess;
 			sourceTree = "<group>";
@@ -110,9 +104,11 @@
 			children = (
 				522CFFC21C795D0B006A6B51 /* README.md */,
 				522CFFC41C796315006A6B51 /* zh-Hans.xliff */,
+				528219B51C6F0D0A003B9307 /* AppDelegate.swift */,
 				525CD97B1C79308100C04862 /* UCUtility.swift */,
 				528219C11C6F0D0B003B9307 /* Info.plist */,
 				52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */,
+				528219B91C6F0D0B003B9307 /* Main.storyboard */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -121,7 +117,6 @@
 			isa = PBXGroup;
 			children = (
 				528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */,
-				52027A371C7236C700E61D95 /* Sublayers */,
 			);
 			name = "Splash Scene";
 			sourceTree = "<group>";
@@ -202,7 +197,7 @@
 				TargetAttributes = {
 					528219B11C6F0D0A003B9307 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = X25UPX4XBW;
+						DevelopmentTeam = U77Q9GTXS2;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 1;
@@ -268,11 +263,12 @@
 				528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */,
 				525CD97C1C79308100C04862 /* UCUtility.swift in Sources */,
 				528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */,
+				52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */,
 				528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */,
 				528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */,
 				528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */,
 				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
-				52027A361C722AE300E61D95 /* UCSplashPieceLayer.swift in Sources */,
+				52CF37701C8DF59F006DD698 /* UCPieceLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +282,7 @@
 				52027A2D1C71772900E61D95 /* zh-Hans */,
 			);
 			name = Main.storyboard;
+			path = underchess;
 			sourceTree = "<group>";
 		};
 		52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */ = {
@@ -357,7 +354,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = net.jdnetwork.wwitdc.underchess;
+				PRODUCT_BUNDLE_IDENTIFIER = net.jdnetwork.wwitdc.apollonian.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -402,7 +399,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = net.jdnetwork.wwitdc.underchess;
+				PRODUCT_BUNDLE_IDENTIFIER = net.jdnetwork.wwitdc.apollonian.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
