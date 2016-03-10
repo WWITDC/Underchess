@@ -4,7 +4,7 @@ Feel free to leave feedbacks on the project, our [website](wwitdc.jdnetwork.net)
 
 ---
 # The use of GitHub
-**We the WWITDC use GitHub to store our code is because we are just students and we don't have enough money to make it private. We hope that you will not use to make profit. Thank you very much.**
+**We the WWITDC use GitHub to store our code is because we are just students and we don't have enough money to make it private. We hope that you will not just download, make a few changes, compile and send it to the App Store. Thank you very much.**
 
 ## About commit
 ### For commit messages
@@ -154,7 +154,8 @@ Editor --> Export For Localization
 	}	
 
 ---
-# Underchess `Board` `Strategy`
+# Underchess
+* `Board` `Strategy` *
 A board game that only have four pieces, and you have a lot of fun if you play it with **someone that has not play it before**.
 
 ## Introduction
