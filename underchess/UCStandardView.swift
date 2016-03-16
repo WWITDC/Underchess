@@ -11,12 +11,27 @@ import UIKit
 // Creat a 3 * 4 (potrait) or 4 * 3 (landscape) view in the center of the superview
 class UCStandardView: UIView {
     
-    init(margin: CGFloat, orientation: UCInterfaceOrientation, father: UIView){
-        super.init(frame: CGRect.zero)
-        frame = father.frame
+    var orientation: UCInterfaceOrientation = .Potrait
+    @IBInspectable var margin: CGFloat = 5
+
+    override init(frame: CGRect){
+        super.init(frame: frame)
+        customSetup()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        customSetup()
+    }
+    
+    func customSetup(){
+        let father = superview
+        frame = father?.frame ?? UIScreen.mainScreen().bounds
         var targetWidth, targetHeight: CGFloat
         if orientation == .Potrait{
-            let scale = CGFloat(min(Int(frame.height - 2 * margin) / 4,Int(frame.width - 2 * margin) / 3))
+            let arg1 = Int(frame.height - 2 * margin) / 4
+            let arg2 = Int(frame.width - 2 * margin) / 3
+            let scale = CGFloat(min(arg1,arg2))
             targetHeight = scale * 4
             targetWidth = scale * 3
             
@@ -29,11 +44,8 @@ class UCStandardView: UIView {
         let targetY = frame.midY - targetHeight / 2
         frame = CGRect(x: targetX, y: targetY, width: targetWidth, height: targetHeight)
         self.layer.frame = self.frame
-        self.backgroundColor = .randomColor()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        self.backgroundColor = .greenColor()
+        setNeedsDisplay()
     }
     
 }
