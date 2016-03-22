@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5247CC2A1C9505B000A28BFB /* UCSplashPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5247CC291C9505B000A28BFB /* UCSplashPieceView.swift */; };
+		520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98251CA17A5100B9733E /* UCPieceView.swift */; };
+		520B98281CA1A0F600B9733E /* UCArenaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98271CA1A0F600B9733E /* UCArenaView.swift */; };
 		525CD97C1C79308100C04862 /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
 		528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528219B91C6F0D0B003B9307 /* Main.storyboard */; };
@@ -17,14 +18,7 @@
 		528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
 		528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */; };
 		528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */; };
-		528EC3A41C93CDC700824CA1 /* EAAnimationDelayed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528EC3991C93CDC700824CA1 /* EAAnimationDelayed.swift */; };
-		528EC3A51C93CDC700824CA1 /* EasyAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528EC39B1C93CDC700824CA1 /* EasyAnimation.swift */; };
-		528EC3AA1C93CDC700824CA1 /* RBBBlockBasedArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528EC3A11C93CDC700824CA1 /* RBBBlockBasedArray.swift */; };
-		528EC3AB1C93CDC700824CA1 /* RBBLinearInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528EC3A21C93CDC700824CA1 /* RBBLinearInterpolation.swift */; };
-		528EC3AC1C93CDC700824CA1 /* RBBSpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528EC3A31C93CDC700824CA1 /* RBBSpringAnimation.swift */; };
-		52CF37701C8DF59F006DD698 /* UCSplashPieceLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF376F1C8DF59F006DD698 /* UCSplashPieceLayer.swift */; };
 		52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF37711C8DF6F4006DD698 /* UCStandardView.swift */; };
-		52D268A01C6FFB7F00AA7217 /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D2689F1C6FFB7F00AA7217 /* GameKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		52D268A31C6FFC2E00AA7217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */; };
 		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -32,8 +26,9 @@
 /* Begin PBXFileReference section */
 		52027A2D1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		52027A2E1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "underchess/zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		520B98251CA17A5100B9733E /* UCPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPieceView.swift; sourceTree = "<group>"; };
+		520B98271CA1A0F600B9733E /* UCArenaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaView.swift; sourceTree = "<group>"; };
 		522CFFC41C796315006A6B51 /* zh-Hans.xliff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "zh-Hans.xliff"; path = "underchess/Underchess/zh-Hans.xliff"; sourceTree = "<group>"; };
-		5247CC291C9505B000A28BFB /* UCSplashPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashPieceView.swift; sourceTree = "<group>"; };
 		525CD97B1C79308100C04862 /* UCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCUtility.swift; path = underchess/UCUtility.swift; sourceTree = "<group>"; };
 		528219B21C6F0D0A003B9307 /* underchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = underchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528219B51C6F0D0A003B9307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = underchess/AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,16 +40,7 @@
 		528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaViewController.swift; sourceTree = "<group>"; };
 		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
 		528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsViewController.swift; sourceTree = "<group>"; };
-		528EC3991C93CDC700824CA1 /* EAAnimationDelayed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EAAnimationDelayed.swift; sourceTree = "<group>"; };
-		528EC39B1C93CDC700824CA1 /* EasyAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EasyAnimation.swift; sourceTree = "<group>"; };
-		528EC3A11C93CDC700824CA1 /* RBBBlockBasedArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBBBlockBasedArray.swift; sourceTree = "<group>"; };
-		528EC3A21C93CDC700824CA1 /* RBBLinearInterpolation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBBLinearInterpolation.swift; sourceTree = "<group>"; };
-		528EC3A31C93CDC700824CA1 /* RBBSpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RBBSpringAnimation.swift; sourceTree = "<group>"; };
-		528EC3B11C93CF0500824CA1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		528EC3B21C93CF1000824CA1 /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		52CF376F1C8DF59F006DD698 /* UCSplashPieceLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashPieceLayer.swift; sourceTree = "<group>"; };
 		52CF37711C8DF6F4006DD698 /* UCStandardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCStandardView.swift; sourceTree = "<group>"; };
-		52D2689F1C6FFB7F00AA7217 /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.2.sdk/System/Library/Frameworks/GameKit.framework; sourceTree = DEVELOPER_DIR; };
 		52D268A21C6FFC2E00AA7217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = underchess/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D268A41C7005E300AA7217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -64,17 +50,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52D268A01C6FFB7F00AA7217 /* GameKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		52444AC61CA1D799008565E0 /* Underchess */ = {
+			isa = PBXGroup;
+			children = (
+				52CF37711C8DF6F4006DD698 /* UCStandardView.swift */,
+				520B98271CA1A0F600B9733E /* UCArenaView.swift */,
+				520B98251CA17A5100B9733E /* UCPieceView.swift */,
+			);
+			name = Underchess;
+			sourceTree = "<group>";
+		};
 		528219A71C6F06F2003B9307 = {
 			isa = PBXGroup;
 			children = (
-				52D2689F1C6FFB7F00AA7217 /* GameKit.framework */,
 				528219B41C6F0D0A003B9307 /* underchess */,
 				528219C71C6F0ECB003B9307 /* Art */,
 				528219C81C6F0EDC003B9307 /* Support */,
@@ -93,7 +87,7 @@
 		528219B41C6F0D0A003B9307 /* underchess */ = {
 			isa = PBXGroup;
 			children = (
-				52CF37711C8DF6F4006DD698 /* UCStandardView.swift */,
+				52444AC61CA1D799008565E0 /* Underchess */,
 				528219C91C6F0EFF003B9307 /* Splash Scene */,
 				528219CA1C6F0F10003B9307 /* Main Scene */,
 				528219CC1C6F0F30003B9307 /* Game Scene */,
@@ -113,7 +107,6 @@
 		528219C81C6F0EDC003B9307 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				528EC3981C93CDC700824CA1 /* EasyAnimation */,
 				522CFFC41C796315006A6B51 /* zh-Hans.xliff */,
 				528219B51C6F0D0A003B9307 /* AppDelegate.swift */,
 				525CD97B1C79308100C04862 /* UCUtility.swift */,
@@ -128,8 +121,6 @@
 			isa = PBXGroup;
 			children = (
 				528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */,
-				52CF376F1C8DF59F006DD698 /* UCSplashPieceLayer.swift */,
-				5247CC291C9505B000A28BFB /* UCSplashPieceView.swift */,
 			);
 			name = "Splash Scene";
 			sourceTree = "<group>";
@@ -176,28 +167,6 @@
 			name = Podium;
 			sourceTree = "<group>";
 		};
-		528EC3981C93CDC700824CA1 /* EasyAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				528EC3991C93CDC700824CA1 /* EAAnimationDelayed.swift */,
-				528EC39B1C93CDC700824CA1 /* EasyAnimation.swift */,
-				528EC3B11C93CF0500824CA1 /* LICENSE */,
-				528EC39F1C93CDC700824CA1 /* RBBSpringAnimation */,
-			);
-			path = EasyAnimation;
-			sourceTree = "<group>";
-		};
-		528EC39F1C93CDC700824CA1 /* RBBSpringAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				528EC3B21C93CF1000824CA1 /* LICENSE */,
-				528EC3A11C93CDC700824CA1 /* RBBBlockBasedArray.swift */,
-				528EC3A21C93CDC700824CA1 /* RBBLinearInterpolation.swift */,
-				528EC3A31C93CDC700824CA1 /* RBBSpringAnimation.swift */,
-			);
-			path = RBBSpringAnimation;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -227,7 +196,7 @@
 			attributes = {
 				CLASSPREFIX = UC;
 				LastSwiftUpdateCheck = 0720;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = WWITDC;
 				TargetAttributes = {
 					528219B11C6F0D0A003B9307 = {
@@ -297,18 +266,13 @@
 				528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */,
 				525CD97C1C79308100C04862 /* UCUtility.swift in Sources */,
 				528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */,
-				528EC3A41C93CDC700824CA1 /* EAAnimationDelayed.swift in Sources */,
 				52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */,
-				5247CC2A1C9505B000A28BFB /* UCSplashPieceView.swift in Sources */,
 				528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */,
+				520B98281CA1A0F600B9733E /* UCArenaView.swift in Sources */,
 				528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */,
-				528EC3A51C93CDC700824CA1 /* EasyAnimation.swift in Sources */,
+				520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */,
 				528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */,
-				528EC3AB1C93CDC700824CA1 /* RBBLinearInterpolation.swift in Sources */,
-				528EC3AC1C93CDC700824CA1 /* RBBSpringAnimation.swift in Sources */,
 				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
-				52CF37701C8DF59F006DD698 /* UCSplashPieceLayer.swift in Sources */,
-				528EC3AA1C93CDC700824CA1 /* RBBBlockBasedArray.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,7 +304,9 @@
 		528219AC1C6F06F3003B9307 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ENABLE_TESTABILITY = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = YES;
 			};
 			name = Debug;
 		};

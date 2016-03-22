@@ -165,15 +165,6 @@ Coming soon
 Coming soon
 
 
-—
-# Used open source projects
-
-Thanks for making CAAnimation much easier:
-- Easy Animation [License](https://github.com/icanzilb/EasyAnimation/blob/master/LICENSE)
-	- RBBAnimation [License](https://github.com/robb/RBBAnimation/blob/master/LICENSE)
-
-
-
 ---
 # WWITDC
 WWITDC is a student organization. We are all creative and good at something in different fields. We work as a group, the plans we come up, the decisions we make, the products we made, all of them are **TEAM WROK**. The world will see what we can make from our knowledge.
