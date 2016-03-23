@@ -12,8 +12,32 @@ extension UIColor{
     class func ucBlueColor() -> UIColor{
         return UIColor(red: 46.0 / 255.0, green: 117.0 / 255.0, blue: 146.0 / 255.0, alpha: 1.0)
     }
+    
+    class func tianyiBlueColor() -> UIColor{
+        return UIColor(red: 0.40, green: 0.80, blue: 1.00, alpha: 1.00)
+    }
     class func randomColor() -> UIColor{
         return UIColor(red: CGFloat(arc4random_uniform(255))/CGFloat(255) ,green: CGFloat(arc4random_uniform(255))/CGFloat(255) , blue: CGFloat(arc4random_uniform(255))/CGFloat(255) , alpha: CGFloat(arc4random_uniform(255))/CGFloat(255))
+    }
+    class func colorWithHex(code: String) -> UIColor{
+        var array = [CGFloat]()
+        for char in code.characters{
+            switch char{
+            case "0","1","2","3","4","5","6","7","8","9": array.append(CGFloat(Int(String(char))!))
+            case "a","A": array.append(10)
+            case "b","B": array.append(11)
+            case "c","C": array.append(12)
+            case "d","D": array.append(13)
+            case "e","E": array.append(14)
+            case "f","F": array.append(15)
+            default: break
+            }
+        }
+        var arguments = [CGFloat]()
+        for i in 0...2{
+            arguments.append(array[2*i]*16 + array[2*i+1])
+        }
+        return UIColor(red: arguments[0]/255, green: arguments[1]/255, blue: arguments[2]/255, alpha: 1)
     }
 }
 
@@ -28,312 +52,106 @@ enum UCInterfaceOrientation{
     }
 }
 
-// MARK: Flat Preloader
-//protocol WDPausable{
-//    func isPaused() -> Bool
-//    func pause()
-//    func resume()
-//}
-//
-//extension CALayer: WDPausable{
-//    func isPaused() -> Bool {
-//        return self.speed == 0
-//    }
-//    func pause(){
-//        if isPaused(){
-//            return
-//        }
-//        let pausedTime = self.convertTime(CACurrentMediaTime(), fromLayer: nil)
-//        self.speed = 0
-//        self.timeOffset = pausedTime
-//    }
-//    func resume(){
-//        if !isPaused(){
-//            return
-//        }
-//        let pausedTime = self.timeOffset
-//        self.speed = 1
-//        self.timeOffset = 0
-//        self.beginTime = 0
-//        let timeSincePause = self.convertTime(CACurrentMediaTime(), fromLayer: nil) - pausedTime
-//        self.beginTime = timeSincePause
+// MARK: kt_Corner
+//private func roundbyunit(num: Double, inout _ unit: Double) -> Double {
+//    let remain = modf(num, &unit)
+//    if (remain > unit / 2.0) {
+//        return ceilbyunit(num, &unit)
+//    } else {
+//        return floorbyunit(num, &unit)
 //    }
 //}
+//private func ceilbyunit(num: Double, inout _ unit: Double) -> Double {
+//    return num - modf(num, &unit) + unit
+//}
 //
-//class DotLayer: CAShapeLayer{
-//    func draw(){
-//        self.path = UIBezierPath(ovalInRect: self.bounds).CGPath
+//private func floorbyunit(num: Double, inout _ unit: Double) -> Double {
+//    return num - modf(num, &unit)
+//}
+//
+//private func pixel(num: Double) -> Double {
+//    var unit: Double
+//    switch Int(UIScreen.mainScreen().scale) {
+//    case 1: unit = 1.0 / 1.0
+//    case 2: unit = 1.0 / 2.0
+//    case 3: unit = 1.0 / 3.0
+//    default: unit = 0.0
+//    }
+//    return roundbyunit(num, &unit)
+//}
+//
+//extension UIView {
+//    func kt_addCorner(radius radius: CGFloat) {
+//        self.kt_addCorner(radius: radius, borderWidth: 1, backgroundColor: UIColor.clearColor(), borderColor: UIColor.blackColor())
+//    }
+//    
+//    func kt_addCorner(radius radius: CGFloat,
+//        borderWidth: CGFloat,
+//        backgroundColor: UIColor,
+//        borderColor: UIColor) {
+//            let imageView = UIImageView(image: kt_drawRectWithRoundedCorner(radius: radius,
+//                borderWidth: borderWidth,
+//                backgroundColor: backgroundColor,
+//                borderColor: borderColor))
+//            self.insertSubview(imageView, atIndex: 0)
+//    }
+//    
+//    func kt_drawRectWithRoundedCorner(radius radius: CGFloat,
+//        borderWidth: CGFloat,
+//        backgroundColor: UIColor,
+//        borderColor: UIColor) -> UIImage {
+//            let sizeToFit = CGSize(width: pixel(Double(self.bounds.size.width)), height: Double(self.bounds.size.height))
+//            let halfBorderWidth = CGFloat(borderWidth / 2.0)
+//            
+//            UIGraphicsBeginImageContextWithOptions(sizeToFit, false, UIScreen.mainScreen().scale)
+//            let context = UIGraphicsGetCurrentContext()
+//            
+//            CGContextSetLineWidth(context, borderWidth)
+//            CGContextSetStrokeColorWithColor(context, borderColor.CGColor)
+//            CGContextSetFillColorWithColor(context, backgroundColor.CGColor)
+//            
+//            let width = sizeToFit.width, height = sizeToFit.height
+//            CGContextMoveToPoint(context, width - halfBorderWidth, radius + halfBorderWidth)  // 开始坐标右边开始
+//            CGContextAddArcToPoint(context, width - halfBorderWidth, height - halfBorderWidth, width - radius - halfBorderWidth, height - halfBorderWidth, radius)  // 右下角角度
+//            CGContextAddArcToPoint(context, halfBorderWidth, height - halfBorderWidth, halfBorderWidth, height - radius - halfBorderWidth, radius) // 左下角角度
+//            CGContextAddArcToPoint(context, halfBorderWidth, halfBorderWidth, width - halfBorderWidth, halfBorderWidth, radius) // 左上角
+//            CGContextAddArcToPoint(context, width - halfBorderWidth, halfBorderWidth, width - halfBorderWidth, radius + halfBorderWidth, radius) // 右上角
+//            
+//            CGContextDrawPath(UIGraphicsGetCurrentContext(), .FillStroke)
+//            let output = UIGraphicsGetImageFromCurrentImageContext()
+//            UIGraphicsEndImageContext()
+//            return output
 //    }
 //}
 //
-//class FlatPreloader: UIView{
-//    enum Style{
-//        case Small, Medium, Big
-//    }
-//    
-//    func startAnimating(){
-//        
-//    }
-//    func stopAnimating(){
-//        
-//    }
-//    func isAnimating() -> Bool{
-//        return false
-//    }
-//    
-//    init(style: FlatPreloader.Style){
-//        var frame: CGRect
-//        switch style{
-//        case .Small: frame = CGRectMake(0, 0, 32, 32)
-//        case .Medium: frame = CGRectMake(0, 0, 64, 64)
-//        case .Big: frame = CGRectMake(0, 0, 128, 128)
-//        }
-//        super.init(frame: frame)
-//    }
-//    
-//    override init(frame: CGRect) {
-//        super.init(frame: frame)
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
+//extension UIImageView {
+//    /**
+//     / !!!只有当 imageView 不为nil 时，调用此方法才有效果
+//     
+//     :param: radius 圆角半径
+//     */
+//    override func kt_addCorner(radius radius: CGFloat) {
+//        // 被注释的是图片添加圆角的 OC 写法
+//        //        self.image = self.image?.imageAddCornerWithRadius(radius, andSize: self.bounds.size)
+//        self.image = self.image?.kt_drawRectWithRoundedCorner(radius: radius, self.bounds.size)
 //    }
 //}
 //
-//class FlatPreloaderTypeA: FlatPreloader{
-//    private enum QuadrantPosition: UInt{
-//        case UpLeft = 0, UpRight, DownRight, DownLeft
-//    }
-//    private typealias Quadrant = (layer:DotLayer, position: QuadrantPosition)
-//    private var quadrants : [Quadrant] = [(DotLayer(),.UpLeft),(DotLayer(),.UpRight),(DotLayer(),.DownRight),(DotLayer(),.DownLeft)]
-//    private let insetLayer = CALayer()
-//    private var animated = false
-//    var dotColors:(upLeft:UIColor, upRight: UIColor,downRight:UIColor,downLeft:UIColor){
-//        get{
-//            return (UIColor(CGColor: self.quadrants[0].layer.fillColor!),UIColor(CGColor: self.quadrants[1].layer.fillColor!),UIColor(CGColor: self.quadrants[2].layer.fillColor!),UIColor(CGColor: self.quadrants[3].layer.fillColor!))
-//        }
-//        set{
-//            self.quadrants[0].layer.fillColor = newValue.upLeft.CGColor
-//            self.quadrants[1].layer.fillColor = newValue.upLeft.CGColor
-//            self.quadrants[2].layer.fillColor = newValue.upLeft.CGColor
-//            self.quadrants[3].layer.fillColor = newValue.upLeft.CGColor
-//        }
-//    }
-//    var dotsDistance: CGFloat = 0
-//    var reverseAnimation = false
-//    var animationDuration: CFTimeInterval = 2.52
-//    var padding: CGFloat = 0
-//    var automaticCornerRadius = false
-//    var hidesWhenStopped = true
-//    private func addLayers(){
-//        self.layer.addSublayer(self.insetLayer)
-//        for quadrant in quadrants{
-//            self.insetLayer.addSublayer(quadrant.layer)
-//        }
-//    }
-//    init(frame: CGRect, dotDisiance: CGFloat = 0, dotColors: (UIColor,UIColor,UIColor,UIColor) = (.randomColor(),.randomColor(),.randomColor(),.randomColor()), animationDuration: CFTimeInterval = 2.52, reverseAnimation: Bool = false, padding: CGFloat = 0, hidesWhenStopped: Bool = true, automaticCornerRadius: Bool = false ){
-//        super.init(frame: frame)
-//        self.addLayers()
-//        self.dotColors = dotColors
-//        self.reverseAnimation = reverseAnimation
-//        self.animationDuration = animationDuration
-//        self.padding = padding
-//        self.automaticCornerRadius = automaticCornerRadius
-//        self.hidesWhenStopped = hidesWhenStopped
-//    }
-//    
-//    override init(style: FlatPreloader.Style) {
-//        var frame: CGRect
-//        var padding: CGFloat
-//        var distance: CGFloat
-//        let colorA = UIColor(red: 237/255, green: 177/255, blue: 111/255, alpha: 1)
-//        let colorB = UIColor(red: 80.0/255.0, green: 172.0/255.0, blue: 154.0/255.0, alpha: 1.0)
-//        let colorC = UIColor(red: 210.0/255.0, green: 85.0/255.0, blue: 83.0/255.0, alpha: 1.0)
-//        let colorD = UIColor(red: 54.0/255.0, green: 77.0/255.0, blue: 88.0/255.0, alpha: 1.0)
+//extension UIImage {
+//    func kt_drawRectWithRoundedCorner(radius radius: CGFloat, _ sizetoFit: CGSize) -> UIImage {
+//        let rect = CGRect(origin: CGPoint(x: 0, y: 0), size: sizetoFit)
 //        
-//        switch style {
-//        case .Small:
-//            frame = CGRectMake(0,0,32,32)
-//            padding = 3.0
-//            distance = 1.0
-//        case .Medium:
-//            frame = CGRectMake(0, 0, 64, 64)
-//            padding = 6.0
-//            distance = 2.0
-//        case .Big:
-//            frame = CGRectMake(0, 0, 128, 128)
-//            padding = 12.0
-//            distance = 4.0
-//        }
+//        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.mainScreen().scale)
+//        CGContextAddPath(UIGraphicsGetCurrentContext(),
+//            UIBezierPath(roundedRect: rect, byRoundingCorners: UIRectCorner.AllCorners,
+//                cornerRadii: CGSize(width: radius, height: radius)).CGPath)
+//        CGContextClip(UIGraphicsGetCurrentContext())
 //        
-//        super.init(style: style)
-//        self.addLayers()
-//        self.dotColors = (colorA, colorB, colorC, colorD)
-//        self.dotsDistance = distance
-//        self.padding = padding
-//    }
-//    
-//    override func layoutSubviews() {
-//        super.layoutSubviews()
-//        self.insetLayer.frame = CGRectInset(self.layer.bounds, self.padding, self.padding)
-//        let size = quadrantSize()
-//        for quadrant in quadrants {
-//            let origin = quadrantOrigin(quadrant.position)
-//            quadrant.layer.frame = CGRect(origin: origin, size: size)
-//            quadrant.layer.draw()
-//        }
-//        if self.automaticCornerRadius {
-//            self.layer.cornerRadius = CGFloat(dotRadius()) + self.padding
-//        }
-//    }
-//    
-//    override func startAnimating() {
-//        CATransaction.begin()
-//        CATransaction.setDisableActions(true)
+//        self.drawInRect(rect)
+//        CGContextDrawPath(UIGraphicsGetCurrentContext(), .FillStroke)
+//        let output = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
 //        
-//        for quadrant in self.quadrants {
-//            if quadrant.layer.isPaused() {
-//                quadrant.layer.resume()
-//            } else {
-//                quadrant.layer.addAnimation(quadrantAnimation(quadrant), forKey: "dotAnimation")
-//            }
-//        }
-//        CATransaction.commit()
-//    }
-//    
-//    override func stopAnimating() {
-//        CATransaction.begin()
-//        CATransaction.setDisableActions(true)
-//        
-//        for quadrant in self.quadrants {
-//            quadrant.layer.pause()
-//        }
-//        
-//        CATransaction.commit()
-//        if self.hidesWhenStopped {
-//            self.hidden = true
-//        }
-//    }
-//    
-//    override func isAnimating() -> Bool {
-//        return self.animated
-//    }
-//    
-//    /**
-//     Returns a complete keyframe animation for one quadrant.
-//     
-//     
-//     :param: quadrant The quadrant to animate.
-//     
-//     :returns: A quadrant animation.
-//     */
-//    private func quadrantAnimation(quadrant : Quadrant) -> CAKeyframeAnimation {
-//        
-//        var currentPoint = quadrantPosition(quadrant.position)
-//        var currentQuadrant = quadrant.position
-//        var functions : [CAMediaTimingFunction] = [] // For assigning a function to every keyframe animation
-//        
-//        var path = CGPathCreateMutable()
-//        CGPathMoveToPoint(path, nil, currentPoint.x, currentPoint.y)
-//        
-//        // Add all corners (or quadrant positions)
-//        for _ in 1...4 {
-//            currentQuadrant = nextQuadrant(currentQuadrant)
-//            currentPoint = quadrantPosition(currentQuadrant)
-//            CGPathAddLineToPoint(path, nil, currentPoint.x, currentPoint.y)
-//            functions.append(CAMediaTimingFunction(name: kCAMediaTimingFunctionDefault))
-//        }
-//        
-//        var animation = CAKeyframeAnimation(keyPath: "position")
-//        animation.path = path
-//        animation.duration = self.animationDuration
-//        animation.timingFunctions = functions
-//        animation.repeatCount = Float(CGFloat.max)
-//        
-//        return animation
-//    }
-//    
-//    /**
-//     Returns the max dot radius for current combination of padding and dotsDistance. This number will be alway rounded to its floor value.
-//     
-//     :returns: The dots radius.
-//     */
-//    private func dotRadius() -> UInt{
-//        let smallestSide = max(0, Float(min(self.insetLayer.bounds.size.height, self.insetLayer.bounds.size.width)) - Float(dotsDistance))
-//        let triangleSide = Float(smallestSide) * sqrt(2.0) * 0.5
-//        let semiperimeter = (triangleSide * 2.0 + smallestSide) * 0.5
-//        if semiperimeter == 0 {
-//            return 0
-//        }
-//        let triangleArea = (smallestSide * (smallestSide * 0.5)) * 0.5
-//        let radius = triangleArea / semiperimeter
-//        return UInt(floor(radius))
-//    }
-//    
-//    /**
-//     Returns the next quadrant position with current animation order (see reverse attribute).
-//     
-//     :param: quadrant The given quadrant.
-//     
-//     :returns: The next quadrant position.
-//     */
-//    private func nextQuadrant(quadrant: QuadrantPosition) -> QuadrantPosition {
-//        if (reverseAnimation) {
-//            return QuadrantPosition(rawValue: (quadrant.rawValue == 0 ? 3 : quadrant.rawValue - 1))!
-//        } else {
-//            return QuadrantPosition(rawValue: (quadrant.rawValue + 1) % 4)!
-//        }
-//        
-//    }
-//    
-//    /**
-//     Returns the max quadrant size for current combination of padding and dotsDistance.
-//     
-//     :returns: The quadrant size.
-//     */
-//    private func quadrantSize() -> CGSize {
-//        let radius = CGFloat(dotRadius())
-//        return CGSize(width: radius * 2.0, height: radius * 2.0)
-//        
-//    }
-//    
-//    /**
-//     Returns the origin of the given quadrant from its current quadrantPosition (animation do not change quadrantPosition, so it's the starting origin).
-//     
-//     :param: quadrant The given quadrant.
-//     
-//     :returns: The quadrant origin.
-//     */
-//    private func quadrantOrigin(quadrant: QuadrantPosition) -> CGPoint{
-//        let radius = CGFloat(dotRadius())
-//        switch quadrant {
-//        case .UpLeft:
-//            return CGPoint(x: 0.0, y: 0.0)
-//        case .UpRight:
-//            return CGPoint(x: (self.insetLayer.bounds.width - radius * 2.0), y: 0)
-//        case .DownRight:
-//            return CGPoint(x: (self.insetLayer.bounds.width - radius * 2.0), y: (self.insetLayer.bounds.height - radius * 2.0))
-//        case .DownLeft:
-//            return CGPoint(x: 0, y: (self.insetLayer.bounds.height - radius * 2.0))
-//        }
-//        
-//    }
-//    
-//    /**
-//     Returns the position (anchor point 0.5, 0.5) of the given quadrant from its current quadrantPosition (animation do not change quadrantPosition, so it's the starting position).
-//     
-//     :param: quadrant The given quadrant.
-//     
-//     :returns: The quadrant position.
-//     */
-//    private func quadrantPosition(quadrant: QuadrantPosition) -> CGPoint {
-//        let radius = CGFloat(dotRadius())
-//        let origin = quadrantOrigin(quadrant)
-//        
-//        return CGPoint(x: origin.x + radius, y: origin.y + radius)
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
+//        return output
 //    }
 //}
