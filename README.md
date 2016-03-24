@@ -80,7 +80,7 @@ There might be multiple points, so here is an example
 
 ---
 # Plans on Scenes
-- [ ] Splash
+- [x] Splash
 - [ ] Main
 - [ ] Arena
 - [ ] Podium
@@ -88,7 +88,7 @@ There might be multiple points, so here is an example
 
 # Plans on Functions
 - [ ] Play with AI
-- [ ] Use In 
+- [ ] Use In App Purchase
 - [ ] History of Games
 - [ ] Play with another player online
 
@@ -164,6 +164,10 @@ Coming soon
 ### Tricks
 Coming soon
 
+
+---
+# Third Party Framework
+[KYCircularProgress](https://github.com/kentya6/KYCircularProgress/blob/master/LICENSE)
 
 ---
 # WWITDC

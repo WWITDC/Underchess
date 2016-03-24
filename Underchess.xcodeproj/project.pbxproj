@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98251CA17A5100B9733E /* UCPieceView.swift */; };
 		520B98281CA1A0F600B9733E /* UCArenaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98271CA1A0F600B9733E /* UCArenaView.swift */; };
+		520C26191CA35911007761D4 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C26181CA35911007761D4 /* KYCircularProgress.swift */; };
+		523EA02A1CA248DF006AFCF7 /* UCCustomizePieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */; };
 		525CD97C1C79308100C04862 /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
 		528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528219B91C6F0D0B003B9307 /* Main.storyboard */; };
@@ -19,16 +21,16 @@
 		528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */; };
 		528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */; };
 		52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF37711C8DF6F4006DD698 /* UCStandardView.swift */; };
-		52D268A31C6FFC2E00AA7217 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */; };
 		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		52027A2D1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
-		52027A2E1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "underchess/zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		520B98251CA17A5100B9733E /* UCPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPieceView.swift; sourceTree = "<group>"; };
 		520B98271CA1A0F600B9733E /* UCArenaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaView.swift; sourceTree = "<group>"; };
+		520C26181CA35911007761D4 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		522CFFC41C796315006A6B51 /* zh-Hans.xliff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "zh-Hans.xliff"; path = "underchess/Underchess/zh-Hans.xliff"; sourceTree = "<group>"; };
+		523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCCustomizePieceViewController.swift; sourceTree = "<group>"; };
 		525CD97B1C79308100C04862 /* UCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCUtility.swift; path = underchess/UCUtility.swift; sourceTree = "<group>"; };
 		528219B21C6F0D0A003B9307 /* underchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = underchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528219B51C6F0D0A003B9307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = underchess/AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +43,6 @@
 		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
 		528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsViewController.swift; sourceTree = "<group>"; };
 		52CF37711C8DF6F4006DD698 /* UCStandardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCStandardView.swift; sourceTree = "<group>"; };
-		52D268A21C6FFC2E00AA7217 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = underchess/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D268A41C7005E300AA7217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,14 +57,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		52444AC61CA1D799008565E0 /* Underchess */ = {
+		523EA0271CA248B5006AFCF7 /* Customizing */ = {
+			isa = PBXGroup;
+			children = (
+				523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */,
+			);
+			name = Customizing;
+			sourceTree = "<group>";
+		};
+		52444AC61CA1D799008565E0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
 				52CF37711C8DF6F4006DD698 /* UCStandardView.swift */,
 				520B98271CA1A0F600B9733E /* UCArenaView.swift */,
 				520B98251CA17A5100B9733E /* UCPieceView.swift */,
 			);
-			name = Underchess;
+			name = Core;
 			sourceTree = "<group>";
 		};
 		528219A71C6F06F2003B9307 = {
@@ -87,7 +96,7 @@
 		528219B41C6F0D0A003B9307 /* underchess */ = {
 			isa = PBXGroup;
 			children = (
-				52444AC61CA1D799008565E0 /* Underchess */,
+				52444AC61CA1D799008565E0 /* Core */,
 				528219C91C6F0EFF003B9307 /* Splash Scene */,
 				528219CA1C6F0F10003B9307 /* Main Scene */,
 				528219CC1C6F0F30003B9307 /* Game Scene */,
@@ -107,11 +116,11 @@
 		528219C81C6F0EDC003B9307 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				520C26181CA35911007761D4 /* KYCircularProgress.swift */,
 				522CFFC41C796315006A6B51 /* zh-Hans.xliff */,
 				528219B51C6F0D0A003B9307 /* AppDelegate.swift */,
 				525CD97B1C79308100C04862 /* UCUtility.swift */,
 				528219C11C6F0D0B003B9307 /* Info.plist */,
-				52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */,
 				528219B91C6F0D0B003B9307 /* Main.storyboard */,
 			);
 			name = Support;
@@ -145,6 +154,7 @@
 		528219CC1C6F0F30003B9307 /* Game Scene */ = {
 			isa = PBXGroup;
 			children = (
+				523EA0271CA248B5006AFCF7 /* Customizing */,
 				528219D71C6FCD5A003B9307 /* Arena */,
 				528219D81C6FCD64003B9307 /* Podium */,
 			);
@@ -235,7 +245,6 @@
 			files = (
 				528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */,
 				52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */,
-				52D268A31C6FFC2E00AA7217 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +272,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */,
+				523EA02A1CA248DF006AFCF7 /* UCCustomizePieceViewController.swift in Sources */,
 				528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */,
 				525CD97C1C79308100C04862 /* UCUtility.swift in Sources */,
 				528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */,
@@ -273,6 +283,7 @@
 				520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */,
 				528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */,
 				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
+				520C26191CA35911007761D4 /* KYCircularProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,15 +298,6 @@
 			);
 			name = Main.storyboard;
 			path = underchess;
-			sourceTree = "<group>";
-		};
-		52D268A11C6FFC2E00AA7217 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				52D268A21C6FFC2E00AA7217 /* Base */,
-				52027A2E1C71772900E61D95 /* zh-Hans */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -360,7 +362,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = net.jdnetwork.wwitdc.apollonian.underchess;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollonian.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -405,7 +407,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = net.jdnetwork.wwitdc.apollonian.underchess;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollonian.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
