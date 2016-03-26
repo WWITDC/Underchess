@@ -19,11 +19,11 @@ class UCArenaViewController: UIViewController, UCPieceProvider {
     
     func pieces() -> [UCPieceView]? {
         piecesWithStyle = [UCPieceView]()
-        piecesWithStyle?.append(UCPieceView(color: .ucPieceRedColor(), strokeColor: .whiteColor(), strokeWdith: 1))
-        piecesWithStyle?.append(UCPieceView(color: .ucPieceRedColor(), strokeColor: .whiteColor(), strokeWdith: 1))
+        piecesWithStyle?.append(UCPieceView(color: .ucPieceRedColor()))
+        piecesWithStyle?.append(UCPieceView(color: .ucPieceRedColor()))
         piecesWithStyle?.append(UCPieceView(color: .whiteColor(), strokeColor: .blackColor(), strokeWdith: 1))
-        piecesWithStyle?.append(UCPieceView(color: .ucPieceGreenColor(), strokeColor: .whiteColor(), strokeWdith: 1))
-        piecesWithStyle?.append(UCPieceView(color: .ucPieceGreenColor(), strokeColor: .whiteColor(), strokeWdith: 1))
+        piecesWithStyle?.append(UCPieceView(color: .ucPieceGreenColor()))
+        piecesWithStyle?.append(UCPieceView(color: .ucPieceGreenColor()))
         return piecesWithStyle
     }
     
@@ -61,11 +61,14 @@ class UCArenaViewController: UIViewController, UCPieceProvider {
         } else {
             arenaView?.performAnimationOnAllPiece(.None, completion: nil)
         }
+        arenaView?.setupAgain(frame: view.frame)
     }
     
     func orientatoinDidChange(){
         arenaView?.setupAgain(frame: view.frame)
     }
+    
+    
     
     /*
     private func loadGameRecord(record: String) -> [String:AnyObject]{

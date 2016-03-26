@@ -27,6 +27,7 @@ class UCSplashViewController: UIViewController {
             sleep(1)
 //            self.presentViewController(UCMainViewController(), animated: true, completion: nil)
             UCArenaViewController.sharedInstance.needAnimation = false
+            self.arenaView?.removeFromSuperview()
             self.presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
         })
     }
@@ -37,6 +38,10 @@ class UCSplashViewController: UIViewController {
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .Portrait
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
         return .Portrait
     }
     

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98251CA17A5100B9733E /* UCPieceView.swift */; };
 		520B98281CA1A0F600B9733E /* UCArenaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98271CA1A0F600B9733E /* UCArenaView.swift */; };
-		520C26191CA35911007761D4 /* KYCircularProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C26181CA35911007761D4 /* KYCircularProgress.swift */; };
 		523EA02A1CA248DF006AFCF7 /* UCCustomizePieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */; };
 		525CD97C1C79308100C04862 /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
@@ -20,6 +19,7 @@
 		528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
 		528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */; };
 		528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */; };
+		52B3D0B81CA6261E009136C4 /* UCLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3D0B71CA6261D009136C4 /* UCLineView.swift */; };
 		52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF37711C8DF6F4006DD698 /* UCStandardView.swift */; };
 		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -28,7 +28,6 @@
 		52027A2D1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		520B98251CA17A5100B9733E /* UCPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPieceView.swift; sourceTree = "<group>"; };
 		520B98271CA1A0F600B9733E /* UCArenaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaView.swift; sourceTree = "<group>"; };
-		520C26181CA35911007761D4 /* KYCircularProgress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KYCircularProgress.swift; sourceTree = "<group>"; };
 		522CFFC41C796315006A6B51 /* zh-Hans.xliff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "zh-Hans.xliff"; path = "underchess/Underchess/zh-Hans.xliff"; sourceTree = "<group>"; };
 		523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCCustomizePieceViewController.swift; sourceTree = "<group>"; };
 		525CD97B1C79308100C04862 /* UCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCUtility.swift; path = underchess/UCUtility.swift; sourceTree = "<group>"; };
@@ -42,6 +41,7 @@
 		528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaViewController.swift; sourceTree = "<group>"; };
 		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
 		528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsViewController.swift; sourceTree = "<group>"; };
+		52B3D0B71CA6261D009136C4 /* UCLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCLineView.swift; sourceTree = "<group>"; };
 		52CF37711C8DF6F4006DD698 /* UCStandardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCStandardView.swift; sourceTree = "<group>"; };
 		52D268A41C7005E300AA7217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -71,6 +71,7 @@
 				52CF37711C8DF6F4006DD698 /* UCStandardView.swift */,
 				520B98271CA1A0F600B9733E /* UCArenaView.swift */,
 				520B98251CA17A5100B9733E /* UCPieceView.swift */,
+				52B3D0B71CA6261D009136C4 /* UCLineView.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -116,7 +117,6 @@
 		528219C81C6F0EDC003B9307 /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				520C26181CA35911007761D4 /* KYCircularProgress.swift */,
 				522CFFC41C796315006A6B51 /* zh-Hans.xliff */,
 				528219B51C6F0D0A003B9307 /* AppDelegate.swift */,
 				525CD97B1C79308100C04862 /* UCUtility.swift */,
@@ -279,11 +279,11 @@
 				52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */,
 				528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */,
 				520B98281CA1A0F600B9733E /* UCArenaView.swift in Sources */,
+				52B3D0B81CA6261E009136C4 /* UCLineView.swift in Sources */,
 				528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */,
 				520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */,
 				528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */,
 				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
-				520C26191CA35911007761D4 /* KYCircularProgress.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -164,11 +164,6 @@ Coming soon
 ### Tricks
 Coming soon
 
-
----
-# Third Party Framework
-[KYCircularProgress](https://github.com/kentya6/KYCircularProgress/blob/master/LICENSE)
-
 ---
 # WWITDC
 WWITDC is a student organization. We are all creative and good at something in different fields. We work as a group, the plans we come up, the decisions we make, the products we made, all of them are **TEAM WROK**. The world will see what we can make from our knowledge.

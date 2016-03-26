@@ -26,10 +26,6 @@ extension UIColor{
 //        return UIColor(red: 0.00, green: 0.87, blue: 0.75, alpha: 1.00)
     }
     
-    class func transparent() -> UIColor{
-        return UIColor(red: 0, green: 0, blue: 0, alpha: 0)
-    }
-    
     class func randomColor() -> UIColor{
         return UIColor(red: CGFloat(arc4random_uniform(255))/CGFloat(255) ,green: CGFloat(arc4random_uniform(255))/CGFloat(255) , blue: CGFloat(arc4random_uniform(255))/CGFloat(255) , alpha: CGFloat(arc4random_uniform(255))/CGFloat(255))
     }
@@ -69,4 +65,22 @@ enum UCInterfaceOrientation{
 let NSUD = NSUserDefaults.standardUserDefaults()
 let NC = NSNotificationCenter.defaultCenter()
 
-
+func ucCenter(frame: CGRect) -> [CGPoint]{
+    var result = [CGPoint]()
+    if frame.height > frame.width{
+        let unit = min(frame.width / 6, frame.height / 8)
+        result.append(CGPointMake(unit * 1, unit * 1))
+        result.append(CGPointMake(unit * 5, unit * 1))
+        result.append(CGPointMake(unit * 3, unit * 4))
+        result.append(CGPointMake(unit * 5, unit * 7))
+        result.append(CGPointMake(unit * 1, unit * 7))
+    } else {
+        let unit = min(frame.width / 8, frame.height / 6)
+        result.append(CGPointMake(unit * 1, unit * 1))
+        result.append(CGPointMake(unit * 7, unit * 1))
+        result.append(CGPointMake(unit * 4, unit * 3))
+        result.append(CGPointMake(unit * 7, unit * 5))
+        result.append(CGPointMake(unit * 1, unit * 5))
+    }
+    return result
+}
