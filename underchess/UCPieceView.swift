@@ -8,13 +8,14 @@
 
 import UIKit
 
-class UCPieceView: UIView {
+@IBDesignable class UCPieceView: UIView {
     
     init(color: UIColor){
         super.init(frame: CGRect.zero)
         backgroundColor = color
         alpha = 0
-        
+        layer.borderWidth = 5
+        layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     init(color: UIColor, strokeColor: UIColor, strokeWdith: CGFloat){

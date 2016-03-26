@@ -80,7 +80,7 @@ There might be multiple points, so here is an example
 
 ---
 # Plans on Scenes
-- [ ] Splash
+- [x] Splash
 - [ ] Main
 - [ ] Arena
 - [ ] Podium
@@ -88,7 +88,7 @@ There might be multiple points, so here is an example
 
 # Plans on Functions
 - [ ] Play with AI
-- [ ] Use In 
+- [ ] Use In App Purchase
 - [ ] History of Games
 - [ ] Play with another player online
 
@@ -163,7 +163,6 @@ A board game that only have four pieces, and you have a lot of fun if you play i
 Coming soon
 ### Tricks
 Coming soon
-
 
 ---
 # WWITDC

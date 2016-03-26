@@ -11,36 +11,37 @@ import UIKit
 class UCSplashViewController: UIViewController {
     
     var arenaView: UCArenaView?
- 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.contentMode = .Redraw
         view.backgroundColor = .tianyiBlueColor()
         arenaView = UCArenaView(father: view)
-        view.addSubview(arenaView!)
-        var pieces = [UCPieceView]()
-        pieces.append(UCPieceView(color: .redColor(), strokeColor: .whiteColor(), strokeWdith: 1))
-        pieces.append(UCPieceView(color: .redColor(), strokeColor: .whiteColor(), strokeWdith: 1))
-        pieces.append(UCPieceView(color: .whiteColor(), strokeColor: .blackColor(), strokeWdith: 1))
-        pieces.append(UCPieceView(color: .greenColor(), strokeColor: .whiteColor(), strokeWdith: 1))
-        pieces.append(UCPieceView(color: .greenColor(), strokeColor: .whiteColor(), strokeWdith: 1))
-        for i in 0..<pieces.count {
-            pieces[i].tag = i
-        }
-        arenaView!.pieceViews = pieces
-        arenaView?.addPieces()
+        view.addSubview(arenaView!)        
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        arenaView?.performAnimationOnAllPiece(.Expand)
+        arenaView?.setupAgain(frame: view.frame)
+        arenaView?.performAnimationOnAllPiece(.Expand, completion: { (_) in
+            sleep(1)
+//            self.presentViewController(UCMainViewController(), animated: true, completion: nil)
+            UCArenaViewController.sharedInstance.needAnimation = false
+            self.arenaView?.removeFromSuperview()
+            self.presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
+        })
     }
-
+    
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .Portrait
+    }
+    
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
         return .Portrait
     }
     
