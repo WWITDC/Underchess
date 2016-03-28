@@ -19,6 +19,7 @@
 		528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
 		528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */; };
 		528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */; };
+		529A9A511CA8C32F0039D5E6 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A9A501CA8C32F0039D5E6 /* LLDialog.swift */; };
 		52B3D0B81CA6261E009136C4 /* UCLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3D0B71CA6261D009136C4 /* UCLineView.swift */; };
 		52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF37711C8DF6F4006DD698 /* UCStandardView.swift */; };
 		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
@@ -41,6 +42,7 @@
 		528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaViewController.swift; sourceTree = "<group>"; };
 		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
 		528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsViewController.swift; sourceTree = "<group>"; };
+		529A9A501CA8C32F0039D5E6 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52B3D0B71CA6261D009136C4 /* UCLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCLineView.swift; sourceTree = "<group>"; };
 		52CF37711C8DF6F4006DD698 /* UCStandardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCStandardView.swift; sourceTree = "<group>"; };
 		52D268A41C7005E300AA7217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		528219C81C6F0EDC003B9307 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				529A9A501CA8C32F0039D5E6 /* LLDialog.swift */,
 				522CFFC41C796315006A6B51 /* zh-Hans.xliff */,
 				528219B51C6F0D0A003B9307 /* AppDelegate.swift */,
 				525CD97B1C79308100C04862 /* UCUtility.swift */,
@@ -284,6 +287,7 @@
 				520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */,
 				528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */,
 				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
+				529A9A511CA8C32F0039D5E6 /* LLDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
