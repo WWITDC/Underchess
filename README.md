@@ -1,3 +1,6 @@
+# Try it out at 
+[https://appetize.io/app/9d73ftht6f0c736cfj15dne3aw](https://appetize.io/app/9d73ftht6f0c736cfj15dne3aw)
+
 # Help Us
 The most **important** part that we are missing is our **Artist** and **Designer**. If you can help us out, please send e-mail to [WWITDC@jdccn.ren](mailto:WWITDC@jdccn.ren)
 Feel free to leave feedbacks on the project, our [website](wwitdc.jdnetwork.net), and the **translation**
@@ -80,15 +83,15 @@ There might be multiple points, so here is an example
 
 ---
 # Plans on Scenes
-- [ ] Splash
+- [x] Splash
 - [ ] Main
-- [ ] Arena
+- [x] Arena
 - [ ] Podium
 - [ ] Settings
 
 # Plans on Functions
 - [ ] Play with AI
-- [ ] Use In 
+- [ ] Use In App Purchase
 - [ ] History of Games
 - [ ] Play with another player online
 
@@ -164,6 +167,9 @@ Coming soon
 ### Tricks
 Coming soon
 
+---
+# Used framework
+For displaying notification: [LLDialog](https://github.com/LiulietLee/LLDialog/blob/master/LICENSE.txt)
 
 ---
 # WWITDC

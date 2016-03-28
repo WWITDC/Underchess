@@ -8,124 +8,63 @@
 
 import UIKit
 
-enum UCInterfaceOrientation{
-    case Potrait, Landscape
-}
-
 class UCSplashViewController: UIViewController {
     
-    private var currentPieceColor = UIColor.randomColor()
+    var arenaView: UCArenaView?
     
-    var preExistingLayers = [CALayer]()
-    var validDrawingArea = CGRect.zero
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.contentMode = .Redraw
+        view.backgroundColor = .tianyiBlueColor()
+        arenaView = UCArenaView(father: view)
+        view.addSubview(arenaView!)        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        arenaView?.setupAgain(frame: view.frame)
+        arenaView?.performAnimationOnAllPiece(.Expand, completion: { (_) in
+            sleep(1)
+//            self.presentViewController(UCMainViewController(), animated: true, completion: nil)
+            UCArenaViewController.sharedInstance.needAnimation = false
+            self.arenaView?.removeFromSuperview()
+            
+            let dialog = LLDialog()
+            
+            // Set title.
+            dialog.title = "Tips"
+            
+            // Set content.
+            dialog.content = "Player controlling red pieces will go first. If you shake your device before tapping any pieces, the other player will go first."
+            
+            // Set the buttons
+            dialog.setYesButton(self, title: "OK", action: "next")
+            dialog.setNoButton(self, title: "", action: nil)
+            
+            // Don't forget this line.
+            dialog.refreshUI()
+            
+            // At last, add it to your view.
+            self.view.addSubview(dialog)
+        })
+    }
+    
+    func next(){
+        self.presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
+
+    }
+    
     
     override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
-    func colorForPiece() -> UIColor {
-        print(currentPieceColor)
-        return currentPieceColor
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return .Portrait
     }
     
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(animated)
-        preExistingLayers = view.layer.sublayers!
-        let width = Int(view.frame.width)
-        let height = Int(view.frame.height)
-        if width < height{
-            let validWidth = CGFloat(width - width % 3)
-            let validHeight = CGFloat(height - height % 4)
-            validDrawingArea = CGRect(origin: CGPointMake(view.frame.midX,view.frame.midY),size: CGSizeMake(validWidth, validHeight))
-        } else {
-            let validWidth = CGFloat(width - width % 4)
-            let validHeight = CGFloat(height - height % 3)
-            validDrawingArea = CGRect(origin: CGPointMake(view.frame.midX,view.frame.midY),size: CGSizeMake(validWidth, validHeight))
-        }
+    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
+        return .Portrait
     }
-    
-    
-    func animation(mode: UCInterfaceOrientation){
-        var pieces = Array(count: 5, repeatedValue: UCSplashPieceLayer())
-        for index in 0..<pieces.count{
-            switch index{
-            case 0,1:
-                pieces[index].color = .redColor()
-            case 2:
-                pieces[index].color = .whiteColor()
-            case 3,4:
-                pieces[index].color = .greenColor()
-            default:
-                break
-            }
-        }
-        
-        switch mode{
-        case .Potrait:
-            pieces[0].initialCenter = CGPointMake(
-                validDrawingArea.width / 6,
-                validDrawingArea.height / 8
-            )
-            pieces[1].initialCenter = CGPointMake(
-                validDrawingArea.width * 5 / 6,
-                validDrawingArea.height / 8
-            )
-            pieces[2].initialCenter = CGPointMake(
-                validDrawingArea.width / 2,
-                validDrawingArea.height / 2
-            )
-            pieces[3].initialCenter = CGPointMake(
-                validDrawingArea.width / 6,
-                validDrawingArea.height * 7 / 8
-            )
-            pieces[4].initialCenter = CGPointMake(
-                validDrawingArea.width * 5 / 6,
-                validDrawingArea.height * 7 / 8
-            )        case .Landscape: break
-        }
-        
-        for piece in pieces{
-            piece.frame = view.frame
-            piece.percentage = 12
-            piece.finalCenter = piece.initialCenter
-            view.layer.addSublayer(piece)
-        }
-        view.layer.setNeedsDisplay()
-        pieces[0].animate()
-        pieces[1].animate()
-        pieces[2].animate()
-        pieces[3].animate()
-        pieces[4].animate()
-    }
-    
-    override func viewWillTransitionToSize(size: CGSize, withTransitionCoordinator coordinator: UIViewControllerTransitionCoordinator) {
-        super.viewWillTransitionToSize(size, withTransitionCoordinator: coordinator)
-        // Calculate area that can be use to draw
-        let width = Int(view.frame.width)
-        let height = Int(view.frame.height)
-        if width < height{
-            let validWidth = CGFloat(width - width % 3)
-            let validHeight = CGFloat(height - height % 4)
-            validDrawingArea = CGRect(origin: CGPointMake(view.frame.midX,view.frame.midY),size: CGSizeMake(validWidth, validHeight))
-            animation(.Potrait)
-        } else {
-            let validWidth = CGFloat(width - width % 4)
-            let validHeight = CGFloat(height - height % 3)
-            validDrawingArea = CGRect(origin: CGPointMake(view.frame.midX,view.frame.midY),size: CGSizeMake(validWidth, validHeight))
-            animation(.Landscape)
-        }
-        // Clear All UCSplashPieceLayer
-        view.layer.sublayers = preExistingLayers
-    }
-    
-    /*
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
-    }
-    */
     
 }
