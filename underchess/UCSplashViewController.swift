@@ -28,8 +28,30 @@ class UCSplashViewController: UIViewController {
 //            self.presentViewController(UCMainViewController(), animated: true, completion: nil)
             UCArenaViewController.sharedInstance.needAnimation = false
             self.arenaView?.removeFromSuperview()
-            self.presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
+            
+            let dialog = LLDialog()
+            
+            // Set title.
+            dialog.title = "Tips"
+            
+            // Set content.
+            dialog.content = "Player controlling red pieces will go first. If you shake your device before tapping any pieces, the other player will go first."
+            
+            // Set the buttons
+            dialog.setYesButton(self, title: "OK", action: "next")
+            dialog.setNoButton(self, title: "", action: nil)
+            
+            // Don't forget this line.
+            dialog.refreshUI()
+            
+            // At last, add it to your view.
+            self.view.addSubview(dialog)
         })
+    }
+    
+    func next(){
+        self.presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
+
     }
     
     

@@ -8,7 +8,28 @@
 
 import UIKit
 
+protocol UCPieceViewDelegate{
+    func getError(error: ErrorType)
+    func touchUpInside(tag: Int) throws
+//    func touchesMovedToDirection()
+    
+}
+
+enum UCDirection{
+    case Up
+    case Down
+    case UpLeft
+    case DownLeft
+    case UpRight
+    case DownRight
+    case Left
+    case right
+}
+
 @IBDesignable class UCPieceView: UIView {
+    
+    var currentTouchMovingDirection: UCDirection?
+    var delegate: UCPieceViewDelegate?
     
     init(color: UIColor){
         super.init(frame: CGRect.zero)
@@ -51,4 +72,21 @@ import UIKit
         fatalError("init(coder:) has not been implemented")
     }
     
+//    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        super.touchesMoved(touches, withEvent: event)
+//        
+//    }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        super.touchesEnded(touches, withEvent: event)
+        if currentTouchMovingDirection == nil{
+            if let handler = delegate{
+                do{
+                    try handler.touchUpInside(tag)
+                } catch let error {
+                    handler.getError(error)
+                }
+            }
+        }
+    }
 }

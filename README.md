@@ -82,7 +82,7 @@ There might be multiple points, so here is an example
 # Plans on Scenes
 - [x] Splash
 - [ ] Main
-- [ ] Arena
+- [x] Arena
 - [ ] Podium
 - [ ] Settings
 
@@ -163,6 +163,10 @@ A board game that only have four pieces, and you have a lot of fun if you play i
 Coming soon
 ### Tricks
 Coming soon
+
+---
+# Used framework
+For displaying notification: [LLDialog](https://github.com/LiulietLee/LLDialog/blob/master/LICENSE.txt)
 
 ---
 # WWITDC

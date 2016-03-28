@@ -20,6 +20,16 @@ protocol UCPieceProvider{
 
 @IBDesignable class UCArenaView: UCStandardView {
     
+    var pieceViewDelegate : UCPieceViewDelegate?{
+        didSet{
+            if let pieces = pieceViews{
+                for piece in pieces{
+                    piece.delegate = pieceViewDelegate
+                }
+            }
+        }
+    }
+    
     var currentSize : CGSize{
         get{
             return CGSizeMake(frame.width, frame.height)
@@ -39,12 +49,7 @@ protocol UCPieceProvider{
         }
     }
     
-    var pieceViews : [UCPieceView]?{
-        didSet{
-            setNeedsLayout()
-            setNeedsDisplay()
-        }
-    }
+    var pieceViews : [UCPieceView]?
     
     var provider: UCPieceProvider?
     
@@ -142,18 +147,28 @@ protocol UCPieceProvider{
     
     func addPieces(){
         if let piece = provider?.pieces(){
-            pieceViews = piece
+            if piece.count == 5{
+                pieceViews = piece
+            } else {
+                setupPieces()
+            }
         } else if pieceViews == nil{
-            pieceViews = [UCPieceView]()
-            pieceViews?.append(UCPieceView(color: .ucPieceRedColor()))
-            pieceViews?.append(UCPieceView(color: .ucPieceRedColor()))
-            pieceViews!.append(UCPieceView(color: .whiteColor(), strokeColor: .blackColor(), strokeWdith: 1))
-            pieceViews?.append(UCPieceView(color: .ucPieceGreenColor()))
-            pieceViews?.append(UCPieceView(color: .ucPieceGreenColor()))
+            setupPieces()
         }
-        for piece in pieceViews!{
-            addSubview(piece)
+        for i in 0...4{
+            pieceViews![i].tag = i
+            pieceViews![i].delegate = pieceViewDelegate
+            addSubview(pieceViews![i])
         }
+    }
+    
+    func setupPieces(){
+        pieceViews = [UCPieceView]()
+        pieceViews?.append(UCPieceView(color: .ucPieceRedColor()))
+        pieceViews?.append(UCPieceView(color: .ucPieceRedColor()))
+        pieceViews?.append(UCPieceView(color: .whiteColor(), strokeColor: .blackColor(), strokeWdith: 1))
+        pieceViews?.append(UCPieceView(color: .ucPieceGreenColor()))
+        pieceViews?.append(UCPieceView(color: .ucPieceGreenColor()))
     }
     
     func addLines(){
@@ -184,6 +199,31 @@ protocol UCPieceProvider{
                     self.lineView?.frame = self.lineViewFrame
                     }, completion: nil)
         })
+    }
+    
+    func movePiece(pieceTag tag: Int, toPlace destination: Int){
+        var arg1 = 0, arg2 = 0
+        for i in 0...4{
+            if pieceViews![i].tag == tag {
+                arg1 = i
+            } else if pieceViews![i].tag == destination{
+                arg2 = i
+            }
+        }
+        var temp = pieceViews
+        swap(&temp![arg1],&temp![arg2])
+        swap(&temp![arg1].tag, &temp![arg2].tag)
+        pieceViews = temp
+        let frames = piecesFrame()
+        self.pieceViews![arg1].frame = frames[arg1]
+        UIView.animateWithDuration(0.5, animations: {
+            self.pieceViews![arg2].frame = frames[arg2]
+        }) { (_) in
+            UIView.animateWithDuration(0.25, animations: {
+                self.pieceViews![arg1].alpha = 1
+            })
+        }
+        
     }
     
 }
