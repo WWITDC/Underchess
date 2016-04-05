@@ -50,8 +50,7 @@ class UCSplashViewController: UIViewController {
     }
     
     func next(){
-        self.presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
-
+        presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
     }
     
     

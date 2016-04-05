@@ -6,6 +6,21 @@
 //  Copyright © 2016 WWITDC. All rights reserved.
 //
 
+
+
+enum UCInterfaceOrientation{
+    case Potrait, Landscape
+    
+    init(input: UIInterfaceOrientation){
+        switch input{
+        case .Portrait, .PortraitUpsideDown: self = .Potrait
+        case .LandscapeLeft, .LandscapeRight: self = .Landscape
+        case .Unknown: fatalError("Can not convert Unknown Interface Orientation")
+        }
+    }
+}
+
+
 import UIKit
 
 // Creat a 3 * 4 (potrait) or 4 * 3 (landscape) view in the center of the superview
