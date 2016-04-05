@@ -2,8 +2,8 @@
 [https://appetize.io/app/9d73ftht6f0c736cfj15dne3aw](https://appetize.io/app/9d73ftht6f0c736cfj15dne3aw)
 
 # Help Us
-The most **important** part that we are missing is our **Artist** and **Designer**. If you can help us out, please send e-mail to [WWITDC@jdccn.ren](mailto:WWITDC@jdccn.ren)
-Feel free to leave feedbacks on the project, our [website](wwitdc.jdnetwork.net), and the **translation**
+The most **important** part that we are missing is our **Artist** and **Designer**. If you can help us out, please send e-mail to [info@wwitdc.com](mailto:info@wwitdc.com)
+Feel free to leave feedbacks on the project, our [website](wwitdc.com), and the **translation**
 
 ---
 # The use of GitHub
