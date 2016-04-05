@@ -51,17 +51,6 @@ extension UIColor{
     }
 }
 
-enum UCInterfaceOrientation{
-    case Potrait, Landscape
-    init(input: UIInterfaceOrientation){
-        switch input{
-        case .Portrait, .PortraitUpsideDown: self = .Potrait
-        case .LandscapeLeft, .LandscapeRight: self = .Landscape
-        case .Unknown: fatalError("Can not convert Unknown Interface Orientation")
-        }
-    }
-}
-
 let NSUD = NSUserDefaults.standardUserDefaults()
 let NC = NSNotificationCenter.defaultCenter()
 

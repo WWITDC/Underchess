@@ -125,7 +125,7 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
                     dialog.content = "Congratulations. Do you want to play again? \n P.S. If you choose no, you can always shake your device and play again."
                     
                     // Set the buttons
-                    dialog.setYesButton(self, title: "YES", action: "next")
+                    dialog.setYesButton(self, title: "YES", action: "reInit")
                     dialog.setNoButton(self, title: "NO", action: nil)
                     
                     // Don't forget this line.
@@ -168,7 +168,7 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
             dialog.content = "That movement is not appropriate"
         default: dialog.content = "Some error occured"
         }
-
+        
         // Set the buttons
         dialog.setYesButton(self, title: "OK", action: nil)
         dialog.setNoButton(self, title: "", action: nil)
@@ -186,17 +186,28 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
             case .NotStarted:
                 currentPlayer = !currentPlayer
             case .Ended:
-                next()
+                reInit()
             default:
                 break
             }
         }
     }
     
-    func next(){
+    func reInit(){
+        NC.removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
         presentViewController(UCArenaViewController(), animated: true, completion: nil)
     }
-    
+
+    //    private func timeMachine(){
+    //        arenaView?.removeFromSuperview()
+    //        arenaView = nil
+    //        situation = [false,false,nil,true,true]
+    //        currentPlayer = false
+    //        didStartMoving = UITouchPhase.Ended
+    //        didStartGame = UCGamePhase.NotStarted
+    //        touchedPiece = nil
+    //    }
+    //
     /*
      private func loadGameRecord(record: String) -> [String:AnyObject]{
      /*
