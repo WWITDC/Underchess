@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98251CA17A5100B9733E /* UCPieceView.swift */; };
 		520B98281CA1A0F600B9733E /* UCArenaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98271CA1A0F600B9733E /* UCArenaView.swift */; };
+		52342D7D1CB17DB400FB2501 /* UCUtility-iOS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52342D7C1CB17DB400FB2501 /* UCUtility-iOS.swift */; };
 		523EA02A1CA248DF006AFCF7 /* UCCustomizePieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */; };
 		525CD97C1C79308100C04862 /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
@@ -25,11 +26,26 @@
 		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5297F8E71CAF00050092FC38 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		52027A2D1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		520B98251CA17A5100B9733E /* UCPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPieceView.swift; sourceTree = "<group>"; };
 		520B98271CA1A0F600B9733E /* UCArenaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaView.swift; sourceTree = "<group>"; };
 		522CFFC41C796315006A6B51 /* zh-Hans.xliff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "zh-Hans.xliff"; path = "underchess/Underchess/zh-Hans.xliff"; sourceTree = "<group>"; };
+		52342D7A1CB17D9B00FB2501 /* UCUtility-Watch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UCUtility-Watch.swift"; path = "Underchess-Watch2 Extension/UCUtility-Watch.swift"; sourceTree = "<group>"; };
+		52342D7C1CB17DB400FB2501 /* UCUtility-iOS.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UCUtility-iOS.swift"; path = "underchess/UCUtility-iOS.swift"; sourceTree = "<group>"; };
 		523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCCustomizePieceViewController.swift; sourceTree = "<group>"; };
 		525CD97B1C79308100C04862 /* UCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCUtility.swift; path = underchess/UCUtility.swift; sourceTree = "<group>"; };
 		528219B21C6F0D0A003B9307 /* underchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = underchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,6 +58,17 @@
 		528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaViewController.swift; sourceTree = "<group>"; };
 		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
 		528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsViewController.swift; sourceTree = "<group>"; };
+		5297F8CA1CAF00020092FC38 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		5297F8CC1CAF00020092FC38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5297F8CE1CAF00020092FC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5297F8D91CAF00040092FC38 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		5297F8DA1CAF00050092FC38 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		5297F8DC1CAF00050092FC38 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		5297F8DE1CAF00050092FC38 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		5297F8E01CAF00050092FC38 /* GlanceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlanceController.swift; sourceTree = "<group>"; };
+		5297F8E21CAF00050092FC38 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5297F8E41CAF00050092FC38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5297F8F11CAF49730092FC38 /* UCPieceImageGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPieceImageGenerator.swift; sourceTree = "<group>"; };
 		529A9A501CA8C32F0039D5E6 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52B3D0B71CA6261D009136C4 /* UCLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCLineView.swift; sourceTree = "<group>"; };
 		52CF37711C8DF6F4006DD698 /* UCStandardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCStandardView.swift; sourceTree = "<group>"; };
@@ -84,6 +111,8 @@
 				528219B41C6F0D0A003B9307 /* underchess */,
 				528219C71C6F0ECB003B9307 /* Art */,
 				528219C81C6F0EDC003B9307 /* Support */,
+				5297F8C81CAF00010092FC38 /* Underchess-Watch2 */,
+				5297F8D71CAF00040092FC38 /* Underchess-Watch2 Extension */,
 				528219B31C6F0D0A003B9307 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,6 +154,8 @@
 				525CD97B1C79308100C04862 /* UCUtility.swift */,
 				528219C11C6F0D0B003B9307 /* Info.plist */,
 				528219B91C6F0D0B003B9307 /* Main.storyboard */,
+				52342D7A1CB17D9B00FB2501 /* UCUtility-Watch.swift */,
+				52342D7C1CB17DB400FB2501 /* UCUtility-iOS.swift */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -180,6 +211,39 @@
 			name = Podium;
 			sourceTree = "<group>";
 		};
+		5297F8C81CAF00010092FC38 /* Underchess-Watch2 */ = {
+			isa = PBXGroup;
+			children = (
+				5297F8C91CAF00020092FC38 /* Interface.storyboard */,
+				5297F8CC1CAF00020092FC38 /* Assets.xcassets */,
+				5297F8CE1CAF00020092FC38 /* Info.plist */,
+			);
+			path = "Underchess-Watch2";
+			sourceTree = "<group>";
+		};
+		5297F8D71CAF00040092FC38 /* Underchess-Watch2 Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5297F8DA1CAF00050092FC38 /* InterfaceController.swift */,
+				5297F8DC1CAF00050092FC38 /* ExtensionDelegate.swift */,
+				5297F8DE1CAF00050092FC38 /* NotificationController.swift */,
+				5297F8E01CAF00050092FC38 /* GlanceController.swift */,
+				5297F8E21CAF00050092FC38 /* Assets.xcassets */,
+				5297F8E41CAF00050092FC38 /* Info.plist */,
+				5297F8F11CAF49730092FC38 /* UCPieceImageGenerator.swift */,
+				5297F8D81CAF00040092FC38 /* Supporting Files */,
+			);
+			path = "Underchess-Watch2 Extension";
+			sourceTree = "<group>";
+		};
+		5297F8D81CAF00040092FC38 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				5297F8D91CAF00040092FC38 /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -191,6 +255,7 @@
 				528219AF1C6F0D0A003B9307 /* Frameworks */,
 				528219B01C6F0D0A003B9307 /* Resources */,
 				528219DB1C6FCDE6003B9307 /* ShellScript */,
+				5297F8E71CAF00050092FC38 /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
@@ -208,13 +273,13 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = UC;
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = WWITDC;
 				TargetAttributes = {
 					528219B11C6F0D0A003B9307 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = U77Q9GTXS2;
+						DevelopmentTeam = 2H866F22W7;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 1;
@@ -275,6 +340,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */,
+				52342D7D1CB17DB400FB2501 /* UCUtility-iOS.swift in Sources */,
 				523EA02A1CA248DF006AFCF7 /* UCCustomizePieceViewController.swift in Sources */,
 				528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */,
 				525CD97C1C79308100C04862 /* UCUtility.swift in Sources */,
@@ -302,6 +368,14 @@
 			);
 			name = Main.storyboard;
 			path = underchess;
+			sourceTree = "<group>";
+		};
+		5297F8C91CAF00020092FC38 /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5297F8CA1CAF00020092FC38 /* Base */,
+			);
+			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -366,7 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollonian.underchess;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollo.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -411,7 +485,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollonian.underchess;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollo.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
