@@ -35,13 +35,17 @@ class UCSplashViewController: UIViewController {
             dialog.title = "Tips"
             
             // Set content.
-            dialog.message = "Player controlling red pieces will go first. If you shake your device before tapping any pieces, the other player will go first."
-
-            // Set the buttons
-            dialog.setPositiveButton(title: "OK", target: self, action: #selector(self.next))
-            dialog.setNegativeButton()
+            dialog.content = "Player controlling red pieces will go first. If you shake your device before tapping any pieces, the other player will go first."
             
-            dialog.show()
+            // Set the buttons
+            dialog.setYesButton(self, title: "OK", action: "next")
+            dialog.setNoButton(self, title: "", action: nil)
+            
+            // Don't forget this line.
+            dialog.refreshUI()
+            
+            // At last, add it to your view.
+            self.view.addSubview(dialog)
         })
     }
     

@@ -279,7 +279,7 @@
 				TargetAttributes = {
 					528219B11C6F0D0A003B9307 = {
 						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = 2H866F22W7;
+						DevelopmentTeam = U77Q9GTXS2;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
 								enabled = 1;
@@ -440,7 +440,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollo.underchess;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollonian.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -485,7 +485,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollo.underchess;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollonian.underchess;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
