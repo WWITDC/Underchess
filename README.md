@@ -81,7 +81,7 @@ There might be multiple points, so here is an example
 # Plans on Scenes
 - [x] Splash
 - [ ] Main
-- [x] Arena
+- [x] Arena — In Progress
 - [ ] Podium
 - [ ] Settings
 
