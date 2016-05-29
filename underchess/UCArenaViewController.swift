@@ -12,8 +12,8 @@ import UIKit
 
 enum UserInputError:ErrorType{
     case ControlUnownedPiece
-    case PlaceOnAnoherPiece
-    case CrossNoncrossbleObject
+    case NoInvalidMove
+    case NeedUserSelection
 }
 
 enum UCGamePhase{
@@ -24,9 +24,9 @@ extension UserInputError: CustomStringConvertible{
     var description:String{
         get{
             switch self{
-            case .CrossNoncrossbleObject: return "Cross noncrossble object"
             case .ControlUnownedPiece: return "Control unowned piece"
-            case .PlaceOnAnoherPiece: return "Place on another piece"
+            case .NoInvalidMove: return "No invalid move for the selcted piece"
+            case .NeedUserSelection: return "Need to select the piece to move by the user"
             }
         }
     }
@@ -51,10 +51,10 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
     // false -> 0; true -> 1
     private var situation : [Bool?] = [false,false,nil,true,true]
     private var currentPlayer = false
-    var didStartMoving = UITouchPhase.Ended
-    var didStartGame = UCGamePhase.NotStarted
-    var touchedPiece : Int?
-    
+    //var didStartMoving = UITouchPhase.Ended
+    var gamingStatus = UCGamePhase.NotStarted
+    //var touchedPiece : Int?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ucBlueColor()
@@ -90,22 +90,18 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
         arenaView?.setupAgain(frame: view.frame)
     }
     
-    func touchUpInside(tag: Int) throws {
-        switch didStartMoving {
-        case .Began:
-            if situation[tag] != nil {
-                touchedPiece = nil
-                didStartMoving = .Ended
-                throw UserInputError.PlaceOnAnoherPiece
-            } else if touchedPiece! + tag == 7 || abs(touchedPiece! - tag) == 3{
-                touchedPiece = nil
-                didStartMoving = .Ended
-                throw UserInputError.CrossNoncrossbleObject
+    func touchUpInside(tagOfPieceToMove: Int) throws {
+        if gamingStatus == .NotStarted{
+            gamingStatus = .Playing
+        }
+        if situation[tagOfPieceToMove] == currentPlayer{
+            // MARK: Insert Here
+            let tagOfEmptySpot = situation.indexOf({$0 == nil})
+            if tagOfPieceToMove + tagOfEmptySpot! == 7 || abs(tagOfPieceToMove - tagOfEmptySpot!) == 3 {
+                throw UserInputError.NoInvalidMove
             } else {
-                arenaView?.movePiece(pieceTag: touchedPiece!, toPlace: tag)
-                swap(&situation[touchedPiece!], &situation[tag])
-                touchedPiece = nil
-                didStartMoving = .Ended
+                arenaView?.movePiece(pieceTag: tagOfPieceToMove, toPlace: tagOfEmptySpot!)
+                swap(&situation[tagOfPieceToMove], &situation[tagOfEmptySpot!])
                 var arg1 = 0, arg2 = 0
                 for i in 0...4{
                     if situation[i] == !currentPlayer{
@@ -117,38 +113,24 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
                 if arg1 == 4 && (arg2 == 2 || arg2 == 3){
                     // TODO: Do something useful after one player won
                     let dialog = LLDialog()
-                    
+
                     // Set title.
                     currentPlayer ? (dialog.title = "Player Green Won") : (dialog.title = "Player Red Won")
-                    
-                    // Set content.
-                    dialog.content = "Congratulations. Do you want to play again? \n P.S. If you choose no, you can always shake your device and play again."
-                    
+
+                    // Set message.
+                    dialog.message = "Congratulations. Do you want to play again? \n P.S. If you choose no, you can always shake your device and play again."
+
                     // Set the buttons
-                    dialog.setYesButton(self, title: "YES", action: "reInit")
-                    dialog.setNoButton(self, title: "NO", action: nil)
-                    
-                    // Don't forget this line.
-                    dialog.refreshUI()
-                    
-                    // At last, add it to your view.
-                    self.view.addSubview(dialog)
-                    didStartGame = .Ended
+                    dialog.setPositiveButton(title: "Yes", target: self, action: #selector(reInit))
+                    dialog.setNegativeButton(title: "NO")
+
+                    dialog.show()
+                    gamingStatus = .Ended
                 }
                 currentPlayer = !currentPlayer
             }
-        case .Ended:
-            if didStartGame == .NotStarted{
-                didStartGame = .Playing
-            }
-            if situation[tag] == currentPlayer{
-                touchedPiece = tag
-                didStartMoving = .Began
-            } else {
-                throw UserInputError.ControlUnownedPiece
-            }
-        default:
-            break
+        } else {
+            throw UserInputError.ControlUnownedPiece
         }
     }
     
@@ -161,34 +143,36 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
         // Set content.
         switch error{
         case UserInputError.ControlUnownedPiece:
-            dialog.content = "You don't own that piece"
-        case UserInputError.PlaceOnAnoherPiece:
-            dialog.content = "You can't place your piece on another one"
-        case UserInputError.CrossNoncrossbleObject:
-            dialog.content = "That movement is not appropriate"
-        default: dialog.content = "Some error occured"
+            dialog.message = "You don't own that piece"
+        case UserInputError.NoInvalidMove:
+            dialog.message = "No invalid move for that piece"
+        case UserInputError.NeedUserSelection:
+            dialog.message = "Can't decide which piece to move. Please select by yourself."
+        default: dialog.message = "An error has been occured"
         }
         
         // Set the buttons
-        dialog.setYesButton(self, title: "OK", action: nil)
-        dialog.setNoButton(self, title: "", action: nil)
+        dialog.setPositiveButton(title: "OK")
+        dialog.setNegativeButton()
         // Don't forget this line.
-        dialog.refreshUI()
-        
-        // At last, add it to your view.
-        view.addSubview(dialog)
+        dialog.show()
     }
     
     override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
         super.motionEnded(motion, withEvent: event)
         if motion == UIEventSubtype.MotionShake{
-            switch didStartGame {
+            switch gamingStatus {
             case .NotStarted:
                 currentPlayer = !currentPlayer
             case .Ended:
                 reInit()
             default:
-                break
+                let dialog = LLDialog()
+                dialog.title = "Restart the game?"
+                dialog.message = "The game is not finished. Do you want to restart the game?"
+                dialog.setPositiveButton(title: "YES", target: self, action: #selector(reInit))
+                dialog.setNegativeButton(title: "NO")
+                dialog.show()
             }
         }
     }
