@@ -18,6 +18,10 @@ protocol UCPieceViewDelegate{
 enum UCDirection{
     case Up
     case Down
+    case UpLeft
+    case DownLeft
+    case UpRight
+    case DownRight
     case Left
     case right
 }
@@ -67,6 +71,11 @@ enum UCDirection{
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//    override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+//        super.touchesMoved(touches, withEvent: event)
+//        
+//    }
     
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesEnded(touches, withEvent: event)

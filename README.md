@@ -81,13 +81,7 @@ There might be multiple points, so here is an example
 # Plans on Scenes
 - [x] Splash
 - [ ] Main
-- [ ] Arena — In Progress
-	- [x] Show Contents
-	- [ ] Control the pieces 
-		- [ ] Show which piece can be moved
-		- [x] Just tap the piece to move
-		- [ ] Slide to move
-		- [ ] Use motion tracker
+- [x] Arena — In Progress
 - [ ] Podium
 - [ ] Settings
 

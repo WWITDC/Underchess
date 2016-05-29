@@ -45,16 +45,15 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
     }
     
     //    var recordIdentifier: String?
-    var arenaView: UCArenaView?
-
     
-    // false -> p0; true -> p1
+    var arenaView: UCArenaView?
+    
+    // false -> 0; true -> 1
     private var situation : [Bool?] = [false,false,nil,true,true]
     private var currentPlayer = false
     var didStartMoving = UITouchPhase.Ended
     var didStartGame = UCGamePhase.NotStarted
     var touchedPiece : Int?
-    var movablePiece : [Int]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -155,7 +154,11 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
     
     func getError(error: ErrorType) {
         let dialog = LLDialog()
+        
+        // Set title.
         dialog.title = "Permission denied"
+        
+        // Set content.
         switch error{
         case UserInputError.ControlUnownedPiece:
             dialog.content = "You don't own that piece"
@@ -165,9 +168,14 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
             dialog.content = "That movement is not appropriate"
         default: dialog.content = "Some error occured"
         }
+        
+        // Set the buttons
         dialog.setYesButton(self, title: "OK", action: nil)
-        dialog.setNoButton()
+        dialog.setNoButton(self, title: "", action: nil)
+        // Don't forget this line.
         dialog.refreshUI()
+        
+        // At last, add it to your view.
         view.addSubview(dialog)
     }
     
