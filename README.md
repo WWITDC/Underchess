@@ -19,7 +19,7 @@ There might be multiple points, so here is an example
 # Regulation
 - The default language for this project is **ENGLISH**. You can use Chinese, but it **must** have a translated version at the next line
 - Have prefix of UC which stands for `Underchess`
-- `<##>` is a Xcode mark, which places a placeholder with the description text between `#`
+- `<##>` is a Xcode mark, which places a place holder with the description text between `#`
 - Every Scene should have a `UC<#SceneName#>ViewController.swift` and a `UC<#SceneName#>View.swift`
 - Use good names for **EVERYTHING**
 	- Should 
