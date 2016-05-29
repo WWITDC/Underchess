@@ -5,10 +5,6 @@
 The most **important** part that we are missing is our **Artist** and **Designer**. If you can help us out, please send e-mail to [info@wwitdc.com](mailto:info@wwitdc.com)
 Feel free to leave feedbacks on the project, our [website](wwitdc.com), and the **translation**
 
----
-# The use of GitHub
-**We the WWITDC use GitHub to store our code is because we are just students and we don't have enough money to make it private. We hope that you will not just download, make a few changes, compile and send it to the App Store. Thank you very much.**
-
 ## About commit
 ### For commit messages
 There might be multiple points, so here is an example
@@ -85,7 +81,13 @@ There might be multiple points, so here is an example
 # Plans on Scenes
 - [x] Splash
 - [ ] Main
-- [x] Arena
+- [ ] Arena
+	- [x] Show Contents
+	- [ ] Control The Pieces
+		- [x] Tap the piece and Target
+		- [ ] Tap the piece to move only
+		- [ ] Slide to move
+		- [ ] Motion tracker
 - [ ] Podium
 - [ ] Settings
 

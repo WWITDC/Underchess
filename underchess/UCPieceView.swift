@@ -15,17 +15,6 @@ protocol UCPieceViewDelegate{
     
 }
 
-enum UCDirection{
-    case Up
-    case Down
-    case UpLeft
-    case DownLeft
-    case UpRight
-    case DownRight
-    case Left
-    case right
-}
-
 @IBDesignable class UCPieceView: UIView {
     
     var currentTouchMovingDirection: UCDirection?

@@ -38,7 +38,7 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
     var needAnimation = true
     
     var piecesWithStyle : [UCPieceView]?
-    
+
     func pieces() -> [UCPieceView]? {
         // MARK: Maybe Override Style with Key: preferedStyle
         return piecesWithStyle
@@ -48,12 +48,11 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
     
     var arenaView: UCArenaView?
     
-    // false -> 0; true -> 1
+    // false -> player 0; true -> player 1
     private var situation : [Bool?] = [false,false,nil,true,true]
     private var currentPlayer = false
-    //var didStartMoving = UITouchPhase.Ended
     var gamingStatus = UCGamePhase.NotStarted
-    //var touchedPiece : Int?
+    var movablePiece : [Int]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
