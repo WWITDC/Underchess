@@ -225,5 +225,14 @@ protocol UCPieceProvider{
         }
         
     }
+
+    func setMovablePieces(withTags tags: [Int]){
+        for piece in pieceViews!{
+            piece.removeAllAnimations()
+        }
+        for tag in tags {
+            pieceViews![tag].addRainbowSparkingAnimation()
+        }
+    }
     
 }

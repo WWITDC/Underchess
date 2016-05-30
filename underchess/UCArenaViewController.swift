@@ -52,7 +52,7 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
     private var situation : [Bool?] = [false,false,nil,true,true]
     private var currentPlayer = false
     var gamingStatus = UCGamePhase.NotStarted
-    var movablePiece : [Int]?
+    var movablePieces = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -95,18 +95,22 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
         }
         if situation[tagOfPieceToMove] == currentPlayer{
             // MARK: Insert Here
-            let tagOfEmptySpot = situation.indexOf({$0 == nil})
+            var tagOfEmptySpot = situation.indexOf({$0 == nil})
             if tagOfPieceToMove + tagOfEmptySpot! == 7 || abs(tagOfPieceToMove - tagOfEmptySpot!) == 3 {
                 throw UserInputError.NoInvalidMove
             } else {
                 arenaView?.movePiece(pieceTag: tagOfPieceToMove, toPlace: tagOfEmptySpot!)
                 swap(&situation[tagOfPieceToMove], &situation[tagOfEmptySpot!])
                 var arg1 = 0, arg2 = 0
+                movablePieces.removeAll()
                 for i in 0...4{
                     if situation[i] == !currentPlayer{
                         arg1 += i
+                        movablePieces.append(i)
                     } else if situation[i] != nil{
                         arg2 += i
+                    } else {
+                        tagOfEmptySpot = i
                     }
                 }
                 if arg1 == 4 && (arg2 == 2 || arg2 == 3){
@@ -121,10 +125,19 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
 
                     // Set the buttons
                     dialog.setPositiveButton(title: "Yes", target: self, action: #selector(reInit))
-                    dialog.setNegativeButton(title: "NO")
+                    dialog.setNegativeButton(title: "No")
 
                     dialog.show()
                     gamingStatus = .Ended
+                } else {
+                    var tags = [Int]()
+                    for i in 0..<movablePieces.count{
+                        let tag = movablePieces[i]
+                        if !(tag + tagOfEmptySpot! == 7 || abs(tag - tagOfEmptySpot!) == 3){
+                            tags.append(tag)
+                        }
+                    }
+                    arenaView?.setMovablePieces(withTags: tags)
                 }
                 currentPlayer = !currentPlayer
             }
@@ -170,7 +183,7 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
                 dialog.title = "Restart the game?"
                 dialog.message = "The game is not finished. Do you want to restart the game?"
                 dialog.setPositiveButton(title: "YES", target: self, action: #selector(reInit))
-                dialog.setNegativeButton(title: "NO")
+                dialog.setNegativeButton(title: "No")
                 dialog.show()
             }
         }
