@@ -85,7 +85,8 @@ There might be multiple points, so here is an example
 	- [x] Show Contents
 	- [ ] Control The Pieces
 		- [x] Tap the piece and Target
-		- [ ] Tap the piece to move only
+		- [x] Tap the piece to move only
+		- [ ] Show the movable piece
 		- [ ] Slide to move
 		- [ ] Motion tracker
 - [ ] Podium
