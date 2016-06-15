@@ -12,7 +12,7 @@ import UIKit
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .clearColor()
+        backgroundColor = .clear()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -21,33 +21,27 @@ import UIKit
     
     init(){
         super.init(frame: CGRect.zero)
-        backgroundColor = .clearColor()
+        backgroundColor = .clear()
     }
     
-    override func drawRect(rect: CGRect) {
-        super.drawRect(rect)
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
         drawLine()
     }
     
     private func drawLine(){
         let points = ucCenter(frame)
         let context = UIGraphicsGetCurrentContext()
-        /* Set the line join style for the line */
-        CGContextSetLineJoin(context, .Round)
-        /* Set the width for the line */
-        CGContextSetLineWidth(context, 10)
-        /* Set line Color */
-        CGContextSetStrokeColorWithColor(context, UIColor.whiteColor().CGColor)
-        /* Start the line at this point */
-        CGContextMoveToPoint(context, points[0].x, points[0].y)
-        /* And draw lines */
-        CGContextAddLineToPoint(context, points[4].x, points[4].y)
-        CGContextAddLineToPoint(context, points[1].x, points[1].y)
-        CGContextAddLineToPoint(context, points[0].x, points[0].y)
-        CGContextAddLineToPoint(context, points[3].x, points[3].y)
-        CGContextAddLineToPoint(context, points[1].x, points[1].y)
-        /* Use the context's current color to draw the line */
-        CGContextStrokePath(context)
+        context?.setLineJoin(.round)
+        context?.setLineWidth(10)
+        context?.setStrokeColor(UIColor.white().cgColor)
+        context.moveTo(x: points[0].x, y: points[0].y)
+        context.addLineTo(x: points[4].x, y: points[4].y)
+        context.addLineTo(x: points[1].x, y: points[1].y)
+        context.addLineTo(x: points[0].x, y: points[0].y)
+        context.addLineTo(x: points[3].x, y: points[3].y)
+        context.addLineTo(x: points[1].x, y: points[1].y)
+        context?.strokePath()
     }
     
 }

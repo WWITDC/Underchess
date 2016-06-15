@@ -8,10 +8,6 @@
 
 import UIKit
 
-func NSUSD() -> NSUserDefaults {
-    return NSUserDefaults.standardUserDefaults()
-}
-
 class UCSettingsManager {
     
 }

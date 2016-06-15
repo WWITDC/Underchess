@@ -9,9 +9,9 @@
 import UIKit
 
 enum UCAnimationOption{
-    case Expand
-    case None
-    case Unknown
+    case expand
+    case none
+    case unknown
 }
 
 protocol UCPieceProvider{
@@ -32,13 +32,13 @@ protocol UCPieceProvider{
     
     var currentSize : CGSize{
         get{
-            return CGSizeMake(frame.width, frame.height)
+            return CGSize(width: frame.width, height: frame.height)
         }
     }
     
     var lineViewFrame : CGRect{
         get{
-            return CGRect(origin: CGPointZero, size: currentSize)
+            return CGRect(origin: CGPoint.zero, size: currentSize)
         }
     }
     
@@ -65,27 +65,27 @@ protocol UCPieceProvider{
         fatalError("init(coder:) has not been implemented")
     }
     
-    func performAnimationOnAllPiece(option: UCAnimationOption, completion todo: ((Bool) -> Void)?){
+    func performAnimationOnAllPiece(_ option: UCAnimationOption, completion todo: ((Bool) -> Void)?){
         if pieceViews != nil && pieceViews?.count == 5 { addPieces() }
         let pieceFrames = piecesFrame()
         let pieceCenters = ucCenter(frame)
         switch option{
-        case .Expand:
+        case .expand:
             setupAgain(frame: superview?.frame)
             lineView?.frame = CGRect.zero
             for i in 0...4{
-                pieceViews![i].frame = CGRect(origin: pieceCenters[i], size: CGSizeMake(0, 0))
+                pieceViews![i].frame = CGRect(origin: pieceCenters[i], size: CGSize(width: 0, height: 0))
             }
-            UIView.animateWithDuration(0.25, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 self.lineView?.frame = self.lineViewFrame
                 }, completion: { (_) in
-                    UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseIn, animations:
+                    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations:
                         {
                             self.pieceViews![0].frame = pieceFrames[0]
                             self.pieceViews![0].round()
                             self.pieceViews![0].alpha = 1
                         }, completion: { (_) in
-                            UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseIn, animations:
+                            UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations:
                                 {
                                     for i in [1,2,4]{
                                         self.pieceViews![i].frame = pieceFrames[i]
@@ -93,7 +93,7 @@ protocol UCPieceProvider{
                                         self.pieceViews![i].alpha = 1
                                     }
                                 }, completion: {(_) in
-                                    UIView.animateWithDuration(0.1, delay: 0, options: .CurveEaseIn, animations:
+                                    UIView.animate(withDuration: 0.1, delay: 0, options: .curveEaseIn, animations:
                                         {
                                             self.pieceViews![3].frame = pieceFrames[3]
                                             self.pieceViews![3].round()
@@ -103,7 +103,7 @@ protocol UCPieceProvider{
                     )
             })
             
-        case .None:
+        case .none:
             for i in 0...4{
                 pieceViews![i].frame = pieceFrames[i]
                 pieceViews![i].round()
@@ -120,18 +120,18 @@ protocol UCPieceProvider{
         var result = [CGRect]()
         if frame.height > frame.width{
             let width = min(frame.width / 3, frame.height / 4)
-            result.append(CGRectMake(0, 0, width, width))
-            result.append(CGRectMake(width * 2, 0, width, width))
-            result.append(CGRectMake(width, width * 3 / 2, width, width))
-            result.append(CGRectMake(width * 2, width * 3, width, width))
-            result.append(CGRectMake(0, width * 3, width, width))
+            result.append(CGRect(x: 0, y: 0, width: width, height: width))
+            result.append(CGRect(x: width * 2, y: 0, width: width, height: width))
+            result.append(CGRect(x: width, y: width * 3 / 2, width: width, height: width))
+            result.append(CGRect(x: width * 2, y: width * 3, width: width, height: width))
+            result.append(CGRect(x: 0, y: width * 3, width: width, height: width))
         } else {
             let width = min(frame.width / 4, frame.height / 3)
-            result.append(CGRectMake(0, 0, width, width))
-            result.append(CGRectMake(width * 3, 0, width, width))
-            result.append(CGRectMake(width * 3 / 2, width, width, width))
-            result.append(CGRectMake(width * 3, width * 2, width, width))
-            result.append(CGRectMake(0, width * 2, width, width))
+            result.append(CGRect(x: 0, y: 0, width: width, height: width))
+            result.append(CGRect(x: width * 3, y: 0, width: width, height: width))
+            result.append(CGRect(x: width * 3 / 2, y: width, width: width, height: width))
+            result.append(CGRect(x: width * 3, y: width * 2, width: width, height: width))
+            result.append(CGRect(x: 0, y: width * 2, width: width, height: width))
         }
         
         return result
@@ -166,7 +166,7 @@ protocol UCPieceProvider{
         pieceViews = [UCPieceView]()
         pieceViews?.append(UCPieceView(color: .ucPieceRedColor()))
         pieceViews?.append(UCPieceView(color: .ucPieceRedColor()))
-        pieceViews?.append(UCPieceView(color: .whiteColor(), strokeColor: .blackColor(), strokeWdith: 1))
+        pieceViews?.append(UCPieceView(color: .white(), strokeColor: .black(), strokeWdith: 1))
         pieceViews?.append(UCPieceView(color: .ucPieceGreenColor()))
         pieceViews?.append(UCPieceView(color: .ucPieceGreenColor()))
     }
@@ -176,7 +176,7 @@ protocol UCPieceProvider{
             lineView?.removeFromSuperview()
         }
         lineView = UCLineView(frame: lineViewFrame)
-        insertSubview(lineView!, atIndex: 0)
+        insertSubview(lineView!, at: 0)
     }
     
     override func didMoveToSuperview() {
@@ -187,12 +187,12 @@ protocol UCPieceProvider{
     
     func setupAgain(frame temp: CGRect?) {
         let tmp = self.standardFrameInFrame(frame: temp)
-        UIView.animateWithDuration(0.25, animations:
+        UIView.animate(withDuration: 0.25, animations:
             {
                 self.frame = tmp
             }, completion: {(_) in
                 let pieceFrames = self.piecesFrame()
-                UIView.animateWithDuration(0.5, delay: 0, options: .CurveEaseInOut, animations: {
+                UIView.animate(withDuration: 0.5, delay: 0, options: UIViewAnimationOptions(), animations: {
                     for i in 0...4{
                         self.pieceViews![i].frame = pieceFrames[i]
                     }
@@ -216,10 +216,10 @@ protocol UCPieceProvider{
         pieceViews = temp
         let frames = piecesFrame()
         self.pieceViews![arg1].frame = frames[arg1]
-        UIView.animateWithDuration(0.5, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.pieceViews![arg2].frame = frames[arg2]
         }) { (_) in
-            UIView.animateWithDuration(0.25, animations: {
+            UIView.animate(withDuration: 0.25, animations: {
                 self.pieceViews![arg1].alpha = 1
             })
         }

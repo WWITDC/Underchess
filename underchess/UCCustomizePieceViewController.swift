@@ -14,7 +14,7 @@ class UCCustomizePieceViewController: UIViewController {
         super.viewDidLoad()
         // FIXME: Add Feature Later
         UCArenaViewController.sharedInstance.needAnimation = false
-        presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
+        present(UCArenaViewController.sharedInstance, animated: true, completion: nil)
     }
 
 }

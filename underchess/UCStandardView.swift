@@ -9,13 +9,13 @@
 
 
 enum UCInterfaceOrientation{
-    case Potrait, Landscape
+    case potrait, landscape
     
     init(input: UIInterfaceOrientation){
         switch input{
-        case .Portrait, .PortraitUpsideDown: self = .Potrait
-        case .LandscapeLeft, .LandscapeRight: self = .Landscape
-        case .Unknown: fatalError("Can not convert Unknown Interface Orientation")
+        case .portrait, .portraitUpsideDown: self = .potrait
+        case .landscapeLeft, .landscapeRight: self = .landscape
+        case .unknown: fatalError("Can not convert Unknown Interface Orientation")
         }
     }
 }
@@ -39,7 +39,7 @@ import UIKit
     }
     
     func setup(frame temp: CGRect?){
-        let fatherFrame = temp ?? superview?.frame ?? UIScreen.mainScreen().bounds
+        let fatherFrame = temp ?? superview?.frame ?? UIScreen.main().bounds
         var targetWidth, targetHeight: CGFloat
         if fatherFrame.height > fatherFrame.width{
             let arg1 = Int(fatherFrame.height - 2 * margin) / 4
@@ -58,7 +58,7 @@ import UIKit
     }
     
     func standardFrameInFrame(frame temp: CGRect?) -> CGRect{
-        let fatherFrame = temp ?? superview?.frame ?? UIScreen.mainScreen().bounds
+        let fatherFrame = temp ?? superview?.frame ?? UIScreen.main().bounds
         var targetWidth, targetHeight: CGFloat
         if fatherFrame.height > fatherFrame.width{
             let arg1 = Int(fatherFrame.height - 2 * margin) / 4

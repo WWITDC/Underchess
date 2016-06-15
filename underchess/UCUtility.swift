@@ -9,9 +9,9 @@
 import UIKit
 
 enum UCDirection{
-    case Up
-    case Down
-    case Left
+    case up
+    case down
+    case left
     case right
 }
 
@@ -36,7 +36,7 @@ extension UIColor{
     class func randomColor() -> UIColor{
         return UIColor(red: CGFloat(arc4random_uniform(255))/CGFloat(255) ,green: CGFloat(arc4random_uniform(255))/CGFloat(255) , blue: CGFloat(arc4random_uniform(255))/CGFloat(255) , alpha: CGFloat(arc4random_uniform(255))/CGFloat(255))
     }
-    class func colorWithHex(code: String) -> UIColor{
+    class func colorWithHex(_ code: String) -> UIColor{
         var array = [CGFloat]()
         for char in code.characters{
             switch char{
@@ -58,25 +58,25 @@ extension UIColor{
     }
 }
 
-let NSUD = NSUserDefaults.standardUserDefaults()
-let NC = NSNotificationCenter.defaultCenter()
+let NSUD = UserDefaults.standard()
+let NC = NotificationCenter.default()
 
-func ucCenter(frame: CGRect) -> [CGPoint]{
+func ucCenter(_ frame: CGRect) -> [CGPoint]{
     var result = [CGPoint]()
     if frame.height > frame.width{
         let unit = min(frame.width / 6, frame.height / 8)
-        result.append(CGPointMake(unit * 1, unit * 1))
-        result.append(CGPointMake(unit * 5, unit * 1))
-        result.append(CGPointMake(unit * 3, unit * 4))
-        result.append(CGPointMake(unit * 5, unit * 7))
-        result.append(CGPointMake(unit * 1, unit * 7))
+        result.append(CGPoint(x: unit * 1, y: unit * 1))
+        result.append(CGPoint(x: unit * 5, y: unit * 1))
+        result.append(CGPoint(x: unit * 3, y: unit * 4))
+        result.append(CGPoint(x: unit * 5, y: unit * 7))
+        result.append(CGPoint(x: unit * 1, y: unit * 7))
     } else {
         let unit = min(frame.width / 8, frame.height / 6)
-        result.append(CGPointMake(unit * 1, unit * 1))
-        result.append(CGPointMake(unit * 7, unit * 1))
-        result.append(CGPointMake(unit * 4, unit * 3))
-        result.append(CGPointMake(unit * 7, unit * 5))
-        result.append(CGPointMake(unit * 1, unit * 5))
+        result.append(CGPoint(x: unit * 1, y: unit * 1))
+        result.append(CGPoint(x: unit * 7, y: unit * 1))
+        result.append(CGPoint(x: unit * 4, y: unit * 3))
+        result.append(CGPoint(x: unit * 7, y: unit * 5))
+        result.append(CGPoint(x: unit * 1, y: unit * 5))
     }
     return result
 }

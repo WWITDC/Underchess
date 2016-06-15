@@ -9,10 +9,9 @@
 import UIKit
 
 protocol UCPieceViewDelegate{
-    func getError(error: ErrorType)
-    func touchUpInside(tag: Int) throws
+    func getError(_ error: ErrorProtocol)
+    func touchUpInside(_ tag: Int) throws
 //    func touchesMovedToDirection()
-    
 }
 
 @IBDesignable class UCPieceView: UIView {
@@ -25,7 +24,7 @@ protocol UCPieceViewDelegate{
         backgroundColor = color
         alpha = 0
         layer.borderWidth = 5
-        layer.borderColor = UIColor.whiteColor().CGColor
+        layer.borderColor = UIColor.white().cgColor
         setupLayers()
     }
 
@@ -34,7 +33,7 @@ protocol UCPieceViewDelegate{
         backgroundColor = color
         alpha = 0
         layer.borderWidth = strokeWdith
-        layer.borderColor = strokeColor.CGColor
+        layer.borderColor = strokeColor.cgColor
         setupLayers()
     }
 
@@ -70,8 +69,8 @@ protocol UCPieceViewDelegate{
 //        
 //    }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesEnded(touches, withEvent: event)
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
         if currentTouchMovingDirection == nil{
             if let handler = delegate{
                 do{
@@ -105,15 +104,15 @@ protocol UCPieceViewDelegate{
         addRainbowSparkingAnimationCompletionBlock(nil)
     }
 
-    func addRainbowSparkingAnimationCompletionBlock(completionBlock: ((finished: Bool) -> Void)?){
+    func addRainbowSparkingAnimationCompletionBlock(_ completionBlock: ((finished: Bool) -> Void)?){
         if completionBlock != nil{
             let completionAnim = CABasicAnimation(keyPath:"completionAnim")
             completionAnim.duration = 2
             completionAnim.delegate = self
             completionAnim.setValue("RainbowSparking", forKey:"animId")
             completionAnim.setValue(false, forKey:"needEndAnim")
-            layer.addAnimation(completionAnim, forKey:"RainbowSparking")
-            if let anim = layer.animationForKey("RainbowSparking"){
+            layer.add(completionAnim, forKey:"RainbowSparking")
+            if let anim = layer.animation(forKey: "RainbowSparking"){
                 completionBlocks[anim] = completionBlock
             }
         }
@@ -121,54 +120,56 @@ protocol UCPieceViewDelegate{
         let fillMode = kCAFillModeForwards
 
         ////Animation
-        let strokeColorAnim      = CAKeyframeAnimation(keyPath:"strokeColor")
-        strokeColorAnim.values   = [UIColor.whiteColor().CGColor,
-                                        UIColor.redColor().CGColor,
-                                        UIColor.orangeColor().CGColor,
-                                        UIColor.yellowColor().CGColor,
-                                        UIColor.greenColor().CGColor,
-                                        UIColor.cyanColor().CGColor,
-                                        UIColor.blueColor().CGColor,
-                                        UIColor.purpleColor().CGColor,
-                                        UIColor.whiteColor().CGColor]
+        let strokeColorAnim      = CAKeyframeAnimation(keyPath:"borderColor")
+        strokeColorAnim.values   = [UIColor.white().cgColor,
+                                        UIColor.red().cgColor,
+                                        UIColor.orange().cgColor,
+                                        UIColor.yellow().cgColor,
+                                        UIColor.green().cgColor,
+                                        UIColor.cyan().cgColor,
+                                        UIColor.blue().cgColor,
+                                        UIColor.purple().cgColor,
+                                        UIColor.white().cgColor]
         strokeColorAnim.keyTimes = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
         strokeColorAnim.duration = 2
 
         let transformAnim      = CAKeyframeAnimation(keyPath:"transform")
-        transformAnim.values   = [NSValue(CATransform3D: CATransform3DIdentity),
-                                      NSValue(CATransform3D: CATransform3DMakeScale(1.4, 1.4, 1)),
-                                      NSValue(CATransform3D: CATransform3DMakeScale(0.8, 0.8, 1)),
-                                      NSValue(CATransform3D: CATransform3DMakeScale(1.2, 1.2, 1)),
-                                      NSValue(CATransform3D: CATransform3DIdentity)]
+        transformAnim.values   = [NSValue(caTransform3D: CATransform3DIdentity),
+                                      NSValue(caTransform3D: CATransform3DMakeScale(1.4, 1.4, 1)),
+                                      NSValue(caTransform3D: CATransform3DMakeScale(0.8, 0.8, 1)),
+                                      NSValue(caTransform3D: CATransform3DMakeScale(1.2, 1.2, 1)),
+                                      NSValue(caTransform3D: CATransform3DIdentity)]
         transformAnim.keyTimes = [0, 0.5, 1, 1.5, 2]
         transformAnim.duration = 2
 
         let rainbowSparkingAnim : CAAnimationGroup = QCMethod.groupAnimations([strokeColorAnim, transformAnim], fillMode:fillMode)
-        layers["self"]?.addAnimation(rainbowSparkingAnim, forKey:"rainbowSparkingAnim")
+        rainbowSparkingAnim.isRemovedOnCompletion = false
+        rainbowSparkingAnim.autoreverses = true
+        layers["self"]?.add(rainbowSparkingAnim, forKey:"rainbowSparkingAnim")
     }
 
     //MARK: - Animation Cleanup
 
-    override func animationDidStop(anim: CAAnimation, finished flag: Bool){
+    override func animationDidStop(_ anim: CAAnimation, finished flag: Bool){
         if let completionBlock = completionBlocks[anim]{
-            completionBlocks.removeValueForKey(anim)
-            if (flag && updateLayerValueForCompletedAnimation) || anim.valueForKey("needEndAnim") as! Bool{
-                updateLayerValuesForAnimationId(anim.valueForKey("animId") as? String)
-                removeAnimationsForAnimationId(anim.valueForKey("animId") as? String)
+            completionBlocks.removeValue(forKey: anim)
+            if (flag && updateLayerValueForCompletedAnimation) || anim.value(forKey: "needEndAnim") as! Bool{
+                updateLayerValuesForAnimationId(anim.value(forKey: "animId") as? String)
+                removeAnimationsForAnimationId(anim.value(forKey: "animId") as? String)
             }
             completionBlock(flag)
         }
     }
 
-    func updateLayerValuesForAnimationId(identifier: String? = "RainbowSparking"){
+    func updateLayerValuesForAnimationId(_ identifier: String? = "RainbowSparking"){
         if identifier == "RainbowSparking"{
-            QCMethod.updateValueFromPresentationLayerForAnimation((layers["self"] as! CALayer).animationForKey("rainbowSparkingAnim"), theLayer:(layers["self"] as! CALayer))
+            QCMethod.updateValueFromPresentationLayerForAnimation((layers["self"] as! CALayer).animation(forKey: "rainbowSparkingAnim"), theLayer:(layers["self"] as! CALayer))
         }
     }
     
-    func removeAnimationsForAnimationId(identifier: String? = "RainbowSparking"){
+    func removeAnimationsForAnimationId(_ identifier: String? = "RainbowSparking"){
         if identifier == "RainbowSparking"{
-            (layers["self"] as! CALayer).removeAnimationForKey("rainbowSparkingAnim")
+            (layers["self"] as! CALayer).removeAnimation(forKey: "rainbowSparkingAnim")
         }
     }
     

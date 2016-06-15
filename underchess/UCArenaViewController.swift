@@ -10,54 +10,54 @@
 
 import UIKit
 
-enum UserInputError:ErrorType{
-    case ControlUnownedPiece
-    case NoInvalidMove
-    case NeedUserSelection
+enum UserInputError:ErrorProtocol{
+    case controlUnownedPiece
+    case noInvalidMove
+    case needUserSelection
 }
 
 enum UCGamePhase{
-    case Ended, Playing, NotStarted
+    case ended, playing, notStarted
 }
 
 extension UserInputError: CustomStringConvertible{
     var description:String{
         get{
             switch self{
-            case .ControlUnownedPiece: return "Control unowned piece"
-            case .NoInvalidMove: return "No invalid move for the selcted piece"
-            case .NeedUserSelection: return "Need to select the piece to move by the user"
+            case .controlUnownedPiece: return "Control unowned piece"
+            case .noInvalidMove: return "No invalid move for the selcted piece"
+            case .needUserSelection: return "Need to select the piece to move by the user"
             }
         }
     }
 }
 
 class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDelegate {
-    
+
     static let sharedInstance = UCArenaViewController()
     var needAnimation = true
-    
+
     var piecesWithStyle : [UCPieceView]?
 
     func pieces() -> [UCPieceView]? {
-        // MARK: Maybe Override Style with Key: preferedStyle
+        // MARK: May be Overrided Style with Key: preferedStyle
         return piecesWithStyle
     }
-    
+
     //    var recordIdentifier: String?
-    
+
     var arenaView: UCArenaView?
-    
+
     // false -> player 0; true -> player 1
     private var situation : [Bool?] = [false,false,nil,true,true]
     private var currentPlayer = false
-    var gamingStatus = UCGamePhase.NotStarted
+    var gamingStatus = UCGamePhase.notStarted
     var movablePieces = [Int]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .ucBlueColor()
-        NC.addObserver(self, selector: #selector(orientatoinDidChange), name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NC.addObserver(self, selector: #selector(orientatoinDidChange), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         arenaView = UCArenaView(father: view)
         arenaView?.provider = self
         arenaView?.pieceViewDelegate = self
@@ -73,110 +73,100 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
          } else {*/
         /*}*/
     }
-    
-    override func viewDidAppear(animated: Bool) {
+
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         arenaView?.setupAgain(frame: view.frame)
         if needAnimation {
-            arenaView?.performAnimationOnAllPiece(.Expand, completion: nil)
+            arenaView?.performAnimationOnAllPiece(.expand, completion: nil)
         } else {
-            arenaView?.performAnimationOnAllPiece(.None, completion: nil)
+            arenaView?.performAnimationOnAllPiece(.none, completion: nil)
         }
         arenaView?.setupAgain(frame: view.frame)
     }
-    
+
     func orientatoinDidChange(){
         arenaView?.setupAgain(frame: view.frame)
     }
-    
-    func touchUpInside(tagOfPieceToMove: Int) throws {
-        if gamingStatus == .NotStarted{
-            gamingStatus = .Playing
-        }
-        if situation[tagOfPieceToMove] == currentPlayer{
-            // MARK: Insert Here
-            var tagOfEmptySpot = situation.indexOf({$0 == nil})
-            if tagOfPieceToMove + tagOfEmptySpot! == 7 || abs(tagOfPieceToMove - tagOfEmptySpot!) == 3 {
-                throw UserInputError.NoInvalidMove
-            } else {
-                arenaView?.movePiece(pieceTag: tagOfPieceToMove, toPlace: tagOfEmptySpot!)
-                swap(&situation[tagOfPieceToMove], &situation[tagOfEmptySpot!])
-                var arg1 = 0, arg2 = 0
-                movablePieces.removeAll()
-                for i in 0...4{
-                    if situation[i] == !currentPlayer{
-                        arg1 += i
-                        movablePieces.append(i)
-                    } else if situation[i] != nil{
-                        arg2 += i
-                    } else {
-                        tagOfEmptySpot = i
-                    }
-                }
-                if arg1 == 4 && (arg2 == 2 || arg2 == 3){
-                    // TODO: Do something useful after one player won
-                    let dialog = LLDialog()
 
-                    // Set title.
-                    currentPlayer ? (dialog.title = "Player Green Won") : (dialog.title = "Player Red Won")
-
-                    // Set message.
-                    dialog.message = "Congratulations. Do you want to play again? \n P.S. If you choose no, you can always shake your device and play again."
-
-                    // Set the buttons
-                    dialog.setPositiveButton(title: "Yes", target: self, action: #selector(reInit))
-                    dialog.setNegativeButton(title: "No")
-
-                    dialog.show()
-                    gamingStatus = .Ended
+    func touchUpInside(_ tagOfPieceToMove: Int) throws {
+        if gamingStatus != .ended{
+            if gamingStatus == .notStarted{
+                gamingStatus = .playing
+            }
+            if situation[tagOfPieceToMove] == currentPlayer{
+                var tagOfEmptySpot = situation.index(where: {$0 == nil})
+                if tagOfPieceToMove + tagOfEmptySpot! == 7 || abs(tagOfPieceToMove - tagOfEmptySpot!) == 3 {
+                    throw UserInputError.noInvalidMove
                 } else {
-                    var tags = [Int]()
-                    for i in 0..<movablePieces.count{
-                        let tag = movablePieces[i]
-                        if !(tag + tagOfEmptySpot! == 7 || abs(tag - tagOfEmptySpot!) == 3){
-                            tags.append(tag)
+                    arenaView?.movePiece(pieceTag: tagOfPieceToMove, toPlace: tagOfEmptySpot!)
+                    swap(&situation[tagOfPieceToMove], &situation[tagOfEmptySpot!])
+                    var arg1 = 0, arg2 = 0
+                    movablePieces.removeAll()
+                    for i in 0...4{
+                        if situation[i] == !currentPlayer{
+                            arg1 += i
+                            movablePieces.append(i)
+                        } else if situation[i] != nil{
+                            arg2 += i
+                        } else {
+                            tagOfEmptySpot = i
                         }
                     }
-                    arenaView?.setMovablePieces(withTags: tags)
+                    if arg1 == 4 && (arg2 == 2 || arg2 == 3){
+                        // MARK: Someone Won
+                        let dialog = LLDialog()
+                        currentPlayer ? (dialog.title = "Player Green Won") : (dialog.title = "Player Red Won")
+                        dialog.message = "Congratulations. Do you want to play again? \n P.S. If you choose no, you can always shake your device and play again."
+                        dialog.setPositiveButton(title: "Yes", target: self, action: #selector(reInit))
+                        dialog.setNegativeButton(title: "No")
+
+                        dialog.show()
+                        gamingStatus = .ended
+
+                    } else {
+                        var tags = [Int]()
+                        for i in 0..<movablePieces.count{
+                            let tag = movablePieces[i]
+                            if !(tag + tagOfEmptySpot! == 7 || abs(tag - tagOfEmptySpot!) == 3){
+                                tags.append(tag)
+                            }
+                        }
+                        arenaView?.setMovablePieces(withTags: tags)
+                    }
+                    currentPlayer = !currentPlayer
                 }
-                currentPlayer = !currentPlayer
+            } else {
+                throw UserInputError.controlUnownedPiece
             }
-        } else {
-            throw UserInputError.ControlUnownedPiece
+
         }
     }
-    
-    func getError(error: ErrorType) {
+
+    func getError(_ error: ErrorProtocol) {
         let dialog = LLDialog()
-        
-        // Set title.
         dialog.title = "Permission denied"
-        
-        // Set content.
         switch error{
-        case UserInputError.ControlUnownedPiece:
+        case UserInputError.controlUnownedPiece:
             dialog.message = "You don't own that piece"
-        case UserInputError.NoInvalidMove:
+        case UserInputError.noInvalidMove:
             dialog.message = "No invalid move for that piece"
-        case UserInputError.NeedUserSelection:
+        case UserInputError.needUserSelection:
             dialog.message = "Can't decide which piece to move. Please select by yourself."
         default: dialog.message = "An error has been occured"
         }
-        
-        // Set the buttons
         dialog.setPositiveButton(title: "OK")
         dialog.setNegativeButton()
-        // Don't forget this line.
         dialog.show()
     }
-    
-    override func motionEnded(motion: UIEventSubtype, withEvent event: UIEvent?) {
-        super.motionEnded(motion, withEvent: event)
-        if motion == UIEventSubtype.MotionShake{
+
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        super.motionEnded(motion, with: event)
+        if motion == UIEventSubtype.motionShake{
             switch gamingStatus {
-            case .NotStarted:
+            case .notStarted:
                 currentPlayer = !currentPlayer
-            case .Ended:
+            case .ended:
                 reInit()
             default:
                 let dialog = LLDialog()
@@ -188,10 +178,10 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
             }
         }
     }
-    
+
     func reInit(){
-        NC.removeObserver(self, name: UIDeviceOrientationDidChangeNotification, object: nil)
-        presentViewController(UCArenaViewController(), animated: true, completion: nil)
+        NC.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        present(UCArenaViewController(), animated: true, completion: nil)
     }
 
     //    private func timeMachine(){
@@ -218,7 +208,7 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
      let data = NSKeyedUnarchiver.unarchiveObjectWithData(NSUD.objectForKey(record) as! NSData)
      return data as! [String:AnyObject]
      }
-     
+
      private func saveGameRecord(record: String){
      dispatch_async(dispatch_get_main_queue(), {
      let data = NSKeyedArchiver.archivedDataWithRootObject(["situation":self.situation, "currentPlayer":self.currentPlayer, "didStartMoving":self.didStartMoving,"didStartGame":self.didStartGame])

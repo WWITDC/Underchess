@@ -86,7 +86,10 @@ There might be multiple points, so here is an example
 	- [ ] Control The Pieces
 		- [x] Tap the piece and Target
 		- [x] Tap the piece to move only
-		- [ ] Show the movable piece
+		- [x] Show the movable piece
+			- [x] Make it different
+			- [x] Return to normal after animation
+			- [ ] *Optional: Infinite Animation*
 		- [ ] Slide to move
 		- [ ] Motion tracker
 - [ ] Podium
@@ -94,9 +97,13 @@ There might be multiple points, so here is an example
 
 # Plans on Functions
 - [ ] Play with AI
+	- [x] Movable piece
+	- [ ] Random decision
+	- [ ] Smart decision
 - [ ] Use In App Purchase
 - [ ] History of Games
-- [ ] Play with another player online
+- [ ] Game Center
+	- [ ] Play with another player online
 
 ---
 # Localization

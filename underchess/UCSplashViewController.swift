@@ -14,16 +14,16 @@ class UCSplashViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.contentMode = .Redraw
+        view.contentMode = .redraw
         view.backgroundColor = .tianyiBlueColor()
         arenaView = UCArenaView(father: view)
         view.addSubview(arenaView!)        
     }
     
-    override func viewDidAppear(animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         arenaView?.setupAgain(frame: view.frame)
-        arenaView?.performAnimationOnAllPiece(.Expand, completion: { (_) in
+        arenaView?.performAnimationOnAllPiece(.expand, completion: { (_) in
             sleep(1)
 //            self.presentViewController(UCMainViewController(), animated: true, completion: nil)
             UCArenaViewController.sharedInstance.needAnimation = false
@@ -46,7 +46,7 @@ class UCSplashViewController: UIViewController {
     }
     
     func next(){
-        presentViewController(UCArenaViewController.sharedInstance, animated: true, completion: nil)
+        present(UCArenaViewController.sharedInstance, animated: true, completion: nil)
     }
     
     
@@ -55,11 +55,11 @@ class UCSplashViewController: UIViewController {
     }
     
     override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .Portrait
+        return .portrait
     }
     
     override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
-        return .Portrait
+        return .portrait
     }
     
 }

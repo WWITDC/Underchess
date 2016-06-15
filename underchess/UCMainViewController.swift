@@ -15,7 +15,7 @@ class UCMainViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         // FIXME: Add Festure Later
-        presentViewController(UCCustomizePieceViewController(), animated: true, completion: nil)
+        present(UCCustomizePieceViewController(), animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
