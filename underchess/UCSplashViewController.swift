@@ -38,14 +38,14 @@ class UCSplashViewController: UIViewController {
             dialog.message = "Player controlling red pieces will go first. If you shake your device before tapping any pieces, the other player will go first."
 
             // Set the buttons
-            dialog.setPositiveButton(title: "OK", target: self, action: #selector(self.next))
+            dialog.setPositiveButton(title: "OK", target: self, action: #selector(UCSplashViewController.nextGame))
             dialog.setNegativeButton()
             
             dialog.show()
         })
     }
     
-    func next(){
+    func nextGame(){
         present(UCArenaViewController.sharedInstance, animated: true, completion: nil)
     }
     

@@ -128,7 +128,7 @@ class QCMethod
 			maxDuration = max(CGFloat(anim.beginTime + anim.duration) * CGFloat(anim.repeatCount == 0 ? 1.0 : anim.repeatCount) * (anim.autoreverses ? 2.0 : 1.0), maxDuration);
 		}
 		
-		if isinf(maxDuration){ return TimeInterval(NSIntegerMax)}
+		if maxDuration.isInfinite { return TimeInterval(NSIntegerMax)}
 		
 		return CFTimeInterval(maxDuration);
 	}
@@ -153,7 +153,7 @@ class QCMethod
 				maxDuration = max(duration, maxDuration);
 			}
 		}
-		if isinf(maxDuration){
+		if maxDuration.isInfinite{
 			maxDuration = 1000
 		}
 		return CFTimeInterval(maxDuration);

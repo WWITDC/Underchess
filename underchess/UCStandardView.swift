@@ -48,7 +48,9 @@ import UIKit
             targetHeight = scale * 4
             targetWidth = scale * 3
         } else {
-            let scale = CGFloat(min(Int(fatherFrame.height - 2 * margin) / 4,Int(fatherFrame.width - 2 * margin) / 3))
+            let heightScale = Int(fatherFrame.height - 2 * margin) / 4
+            let widthScale = Int(fatherFrame.width - 2 * margin) / 3
+            let scale = CGFloat(min(heightScale,widthScale))
             targetHeight = scale * 3
             targetWidth = scale * 4
         }

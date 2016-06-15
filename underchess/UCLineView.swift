@@ -35,12 +35,12 @@ import UIKit
         context?.setLineJoin(.round)
         context?.setLineWidth(10)
         context?.setStrokeColor(UIColor.white().cgColor)
-        context.moveTo(x: points[0].x, y: points[0].y)
-        context.addLineTo(x: points[4].x, y: points[4].y)
-        context.addLineTo(x: points[1].x, y: points[1].y)
-        context.addLineTo(x: points[0].x, y: points[0].y)
-        context.addLineTo(x: points[3].x, y: points[3].y)
-        context.addLineTo(x: points[1].x, y: points[1].y)
+        context?.moveTo(x: points[0].x, y: points[0].y)
+        context?.addLineTo(x: points[4].x, y: points[4].y)
+        context?.addLineTo(x: points[1].x, y: points[1].y)
+        context?.addLineTo(x: points[0].x, y: points[0].y)
+        context?.addLineTo(x: points[3].x, y: points[3].y)
+        context?.addLineTo(x: points[1].x, y: points[1].y)
         context?.strokePath()
     }
     
