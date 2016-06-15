@@ -65,7 +65,7 @@ protocol UCPieceProvider{
         fatalError("init(coder:) has not been implemented")
     }
     
-    func performAnimationOnAllPiece(_ option: UCAnimationOption, completion todo: ((Bool) -> Void)?){
+    func performAnimationOnAllPiece(_ option: UCAnimationOption, completion todo: ((Bool) -> ())?){
         if pieceViews != nil && pieceViews?.count == 5 { addPieces() }
         let pieceFrames = piecesFrame()
         let pieceCenters = ucCenter(frame)

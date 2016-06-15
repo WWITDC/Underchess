@@ -13,8 +13,7 @@ class UCCustomizePieceViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // FIXME: Add Feature Later
-        UCArenaViewController.sharedInstance.needAnimation = false
-        present(UCArenaViewController.sharedInstance, animated: true, completion: nil)
+        UIApplication.shared().keyWindow?.rootViewController = UCArenaViewController()
     }
 
 }

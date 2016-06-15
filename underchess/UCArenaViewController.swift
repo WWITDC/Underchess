@@ -34,7 +34,6 @@ extension UserInputError: CustomStringConvertible{
 
 class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDelegate {
 
-    static let sharedInstance = UCArenaViewController()
     var needAnimation = true
 
     var piecesWithStyle : [UCPieceView]?
@@ -181,7 +180,10 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
 
     func reInit(){
         NC.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
-        present(UCArenaViewController(), animated: true, completion: nil)
+        arenaView?.provider = nil
+        arenaView?.pieceViewDelegate = nil
+        UIApplication.shared().keyWindow?.rootViewController = UCArenaViewController()
+//        present(UCArenaViewController(), animated: true, completion: nil)
     }
 
     //    private func timeMachine(){

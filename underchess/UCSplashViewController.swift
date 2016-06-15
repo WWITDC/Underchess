@@ -26,7 +26,6 @@ class UCSplashViewController: UIViewController {
         arenaView?.performAnimationOnAllPiece(.expand, completion: { (_) in
             sleep(1)
 //            self.presentViewController(UCMainViewController(), animated: true, completion: nil)
-            UCArenaViewController.sharedInstance.needAnimation = false
             self.arenaView?.removeFromSuperview()
             
             let dialog = LLDialog()
@@ -38,15 +37,16 @@ class UCSplashViewController: UIViewController {
             dialog.message = "Player controlling red pieces will go first. If you shake your device before tapping any pieces, the other player will go first."
 
             // Set the buttons
-            dialog.setPositiveButton(title: "OK", target: self, action: #selector(UCSplashViewController.nextGame))
+            dialog.setPositiveButton(title: "OK", target: self, action: #selector(UCSplashViewController.startGame))
             dialog.setNegativeButton()
             
             dialog.show()
         })
     }
     
-    func nextGame(){
-        present(UCArenaViewController.sharedInstance, animated: true, completion: nil)
+    func startGame(){
+        UIApplication.shared().keyWindow?.rootViewController = UCArenaViewController()
+//        present(UCArenaViewController.sharedInstance, animated: true, completion: nil)
     }
     
     
