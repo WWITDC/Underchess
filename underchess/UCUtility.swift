@@ -16,24 +16,24 @@ enum UCDirection{
 }
 
 extension UIColor{
-    class func ucBlueColor() -> UIColor{
+    class func ucBlue() -> UIColor{
         return UIColor(red: 46.0 / 255.0, green: 117.0 / 255.0, blue: 146.0 / 255.0, alpha: 1.0)
     }
     
-    class func tianyiBlueColor() -> UIColor{
+    class func tianyiBlue() -> UIColor{
         return UIColor(red: 0.40, green: 0.80, blue: 1.00, alpha: 1.00)
     }
     
-    class func ucPieceRedColor() -> UIColor{
+    class func ucPieceRed() -> UIColor{
         return UIColor(red: 0.92, green: 0.23, blue: 0.09, alpha: 1.00)
     }
     
-    class func ucPieceGreenColor() -> UIColor{
+    class func ucPieceGreen() -> UIColor{
         return UIColor(red: 0.04, green: 0.93, blue: 0.76, alpha: 1.00)
 //        return UIColor(red: 0.00, green: 0.87, blue: 0.75, alpha: 1.00)
     }
     
-    class func randomColor() -> UIColor{
+    class func random() -> UIColor{
         return UIColor(red: CGFloat(arc4random_uniform(255))/CGFloat(255) ,green: CGFloat(arc4random_uniform(255))/CGFloat(255) , blue: CGFloat(arc4random_uniform(255))/CGFloat(255) , alpha: CGFloat(arc4random_uniform(255))/CGFloat(255))
     }
     class func colorWithHex(_ code: String) -> UIColor{
@@ -58,7 +58,7 @@ extension UIColor{
     }
 }
 
-let NSUD = UserDefaults.standard()
+let SUD = UserDefaults.standard()
 let NC = NotificationCenter.default()
 
 func ucCenter(_ frame: CGRect) -> [CGPoint]{

@@ -54,7 +54,7 @@ class QCMethod
 				let groupAnim = CAAnimationGroup()
 				groupAnim.animations = [basicAnim]
 				groupAnim.duration = maxDurationFromAnimations(groupAnim.animations! as [CAAnimation])
-				groupAnim.animations?.map{$0.setValue(kCAFillModeBoth, forKey: "fillMode")}
+				_ = groupAnim.animations?.map{$0.setValue(kCAFillModeBoth, forKey: "fillMode")}
 				newAnim = groupAnim
 			}
 			else{
@@ -74,7 +74,7 @@ class QCMethod
 				let groupAnim = CAAnimationGroup()
 				groupAnim.animations = [keyAnim]
 				groupAnim.duration = maxDurationFromAnimations(groupAnim.animations! as [CAAnimation])
-				groupAnim.animations?.map{$0.setValue(kCAFillModeBoth, forKey: "fillMode")}
+				_ = groupAnim.animations?.map{$0.setValue(kCAFillModeBoth, forKey: "fillMode")}
 				newAnim = groupAnim
 				}else{
 				newAnim = keyAnim
@@ -88,7 +88,7 @@ class QCMethod
 			}
 			
 			groupAnim.animations = newSubAnims
-			groupAnim.animations?.map{$0.setValue(kCAFillModeBoth, forKey: "fillMod")}
+			_ = groupAnim.animations?.map{$0.setValue(kCAFillModeBoth, forKey: "fillMod")}
 			groupAnim.duration = maxDurationFromAnimations(newSubAnims)
 			newAnim = groupAnim
 			}else{
@@ -252,7 +252,7 @@ class QCMethod
 					setBeginTime(sub, idx)
 					//Reverse animation if needed
 					if reverseAnimation {
-						self.reverseAnimation(sub, totalDuration: totalDuration)
+						_ = self.reverseAnimation(sub, totalDuration: totalDuration)
 					}
 					
 				}

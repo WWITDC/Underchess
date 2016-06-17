@@ -8,8 +8,14 @@
 
 import UIKit
 
+enum UCUserInputError:ErrorProtocol{
+    case controlUnownedPiece
+    case noInvalidMove
+    case needUserSelection
+}
+
 protocol UCPieceViewDelegate{
-    func getError(_ error: ErrorProtocol)
+    func get(error: UCUserInputError)
     func touchUpInside(_ tag: Int) throws
 //    func touchesMovedToDirection()
 }
@@ -25,7 +31,6 @@ protocol UCPieceViewDelegate{
         alpha = 0
         layer.borderWidth = 5
         layer.borderColor = UIColor.white().cgColor
-        setupLayers()
     }
 
     init(color: UIColor, strokeColor: UIColor, strokeWdith: CGFloat){
@@ -34,7 +39,6 @@ protocol UCPieceViewDelegate{
         alpha = 0
         layer.borderWidth = strokeWdith
         layer.borderColor = strokeColor.cgColor
-        setupLayers()
     }
 
     init(frame: CGRect, cornerRadius radius: CGFloat, color: UIColor, picture: UIImage?, animatable: Bool?){
@@ -52,12 +56,11 @@ protocol UCPieceViewDelegate{
         layer.cornerRadius = radius
         backgroundColor = color
         alpha = 0
-        setupLayers()
     }
 
     required init?(coder aDecoder: NSCoder)
     {
-        fatalError("UCPieceView don't know about NSCoder")
+        fatalError("UC doesn't support NSCoder")
     }
 
     func round(){
@@ -75,22 +78,18 @@ protocol UCPieceViewDelegate{
             if let handler = delegate{
                 do{
                     try handler.touchUpInside(tag)
-                } catch let error {
-                    handler.getError(error)
+                } catch let error where error is UCUserInputError {
+                    handler.get(error: error as! UCUserInputError)
+                } catch {
+                    return
                 }
             }
         }
     }
 
     // MARK: Quartz Code exported animation
-    var layers : Dictionary<String, AnyObject> = [:]
     var completionBlocks : Dictionary<CAAnimation, (Bool) -> Void> = [:]
     var updateLayerValueForCompletedAnimation : Bool = false
-
-    func setupLayers(){
-        layers["self"] = self.layer
-        //resetLayerPropertiesForLayerIdentifiers(nil)
-    }
 
     //func resetLayerPropertiesForLayerIdentifiers(layerIds: [String]!){
         //CATransaction.begin()
@@ -145,7 +144,7 @@ protocol UCPieceViewDelegate{
         let rainbowSparkingAnim : CAAnimationGroup = QCMethod.groupAnimations([strokeColorAnim, transformAnim], fillMode:fillMode)
         rainbowSparkingAnim.isRemovedOnCompletion = false
         rainbowSparkingAnim.autoreverses = true
-        layers["self"]?.add(rainbowSparkingAnim, forKey:"rainbowSparkingAnim")
+        layer.add(rainbowSparkingAnim, forKey:"rainbowSparkingAnim")
     }
 
     //MARK: - Animation Cleanup
@@ -163,19 +162,17 @@ protocol UCPieceViewDelegate{
 
     func updateLayerValuesForAnimationId(_ identifier: String? = "RainbowSparking"){
         if identifier == "RainbowSparking"{
-            QCMethod.updateValueFromPresentationLayerForAnimation((layers["self"] as! CALayer).animation(forKey: "rainbowSparkingAnim"), theLayer:(layers["self"] as! CALayer))
+            QCMethod.updateValueFromPresentationLayerForAnimation(layer.animation(forKey: "rainbowSparkingAnim"), theLayer:(layer))
         }
     }
     
     func removeAnimationsForAnimationId(_ identifier: String? = "RainbowSparking"){
         if identifier == "RainbowSparking"{
-            (layers["self"] as! CALayer).removeAnimation(forKey: "rainbowSparkingAnim")
+            layer.removeAnimation(forKey: "rainbowSparkingAnim")
         }
     }
     
     func removeAllAnimations(){
-        for layer in layers.values{
-            (layer as! CALayer).removeAllAnimations()
-        }
+        layer.removeAllAnimations()
     }
 }

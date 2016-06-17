@@ -55,10 +55,11 @@ protocol UCPieceProvider{
     
     override init(father: UIView){
         super.init(father: father)
-        backgroundColor = .tianyiBlueColor()
+        backgroundColor = .tianyiBlue()
         addLines()
         addPieces()
         setupAgain(frame: superview?.frame)
+        father.addSubview(self)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -110,7 +111,7 @@ protocol UCPieceProvider{
                 pieceViews![i].alpha = 1
             }
             lineView?.frame = self.frame
-            todo
+            _ = todo
         default: break
         }
     }
@@ -164,11 +165,11 @@ protocol UCPieceProvider{
     
     func setupPieces(){
         pieceViews = [UCPieceView]()
-        pieceViews?.append(UCPieceView(color: .ucPieceRedColor()))
-        pieceViews?.append(UCPieceView(color: .ucPieceRedColor()))
+        pieceViews?.append(UCPieceView(color: .ucPieceRed()))
+        pieceViews?.append(UCPieceView(color: .ucPieceRed()))
         pieceViews?.append(UCPieceView(color: .white(), strokeColor: .black(), strokeWdith: 1))
-        pieceViews?.append(UCPieceView(color: .ucPieceGreenColor()))
-        pieceViews?.append(UCPieceView(color: .ucPieceGreenColor()))
+        pieceViews?.append(UCPieceView(color: .ucPieceGreen()))
+        pieceViews?.append(UCPieceView(color: .ucPieceGreen()))
     }
     
     func addLines(){

@@ -9,22 +9,41 @@
 /* Begin PBXBuildFile section */
 		520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98251CA17A5100B9733E /* UCPieceView.swift */; };
 		520B98281CA1A0F600B9733E /* UCArenaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98271CA1A0F600B9733E /* UCArenaView.swift */; };
-		523EA02A1CA248DF006AFCF7 /* UCCustomizePieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */; };
+		5244C58D1D1366E4004DFAF0 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5244C58C1D1366E4004DFAF0 /* Default-568h@2x.png */; };
 		525CD97C1C79308100C04862 /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
+		52622B1C1D13291300F3E945 /* UCiOSArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52622B1B1D13291300F3E945 /* UCiOSArenaViewController.swift */; };
+		52622B1D1D13304E00F3E945 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
 		528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219B51C6F0D0A003B9307 /* AppDelegate.swift */; };
-		528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 528219B91C6F0D0B003B9307 /* Main.storyboard */; };
-		528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219C51C6F0DBB003B9307 /* UCSettingsManager.swift */; };
 		528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */; };
 		528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D11C6FCCA6003B9307 /* UCMainViewController.swift */; };
 		528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
-		528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */; };
-		528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */; };
 		529A9A511CA8C32F0039D5E6 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A9A501CA8C32F0039D5E6 /* LLDialog.swift */; };
 		52B3D0B81CA6261E009136C4 /* UCLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3D0B71CA6261D009136C4 /* UCLineView.swift */; };
 		52B9D1911CFBA57B007088D8 /* QCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D1901CFBA57B007088D8 /* QCMethod.swift */; };
 		52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF37711C8DF6F4006DD698 /* UCStandardView.swift */; };
 		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
+		52D757291D13227B003372DB /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D757281D13227B003372DB /* MessagesViewController.swift */; };
+		52D7572C1D13227B003372DB /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D7572A1D13227B003372DB /* MainInterface.storyboard */; };
+		52D7572E1D13227B003372DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D7572D1D13227B003372DB /* Assets.xcassets */; };
+		52D757321D13227B003372DB /* iMessages.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 52D757251D13227A003372DB /* iMessages.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		52D757371D1322C8003372DB /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52D757361D1322C8003372DB /* Messages.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		52D757411D132625003372DB /* QCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D1901CFBA57B007088D8 /* QCMethod.swift */; };
+		52D757421D13283F003372DB /* UCUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 525CD97B1C79308100C04862 /* UCUtility.swift */; };
+		52D757431D13287A003372DB /* UCLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3D0B71CA6261D009136C4 /* UCLineView.swift */; };
+		52D757441D132885003372DB /* UCPieceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98251CA17A5100B9733E /* UCPieceView.swift */; };
+		52D757451D132890003372DB /* UCArenaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B98271CA1A0F600B9733E /* UCArenaView.swift */; };
+		52D757461D13289A003372DB /* UCStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF37711C8DF6F4006DD698 /* UCStandardView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		52D757301D13227B003372DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 528219A81C6F06F2003B9307 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52D757241D13227A003372DB;
+			remoteInfo = iMessages;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		5297F8E71CAF00050092FC38 /* Embed Watch Content */ = {
@@ -37,18 +56,29 @@
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		52FB690E1D131B0400E8B310 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				52D757321D13227B003372DB /* iMessages.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		52027A2D1C71772900E61D95 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		520B98251CA17A5100B9733E /* UCPieceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPieceView.swift; sourceTree = "<group>"; };
 		520B98271CA1A0F600B9733E /* UCArenaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaView.swift; sourceTree = "<group>"; };
-		522CFFC41C796315006A6B51 /* zh-Hans.xliff */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = "zh-Hans.xliff"; path = "underchess/Underchess/zh-Hans.xliff"; sourceTree = "<group>"; };
+		521DBF441D1365700068341B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/MainInterface.strings; sourceTree = "<group>"; };
 		523EA0291CA248DE006AFCF7 /* UCCustomizePieceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCCustomizePieceViewController.swift; sourceTree = "<group>"; };
-		525CD97B1C79308100C04862 /* UCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCUtility.swift; sourceTree = "<group>"; };
+		5244C58C1D1366E4004DFAF0 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		525CD97B1C79308100C04862 /* UCUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UCUtility.swift; path = underchess/UCUtility.swift; sourceTree = "<group>"; };
+		52622B1B1D13291300F3E945 /* UCiOSArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCiOSArenaViewController.swift; sourceTree = "<group>"; };
 		528219B21C6F0D0A003B9307 /* underchess.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = underchess.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		528219B51C6F0D0A003B9307 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = underchess/AppDelegate.swift; sourceTree = "<group>"; };
-		528219BA1C6F0D0B003B9307 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		528219C11C6F0D0B003B9307 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = underchess/Info.plist; sourceTree = "<group>"; };
 		528219C51C6F0DBB003B9307 /* UCSettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsManager.swift; sourceTree = "<group>"; };
 		528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSplashViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +91,12 @@
 		52B9D1901CFBA57B007088D8 /* QCMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QCMethod.swift; sourceTree = "<group>"; };
 		52CF37711C8DF6F4006DD698 /* UCStandardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCStandardView.swift; sourceTree = "<group>"; };
 		52D268A41C7005E300AA7217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
+		52D757251D13227A003372DB /* iMessages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D757281D13227B003372DB /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		52D7572B1D13227B003372DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		52D7572D1D13227B003372DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		52D7572F1D13227B003372DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		52D757361D1322C8003372DB /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Messages.framework; sourceTree = DEVELOPER_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +104,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D757221D13227A003372DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52D757371D1322C8003372DB /* Messages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,20 +129,24 @@
 		52444AC61CA1D799008565E0 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */,
 				52CF37711C8DF6F4006DD698 /* UCStandardView.swift */,
 				520B98271CA1A0F600B9733E /* UCArenaView.swift */,
 				520B98251CA17A5100B9733E /* UCPieceView.swift */,
 				52B3D0B71CA6261D009136C4 /* UCLineView.swift */,
-				525CD97B1C79308100C04862 /* UCUtility.swift */,
 			);
 			name = Core;
+			path = underchess;
 			sourceTree = "<group>";
 		};
 		528219A71C6F06F2003B9307 = {
 			isa = PBXGroup;
 			children = (
-				528219B41C6F0D0A003B9307 /* underchess */,
+				5244C58C1D1366E4004DFAF0 /* Default-568h@2x.png */,
+				52444AC61CA1D799008565E0 /* Core */,
+				528219B41C6F0D0A003B9307 /* iOS */,
 				528219C81C6F0EDC003B9307 /* Support */,
+				52D757271D13227B003372DB /* iMessages */,
 				528219B31C6F0D0A003B9307 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -107,32 +155,33 @@
 			isa = PBXGroup;
 			children = (
 				528219B21C6F0D0A003B9307 /* underchess.app */,
+				52D757251D13227A003372DB /* iMessages.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		528219B41C6F0D0A003B9307 /* underchess */ = {
+		528219B41C6F0D0A003B9307 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				52444AC61CA1D799008565E0 /* Core */,
 				528219C91C6F0EFF003B9307 /* Splash Scene */,
 				528219CA1C6F0F10003B9307 /* Main Scene */,
 				528219CC1C6F0F30003B9307 /* Game Scene */,
 				528219CB1C6F0F1D003B9307 /* Configuration Scene */,
 			);
+			name = iOS;
 			path = underchess;
 			sourceTree = "<group>";
 		};
 		528219C81C6F0EDC003B9307 /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				525CD97B1C79308100C04862 /* UCUtility.swift */,
 				52D268A41C7005E300AA7217 /* Assets.xcassets */,
 				529A9A501CA8C32F0039D5E6 /* LLDialog.swift */,
 				52B9D1901CFBA57B007088D8 /* QCMethod.swift */,
-				522CFFC41C796315006A6B51 /* zh-Hans.xliff */,
 				528219B51C6F0D0A003B9307 /* AppDelegate.swift */,
 				528219C11C6F0D0B003B9307 /* Info.plist */,
-				528219B91C6F0D0B003B9307 /* Main.storyboard */,
+				52D757091D1321D5003372DB /* Frameworks */,
 			);
 			name = Support;
 			sourceTree = "<group>";
@@ -175,7 +224,7 @@
 		528219D71C6FCD5A003B9307 /* Arena */ = {
 			isa = PBXGroup;
 			children = (
-				528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */,
+				52622B1B1D13291300F3E945 /* UCiOSArenaViewController.swift */,
 			);
 			name = Arena;
 			sourceTree = "<group>";
@@ -186,6 +235,25 @@
 				528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */,
 			);
 			name = Podium;
+			sourceTree = "<group>";
+		};
+		52D757091D1321D5003372DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				52D757361D1322C8003372DB /* Messages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		52D757271D13227B003372DB /* iMessages */ = {
+			isa = PBXGroup;
+			children = (
+				52D757281D13227B003372DB /* MessagesViewController.swift */,
+				52D7572A1D13227B003372DB /* MainInterface.storyboard */,
+				52D7572D1D13227B003372DB /* Assets.xcassets */,
+				52D7572F1D13227B003372DB /* Info.plist */,
+			);
+			path = iMessages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,15 +268,34 @@
 				528219B01C6F0D0A003B9307 /* Resources */,
 				528219DB1C6FCDE6003B9307 /* ShellScript */,
 				5297F8E71CAF00050092FC38 /* Embed Watch Content */,
+				52FB690E1D131B0400E8B310 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				52D757311D13227B003372DB /* PBXTargetDependency */,
 			);
 			name = underchess;
 			productName = underchess;
 			productReference = 528219B21C6F0D0A003B9307 /* underchess.app */;
 			productType = "com.apple.product-type.application";
+		};
+		52D757241D13227A003372DB /* iMessages */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 52D757331D13227B003372DB /* Build configuration list for PBXNativeTarget "iMessages" */;
+			buildPhases = (
+				52D757211D13227A003372DB /* Sources */,
+				52D757221D13227A003372DB /* Frameworks */,
+				52D757231D13227A003372DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iMessages;
+			productName = iMessages;
+			productReference = 52D757251D13227A003372DB /* iMessages.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
 		};
 /* End PBXNativeTarget section */
 
@@ -217,7 +304,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = UC;
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0800;
 				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = WWITDC;
 				TargetAttributes = {
@@ -231,6 +318,12 @@
 							};
 						};
 					};
+					52D757241D13227A003372DB = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 2H866F22W7;
+						DevelopmentTeamName = "Apollo Zhu (Personal Team)";
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 528219AB1C6F06F2003B9307 /* Build configuration list for PBXProject "Underchess" */;
@@ -238,7 +331,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 528219A71C6F06F2003B9307;
@@ -247,6 +339,7 @@
 			projectRoot = "";
 			targets = (
 				528219B11C6F0D0A003B9307 /* underchess */,
+				52D757241D13227A003372DB /* iMessages */,
 			);
 		};
 /* End PBXProject section */
@@ -256,8 +349,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				528219BB1C6F0D0B003B9307 /* Main.storyboard in Resources */,
 				52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */,
+				5244C58D1D1366E4004DFAF0 /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D757231D13227A003372DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52D7572E1D13227B003372DB /* Assets.xcassets in Resources */,
+				52D7572C1D13227B003372DB /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,34 +387,53 @@
 			buildActionMask = 2147483647;
 			files = (
 				528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */,
-				523EA02A1CA248DF006AFCF7 /* UCCustomizePieceViewController.swift in Sources */,
-				528219DA1C6FCDAF003B9307 /* UCSettingsViewController.swift in Sources */,
 				525CD97C1C79308100C04862 /* UCUtility.swift in Sources */,
-				528219C61C6F0DBB003B9307 /* UCSettingsManager.swift in Sources */,
 				52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */,
 				528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */,
 				520B98281CA1A0F600B9733E /* UCArenaView.swift in Sources */,
 				52B3D0B81CA6261E009136C4 /* UCLineView.swift in Sources */,
 				528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */,
 				520B98261CA17A5100B9733E /* UCPieceView.swift in Sources */,
-				528219D61C6FCD51003B9307 /* UCPodiumViewController.swift in Sources */,
 				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
 				52B9D1911CFBA57B007088D8 /* QCMethod.swift in Sources */,
+				52622B1C1D13291300F3E945 /* UCiOSArenaViewController.swift in Sources */,
 				529A9A511CA8C32F0039D5E6 /* LLDialog.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		52D757211D13227A003372DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				52D757421D13283F003372DB /* UCUtility.swift in Sources */,
+				52D757411D132625003372DB /* QCMethod.swift in Sources */,
+				52D757431D13287A003372DB /* UCLineView.swift in Sources */,
+				52D757441D132885003372DB /* UCPieceView.swift in Sources */,
+				52622B1D1D13304E00F3E945 /* UCArenaViewController.swift in Sources */,
+				52D757451D132890003372DB /* UCArenaView.swift in Sources */,
+				52D757461D13289A003372DB /* UCStandardView.swift in Sources */,
+				52D757291D13227B003372DB /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		52D757311D13227B003372DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 52D757241D13227A003372DB /* iMessages */;
+			targetProxy = 52D757301D13227B003372DB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		528219B91C6F0D0B003B9307 /* Main.storyboard */ = {
+		52D7572A1D13227B003372DB /* MainInterface.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				528219BA1C6F0D0B003B9307 /* Base */,
-				52027A2D1C71772900E61D95 /* zh-Hans */,
+				52D7572B1D13227B003372DB /* Base */,
+				521DBF441D1365700068341B /* en */,
 			);
-			name = Main.storyboard;
-			path = underchess;
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -369,6 +490,7 @@
 		528219C21C6F0D0B003B9307 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -422,6 +544,7 @@
 		528219C31C6F0D0B003B9307 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -466,6 +589,83 @@
 			};
 			name = Release;
 		};
+		52D757341D13227B003372DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = iMessages/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollo.underchess.iMessages;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		52D757351D13227B003372DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				INFOPLIST_FILE = iMessages/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wwitdc.apollo.underchess.iMessages;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -483,6 +683,15 @@
 			buildConfigurations = (
 				528219C21C6F0D0B003B9307 /* Debug */,
 				528219C31C6F0D0B003B9307 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		52D757331D13227B003372DB /* Build configuration list for PBXNativeTarget "iMessages" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				52D757341D13227B003372DB /* Debug */,
+				52D757351D13227B003372DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

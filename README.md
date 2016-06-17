@@ -96,6 +96,7 @@ There might be multiple points, so here is an example
 - [ ] Settings
 
 # Plans on Functions
+- [ ] Play in iMessages
 - [ ] Play with AI
 	- [x] Movable piece
 	- [ ] Random decision
