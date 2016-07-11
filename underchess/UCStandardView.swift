@@ -59,8 +59,8 @@ import UIKit
         self.frame = CGRect(x: targetX, y: targetY, width: targetWidth, height: targetHeight)
     }
     
-    func standardFrameInFrame(frame temp: CGRect?) -> CGRect{
-        let fatherFrame = temp ?? superview?.frame ?? UIScreen.main().bounds
+    func standardFrame(inRect superFrame: CGRect?) -> CGRect{
+        let fatherFrame = superFrame ?? superview?.frame ?? UIScreen.main().bounds
         var targetWidth, targetHeight: CGFloat
         if fatherFrame.height > fatherFrame.width{
             let arg1 = Int(fatherFrame.height - 2 * margin) / 4

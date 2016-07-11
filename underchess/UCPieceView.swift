@@ -10,14 +10,13 @@ import UIKit
 
 enum UCUserInputError:ErrorProtocol{
     case controlUnownedPiece
-    case noInvalidMove
+    case noValidMove
     case needUserSelection
 }
 
 protocol UCPieceViewDelegate{
     func get(error: UCUserInputError)
-    func touchUpInside(_ tag: Int) throws
-//    func touchesMovedToDirection()
+    func touchUpInside(pieceWithIndex: Int) throws
 }
 
 @IBDesignable class UCPieceView: UIView {
@@ -77,7 +76,7 @@ protocol UCPieceViewDelegate{
         if currentTouchMovingDirection == nil{
             if let handler = delegate{
                 do{
-                    try handler.touchUpInside(tag)
+                    try handler.touchUpInside(pieceWithIndex: tag)
                 } catch let error where error is UCUserInputError {
                     handler.get(error: error as! UCUserInputError)
                 } catch {

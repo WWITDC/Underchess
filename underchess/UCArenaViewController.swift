@@ -15,8 +15,8 @@ extension UCUserInputError: CustomStringConvertible{
         get{
             switch self{
             case .controlUnownedPiece: return "Control unowned piece"
-            case .noInvalidMove: return "No invalid move for the selcted piece"
-            case .needUserSelection: return "Need to select the piece to move by the user"
+            case .noValidMove: return "No invalid move for the selcted piece"
+            case .needUserSelection: return "Need to select the piece to move by the player"
             }
         }
     }
@@ -26,14 +26,15 @@ enum UCGamePhase{
     case ended, playing, notStarted
 }
 
-protocol UCArenaViewEventHandler {
-    func endGame()
-    var base: Any? {get}
+@objc protocol UCArenaViewControllerDelegate {
+    @objc optional func endGame()
+    @objc var base: AnyObject? {get}
+    @objc optional func didTakeAMove()
 }
 
 var newUCArenaViewController = UCArenaViewController()
 
-class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDelegate {
+class UCArenaViewController: UIViewController, UCPieceDataSource, UCPieceViewDelegate {
     var needAnimation = true
 
     /// May be Overrided Style with Key: preferedStyle
@@ -45,109 +46,139 @@ class UCArenaViewController: UIViewController, UCPieceProvider, UCPieceViewDeleg
 
     var arenaView: UCArenaView?
 
-    // false -> player 0; true -> player 1
-    private var situation : [Bool?] = [false,false,nil,true,true]
-    internal var currentPlayer = false
+    /// false -> player 0(Red); true -> player 1(Green)
+    final var boardStatus : [Bool?] {
+        get{
+            return _boardStatus
+        }
+    }
+    private var _boardStatus: [Bool?] = [false,false,nil,true,true]
+    final var emptySpotIndex : Int! {
+        return boardStatus.index{$0 == nil}
+    }
+    var currentPlayer : Bool{
+        get{
+            return _currentPlayer
+        }
+        set{
+            animateMovablePieces(for: _currentPlayer)
+            _currentPlayer = newValue
+        }
+    }
+    private var _currentPlayer = false
     var gamingStatus = UCGamePhase.notStarted
-    var movablePieces = [Int]()
-    var eventHandler : UCArenaViewEventHandler?
+    var movablePieces = [Int](){
+        didSet{
+            print("Perform Animation Please")
+        }
+    }
+    var delegate : UCArenaViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        NC.addObserver(self, selector: #selector(updateUI), name: .UIDeviceOrientationDidChange, object: nil)
         view.backgroundColor = .ucBlue()
         arenaView = UCArenaView(father: view)
-        arenaView?.provider = self
+        arenaView?.dataSource = self
         arenaView?.pieceViewDelegate = self
         view.addSubview(arenaView!)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        if needAnimation {
-            arenaView?.performAnimationOnAllPiece(.expand, completion: nil)
-        } else {
-            arenaView?.performAnimationOnAllPiece(.none, completion: nil)
-        }
-        animateMovablePieces(forUser: !currentPlayer)
+        arenaView?.performAnimationOnAllPiece((needAnimation) ? .expand : .none)
+        animateMovablePieces(for: !currentPlayer)
     }
 
-    private func setMovablePieces(_ user: Bool){
+    private func setMovablePieces(for player: Bool){
         movablePieces.removeAll()
-        let tagOfEmptySpot = situation.index {$0 == nil}!
+        let emptySpotIndex = boardStatus.index {$0 == nil}!
         for i in 0...4{
-            if situation[i] == !user{
-                if !(i + tagOfEmptySpot == 7 || abs(i - tagOfEmptySpot) == 3){
+            if boardStatus[i] == !player{
+                if !(i + emptySpotIndex == 7 || abs(i - emptySpotIndex) == 3){
                     movablePieces.append(i)
                 }
             }
         }
     }
 
-    func animateMovablePieces(forUser user: Bool){
-        setMovablePieces(user)
+    final func animateMovablePieces(for player: Bool){
+        setMovablePieces(for: player)
         if !movablePieces.isEmpty{
             arenaView?.setMovablePieces(withTags: movablePieces)
         }
     }
 
-    func touchUpInside(_ tagOfPieceToMove: Int) throws {
+    final func hasValidMove(forPiece selectedIndex: Int) -> Bool{
+        if selectedIndex + emptySpotIndex == 7 || abs(selectedIndex - emptySpotIndex) == 3 {
+            return false
+        } else {
+            return true
+        }
+    }
+
+    final func move(from startIndex: Int, to endIndex: Int){
+        arenaView?.movePiece(from: startIndex, to: endIndex)
+        swap(&_boardStatus[startIndex], &_boardStatus[endIndex])
+    }
+
+    final func hasValidMove(forPlayer player: Bool) -> Bool{
+        var thisPlayerIndexes = 0, anotherPlayerIndexes = 0
+        movablePieces.removeAll()
+        for i in 0...4{
+            if boardStatus[i] == player{
+                thisPlayerIndexes += i
+            } else if boardStatus[i] != nil{
+                anotherPlayerIndexes += i
+            }
+        }
+        if thisPlayerIndexes == 4 && (anotherPlayerIndexes == 2 || anotherPlayerIndexes == 3){
+            return false
+        } else {
+            return true
+        }
+    }
+
+    final func touchUpInside(pieceWithIndex touchedIndex: Int) throws {
         if gamingStatus != .ended{
             if gamingStatus == .notStarted{
                 gamingStatus = .playing
             }
-            if situation[tagOfPieceToMove] == currentPlayer{
-                var tagOfEmptySpot = situation.index(where: {$0 == nil})
-                if tagOfPieceToMove + tagOfEmptySpot! == 7 || abs(tagOfPieceToMove - tagOfEmptySpot!) == 3 {
-                    throw UCUserInputError.noInvalidMove
-                } else {
-                    arenaView?.movePiece(pieceTag: tagOfPieceToMove, toPlace: tagOfEmptySpot!)
-                    swap(&situation[tagOfPieceToMove], &situation[tagOfEmptySpot!])
-                    var arg1 = 0, arg2 = 0
-                    movablePieces.removeAll()
-                    for i in 0...4{
-                        if situation[i] == !currentPlayer{
-                            arg1 += i
-                            movablePieces.append(i)
-                        } else if situation[i] != nil{
-                            arg2 += i
-                        } else {
-                            tagOfEmptySpot = i
-                        }
-                    }
-                    if arg1 == 4 && (arg2 == 2 || arg2 == 3){
-                        // MARK: Someone Won
+            if boardStatus[touchedIndex] == currentPlayer{
+                if hasValidMove(forPiece: touchedIndex){
+                    delegate?.didTakeAMove?()
+                    move(from: touchedIndex, to: emptySpotIndex)
+                    if hasValidMove(forPlayer: currentPlayer){
+                        currentPlayer = !currentPlayer
+                    } else {
                         arenaView?.setMovablePieces(withTags: [Int]())
                         gamingStatus = .ended
-                        eventHandler?.endGame()
-                    } else {
-                        animateMovablePieces(forUser: currentPlayer)
-                        currentPlayer = !currentPlayer
+                        _ = delegate == nil ? startNew() : delegate!.endGame?()
                     }
+                } else {
+                    throw UCUserInputError.noValidMove
                 }
             } else {
                 throw UCUserInputError.controlUnownedPiece
             }
-
         }
     }
 
     func get(error: UCUserInputError) {}
 
-    func startNew(){
-        arenaView?.provider = nil
+    final func startNew(){
+        arenaView?.dataSource = nil
         arenaView?.pieceViewDelegate = nil
         piecesWithStyle = nil
         arenaView = nil
-        if let window = eventHandler?.base as? UIWindow{
+        if let window = delegate?.base as? UIWindow{
             window.rootViewController = newUCArenaViewController
-        } else if let viewController = eventHandler?.base as? UIViewController{
+        } else if let viewController = delegate?.base as? UIViewController{
             viewController.show(newUCArenaViewController, sender: nil)
         }
-        self.eventHandler = nil
+        self.delegate = nil
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        arenaView?.setupAgain(frame: CGRect(origin: .zero, size: size))
+        arenaView?.setupAgain(inRect: CGRect(origin: .zero, size: size))
     }
 }

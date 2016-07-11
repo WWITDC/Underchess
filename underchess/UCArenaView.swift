@@ -14,7 +14,7 @@ enum UCAnimationOption{
     case unknown
 }
 
-protocol UCPieceProvider{
+protocol UCPieceDataSource{
     func pieces() -> [UCPieceView]?
 }
 
@@ -51,14 +51,14 @@ protocol UCPieceProvider{
     
     var pieceViews : [UCPieceView]?
     
-    var provider: UCPieceProvider?
+    var dataSource: UCPieceDataSource?
     
     override init(father: UIView){
         super.init(father: father)
         backgroundColor = .tianyiBlue()
         addLines()
         addPieces()
-        setupAgain(frame: superview?.frame)
+        setupAgain(inRect: superview?.frame)
         father.addSubview(self)
     }
     
@@ -66,13 +66,13 @@ protocol UCPieceProvider{
         fatalError("init(coder:) has not been implemented")
     }
     
-    func performAnimationOnAllPiece(_ option: UCAnimationOption, completion todo: ((Bool) -> ())?){
+    func performAnimationOnAllPiece(_ option: UCAnimationOption, completion todo: ((Bool) -> ())? = nil){
         if pieceViews != nil && pieceViews?.count == 5 { addPieces() }
         let pieceFrames = piecesFrame()
         let pieceCenters = ucCenter(frame)
         switch option{
         case .expand:
-            setupAgain(frame: superview?.frame)
+            setupAgain(inRect: superview?.frame)
             lineView?.frame = CGRect.zero
             for i in 0...4{
                 pieceViews![i].frame = CGRect(origin: pieceCenters[i], size: CGSize(width: 0, height: 0))
@@ -147,7 +147,7 @@ protocol UCPieceProvider{
     }
     
     func addPieces(){
-        if let piece = provider?.pieces(){
+        if let piece = dataSource?.pieces(){
             if piece.count == 5{
                 pieceViews = piece
             } else {
@@ -172,7 +172,7 @@ protocol UCPieceProvider{
         pieceViews?.append(UCPieceView(color: .ucPieceGreen()))
     }
     
-    func addLines(){
+    final func addLines(){
         if lineView != nil {
             lineView?.removeFromSuperview()
         }
@@ -181,13 +181,14 @@ protocol UCPieceProvider{
     }
     
     override func didMoveToSuperview() {
+        super.didMoveToSuperview()
         addLines()
         addPieces()
-        setupAgain(frame: superview?.frame)
+        setupAgain(inRect: superview?.frame)
     }
     
-    func setupAgain(frame temp: CGRect?) {
-        let tmp = self.standardFrameInFrame(frame: temp)
+    func setupAgain(inRect superFrame: CGRect?) {
+        let tmp = self.standardFrame(inRect: superFrame)
         UIView.animate(withDuration: 0.25, animations:
             {
                 self.frame = tmp
@@ -201,27 +202,28 @@ protocol UCPieceProvider{
                     }, completion: nil)
         })
     }
-    
-    func movePiece(pieceTag tag: Int, toPlace destination: Int){
-        var arg1 = 0, arg2 = 0
+
+    final func movePiece(from selectedTag: Int, to destinationTag: Int){
+        var selectedIndex = 0, destinationIndex = 0
         for i in 0...4{
-            if pieceViews![i].tag == tag {
-                arg1 = i
-            } else if pieceViews![i].tag == destination{
-                arg2 = i
+            if pieceViews![i].tag == selectedTag {
+                selectedIndex = i
+            } else if pieceViews![i].tag == destinationTag{
+                destinationIndex = i
             }
         }
-        var temp = pieceViews
-        swap(&temp![arg1],&temp![arg2])
-        swap(&temp![arg1].tag, &temp![arg2].tag)
-        pieceViews = temp
+        var pieces = pieceViews
+        swap(&pieces![selectedIndex],&pieces![destinationIndex])
+        swap(&pieces![selectedIndex].tag, &pieces![destinationTag].tag)
+        pieceViews = pieces
         let frames = piecesFrame()
-        self.pieceViews![arg1].frame = frames[arg1]
+        pieceViews![selectedIndex].frame = frames[selectedIndex]
+
         UIView.animate(withDuration: 0.5, animations: {
-            self.pieceViews![arg2].frame = frames[arg2]
+            self.pieceViews![destinationTag].frame = frames[destinationTag]
         }) { (_) in
             UIView.animate(withDuration: 0.25, animations: {
-                self.pieceViews![arg1].alpha = 1
+                self.pieceViews![selectedIndex].alpha = 1
             })
         }
         

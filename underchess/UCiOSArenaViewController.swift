@@ -8,15 +8,15 @@
 
 import UIKit
 
-class UCiOSArenaViewController: UCArenaViewController, UCArenaViewEventHandler {
+class UCiOSArenaViewController: UCArenaViewController, UCArenaViewControllerDelegate {
 
     //    var recordIdentifier: String?
 
-    var base: Any?
+    var base: AnyObject?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        eventHandler = self
+        delegate = self
         base = UIApplication.shared().keyWindow
         /*
          if let identifier = recordIdentifier {
@@ -32,8 +32,8 @@ class UCiOSArenaViewController: UCArenaViewController, UCArenaViewEventHandler {
 
     func endGame() {
         let dialog = LLDialog()
-        currentPlayer ? (dialog.title = "Player Green Won") : (dialog.title = "Player Red Won")
-        dialog.message = "Congratulations. Do you want to play again? \n P.S. If you choose no, you can always shake your device and play again."
+        dialog.title = currentPlayer ? ("Player Green Won") : ("Player Red Won")
+        dialog.message = "Congratulations. Do you want to play again? \n P.S. If you choose `No`, you can always shake your device and play again."
         dialog.setPositiveButton(title: "Yes", target: self, action: #selector(startNew))
         dialog.setNegativeButton(title: "No")
         dialog.show()
@@ -55,7 +55,6 @@ class UCiOSArenaViewController: UCArenaViewController, UCArenaViewEventHandler {
         if motion == UIEventSubtype.motionShake{
             switch gamingStatus {
             case .notStarted:
-                animateMovablePieces(forUser: currentPlayer)
                 currentPlayer = !currentPlayer
             case .ended:
                 startNew()

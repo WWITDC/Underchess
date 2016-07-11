@@ -10,15 +10,21 @@ import UIKit
 import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
+
+    var browserViewController:UCStickerBrowserViewController!
+    var arenaViewController: UCMessagesExtensionArenaViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        browserViewController = UCStickerBrowserViewController(stickerSize: .regular)
+        browserViewController.view.frame = view.frame
+        addChildViewController(browserViewController)
+        browserViewController.didMove(toParentViewController: self)
+        view.addSubview(browserViewController.view)
+        browserViewController.loadStickers()
+        browserViewController.stickerBrowserView.reloadData()
+        browserViewController.changeBrowserView(backgroundColor: .random())
     }
     
     // MARK: - Conversation Handling
@@ -60,7 +66,14 @@ class MessagesViewController: MSMessagesAppViewController {
     override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
         // Called before the extension transitions to a new presentation style.
     
-        // Use this method to prepare for the change in presentation style.
+        // Use this method to prepare for the change in presentation style
+        switch presentationStyle {
+        case .compact:
+            print("Show Stickers")
+        case .expanded:
+            arenaViewController = UCMessagesExtensionArenaViewController()
+            arenaViewController.base = self
+        }
     }
     
     override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
