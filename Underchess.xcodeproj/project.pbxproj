@@ -328,6 +328,7 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 2H866F22W7;
 						DevelopmentTeamName = "Apollo Zhu (Personal Team)";
+						LastSwiftMigration = 0800;
 						ProvisioningStyle = Automatic;
 					};
 				};

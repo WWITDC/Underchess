@@ -67,7 +67,7 @@ class LLDialog: UIView {
      */
     func show(inView superview: UIView? = UIApplication.shared().keyWindow){
         contentMode = .redraw
-        NotificationCenter.default().addObserver(self, selector: #selector(LLDialog.placeControls), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(LLDialog.placeControls), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         addControls()
         placeControls()
         if let view = superview{
@@ -222,8 +222,6 @@ class LLDialog: UIView {
 
         func delay(_ delay:Double, closure: ()->()) {
             DispatchQueue.main.after(when: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
-            //            DispatchQueue.main.after(
-            //                when: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), block: closure)
         }
 
         UIView.animate(withDuration: 0.3) {
@@ -235,7 +233,7 @@ class LLDialog: UIView {
             self.cover.removeFromSuperview()
             self.removeFromSuperview()
         }
-        NotificationCenter.default().removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
 }
 

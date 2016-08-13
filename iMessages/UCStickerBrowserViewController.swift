@@ -22,7 +22,7 @@ class UCStickerBrowserViewController: MSStickerBrowserViewController {
     }
 
     func createSticker(asset: String, localizedDescription: String){
-        if let stickerPath = Bundle.main().pathForResource(asset, ofType: "png")
+        if let stickerPath = Bundle.main.pathForResource(asset, ofType: "png")
         {
             let stickerURL = URL(fileURLWithPath: stickerPath)
             let sticker : MSSticker

@@ -58,8 +58,8 @@ extension UIColor{
     }
 }
 
-let SUD = UserDefaults.standard()
-let NC = NotificationCenter.default()
+//let SUD = UserDefaults.standard
+//let NC = NotificationCenter.default
 
 func ucCenter(_ frame: CGRect) -> [CGPoint]{
     var result = [CGPoint]()
