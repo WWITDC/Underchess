@@ -17,15 +17,11 @@ class MessagesViewController: MSMessagesAppViewController {
     lazy var dialog: LLDialog = {
         let dialog = LLDialog()
         // Set title. (Not required)
-        dialog.title = "Use Google's location service?"
+        dialog.title = "Tips"
 
         // Set message. (Not required)
-        dialog.message = "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
+        dialog.message = "This is an alpha version of UC for messages"
 
-        // Set the buttons.
-        // Title for positive button is required. If set it to be a "blank" string, it will automatically change to "OK"
-        dialog.setPositiveButton(withTitle: "AGREE", target: self, action: nil)
-        dialog.setNegativeButton(withTitle: "DISAGREE", target: self, action: nil)
         return dialog
     }()
     

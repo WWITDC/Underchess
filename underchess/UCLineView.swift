@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class UCLineView: UIView{
+@IBDesignable class UCLineView: UIView {
 
     override init(frame: CGRect) {
         super.init(frame: frame)

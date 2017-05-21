@@ -21,7 +21,7 @@ class UCSplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         arenaView = UCArenaView(father: view)
-        arenaView?.performAnimationOnAllPiece(.expand, completion: { (_) in
+        arenaView?.performAnimationOnAllPiece(.expand) { _ in
             sleep(1)
             self.arenaView?.removeFromSuperview()
             let dialog = LLDialog()
@@ -35,10 +35,10 @@ class UCSplashViewController: UIViewController {
             dialog.setNegativeButton()
 
             dialog.show()
-        })
+        }
     }
 
-    func startGame(){
+    func startGame() {
         UIApplication.shared.keyWindow?.rootViewController = UCiOSArenaViewController()
     }
 

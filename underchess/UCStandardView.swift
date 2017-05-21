@@ -11,7 +11,7 @@
 enum UCInterfaceOrientation{
     case potrait, landscape
 
-    init(input: UIInterfaceOrientation){
+    init(input: UIInterfaceOrientation) {
         switch input{
         case .portrait, .portraitUpsideDown: self = .potrait
         case .landscapeLeft, .landscapeRight: self = .landscape
@@ -27,21 +27,21 @@ import UIKit
 @IBDesignable class UCStandardView: UIView {
 
     var margin: CGFloat = 5 {
-        didSet{
+        didSet {
             setup(frame: superview?.frame)
         }
     }
 
-    init(father: UIView){
+    init(father: UIView) {
         let superFrame = father.frame
         super.init(frame: superFrame)
         setup(frame: superFrame)
     }
 
-    func setup(frame temp: CGRect?){
+    func setup(frame temp: CGRect?) {
         let fatherFrame = temp ?? superview?.frame ?? UIScreen.main.bounds
         var targetWidth, targetHeight: CGFloat
-        if fatherFrame.height > fatherFrame.width{
+        if fatherFrame.height > fatherFrame.width {
             let arg1 = Int(fatherFrame.height - 2 * margin) / 4
             let arg2 = Int(fatherFrame.width - 2 * margin) / 3
             let scale = CGFloat(min(arg1,arg2))
@@ -59,7 +59,7 @@ import UIKit
         self.frame = CGRect(x: targetX, y: targetY, width: targetWidth, height: targetHeight)
     }
 
-    func standardFrame(inRect superFrame: CGRect?) -> CGRect{
+    func standardFrame(inRect superFrame: CGRect?) -> CGRect {
         let fatherFrame = superFrame ?? superview?.frame ?? UIScreen.main.bounds
         var targetWidth, targetHeight: CGFloat
         if fatherFrame.height > fatherFrame.width{

@@ -14,44 +14,32 @@ enum UCAnimationOption{
     case unknown
 }
 
-protocol UCPieceDataSource{
+protocol UCPieceDataSource: class {
     var pieces: [UCPieceView]? { get set }
 }
 
 @IBDesignable class UCArenaView: UCStandardView {
 
-    var pieceViewDelegate : UCPieceViewDelegate?{
-        didSet{
-            if let pieces = pieceViews{
-                for piece in pieces{
+    weak var pieceViewDelegate : UCPieceViewDelegate? {
+        didSet {
+            if let pieces = pieceViews {
+                for piece in pieces {
                     piece.delegate = pieceViewDelegate
                 }
             }
         }
     }
 
-    var currentSize : CGSize{
-        get{
-            return CGSize(width: frame.width, height: frame.height)
-        }
-    }
-
-    var lineViewFrame : CGRect{
-        get{
-            return CGRect(origin: CGPoint.zero, size: currentSize)
-        }
-    }
-
-    var lineView: UCLineView = UCLineView() {
+    var lineView = UCLineView() {
         didSet {
             setNeedsLayout()
             setNeedsDisplay()
         }
     }
 
-    var pieceViews : [UCPieceView]!
+    var pieceViews: [UCPieceView]!
 
-    var dataSource: UCPieceDataSource?
+    weak var dataSource: UCPieceDataSource?
 
     override init(father: UIView) {
         super.init(father: father)
@@ -79,7 +67,7 @@ protocol UCPieceDataSource{
             }
             UIView.animate(
                 withDuration: 0.25,
-                animations: { [lineViewFrame, weak self] in self?.lineView.frame = lineViewFrame },
+                animations: { [bounds, weak self] in self?.lineView.frame = bounds },
                 completion: { _ in
                     UIView.animate(
                         withDuration: 0.5, delay: 0, options: .curveEaseIn,
@@ -168,14 +156,14 @@ protocol UCPieceDataSource{
         pieceViews = [UCPieceView]()
         pieceViews.append(UCPieceView(color: .ucPieceRed))
         pieceViews.append(UCPieceView(color: .ucPieceRed))
-        pieceViews.append(UCPieceView(color: .white, strokeColor: .black, strokeWdith: 1))
+        pieceViews.append(UCPieceView(color: .white, strokeColor: .black, strokeWidth: 1))
         pieceViews.append(UCPieceView(color: .ucPieceGreen))
         pieceViews.append(UCPieceView(color: .ucPieceGreen))
     }
 
-    final func addLines(){
+    final func addLines() {
         lineView.removeFromSuperview()
-        lineView = UCLineView(frame: lineViewFrame)
+        lineView = UCLineView(frame: bounds)
         insertSubview(lineView, at: 0)
     }
 
@@ -197,13 +185,13 @@ protocol UCPieceDataSource{
                     for i in 0...4 {
                         weakSelf.pieceViews[i].frame = pieceFrames[i]
                     }
-                    weakSelf.lineView.frame = weakSelf.lineViewFrame
+                    weakSelf.lineView.frame = weakSelf.bounds
                 }
-            }
+        }
         )
     }
 
-    final func movePiece(from selectedTag: Int, to destinationTag: Int){
+    final func movePiece(from selectedTag: Int, to destinationTag: Int) {
         var selectedIndex = 0, destinationIndex = 0
         for i in 0...4 {
             if pieceViews[i].tag == selectedTag {
@@ -227,7 +215,7 @@ protocol UCPieceDataSource{
         })
     }
 
-    func setMovablePieces(withTags tags: [Int]){
+    func setMovablePieces(withTags tags: [Int]) {
         for piece in pieceViews {
             piece.removeAllAnimations()
         }

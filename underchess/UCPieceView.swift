@@ -14,7 +14,7 @@ enum UCUserInputError: Error {
     case needUserSelection
 }
 
-protocol UCPieceViewDelegate{
+protocol UCPieceViewDelegate: class {
     func get(error: UCUserInputError)
     func touchUpInside(pieceWithIndex: Int) throws
 }
@@ -22,25 +22,21 @@ protocol UCPieceViewDelegate{
 @IBDesignable class UCPieceView: UIView, CAAnimationDelegate {
 
     var currentTouchMovingDirection: UCDirection?
-    var delegate: UCPieceViewDelegate?
+    weak var delegate: UCPieceViewDelegate?
 
-    init(color: UIColor){
-        super.init(frame: CGRect.zero)
-        backgroundColor = color
-        alpha = 0
-        layer.borderWidth = 5
-        layer.borderColor = UIColor.white.cgColor
+    convenience init(color: UIColor) {
+        self.init(color: color, strokeColor: .white, strokeWidth: 5)
     }
 
-    init(color: UIColor, strokeColor: UIColor, strokeWdith: CGFloat){
-        super.init(frame: CGRect.zero)
+    init(color: UIColor, strokeColor: UIColor, strokeWidth: CGFloat) {
+        super.init(frame: .zero)
         backgroundColor = color
         alpha = 0
-        layer.borderWidth = strokeWdith
         layer.borderColor = strokeColor.cgColor
+        layer.borderWidth = strokeWidth
     }
 
-    init(frame: CGRect, cornerRadius radius: CGFloat, color: UIColor, picture: UIImage?, animatable: Bool?){
+    init(frame: CGRect, cornerRadius radius: CGFloat, color: UIColor, picture: UIImage?, animatable: Bool?) {
         super.init(frame: frame)
         // MARK: New Feature: Customized Background
         /*
@@ -68,22 +64,20 @@ protocol UCPieceViewDelegate{
 
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        if currentTouchMovingDirection == nil{
-            if let handler = delegate{
-                do{
-                    try handler.touchUpInside(pieceWithIndex: tag)
-                } catch let error where error is UCUserInputError {
-                    handler.get(error: error as! UCUserInputError)
-                } catch {
-                    return
-                }
+        if currentTouchMovingDirection == nil, let handler = delegate {
+            do{
+                try handler.touchUpInside(pieceWithIndex: tag)
+            } catch let error where error is UCUserInputError {
+                handler.get(error: error as! UCUserInputError)
+            } catch {
+                return
             }
         }
     }
 
     // MARK: Quartz Code exported animation
-    var completionBlocks : Dictionary<CAAnimation, (Bool) -> Void> = [:]
-    var updateLayerValueForCompletedAnimation : Bool = false
+    var completionBlocks: Dictionary<CAAnimation, (Bool) -> Void> = [:]
+    var updateLayerValueForCompletedAnimation: Bool = false
 
     //func resetLayerPropertiesForLayerIdentifiers(layerIds: [String]!){
     //CATransaction.begin()
@@ -93,12 +87,12 @@ protocol UCPieceViewDelegate{
 
     //MARK: - Animation Setup
 
-    func addRainbowSparkingAnimation(){
+    func addRainbowSparkingAnimation() {
         addRainbowSparkingAnimationCompletionBlock(nil)
     }
 
-    func addRainbowSparkingAnimationCompletionBlock(_ completionBlock: ((_ finished: Bool) -> Void)?){
-        if completionBlock != nil{
+    func addRainbowSparkingAnimationCompletionBlock(_ completionBlock: ((_ finished: Bool) -> Void)?) {
+        if completionBlock != nil {
             let completionAnim = CABasicAnimation(keyPath:"completionAnim")
             completionAnim.duration = 2
             completionAnim.delegate = self
@@ -154,13 +148,13 @@ protocol UCPieceViewDelegate{
         }
     }
 
-    func updateLayerValuesForAnimationId(_ identifier: String? = "RainbowSparking"){
+    func updateLayerValuesForAnimationId(_ identifier: String? = "RainbowSparking") {
         if identifier == "RainbowSparking" {
             QCMethod.updateValueFromPresentationLayerForAnimation(layer.animation(forKey: "rainbowSparkingAnim"), theLayer:(layer))
         }
     }
 
-    func removeAnimationsForAnimationId(_ identifier: String? = "RainbowSparking"){
+    func removeAnimationsForAnimationId(_ identifier: String? = "RainbowSparking") {
         if identifier == "RainbowSparking" {
             layer.removeAnimation(forKey: "rainbowSparkingAnim")
         }

@@ -13,7 +13,7 @@ class UCStickerBrowserViewController: MSStickerBrowserViewController {
 
     var stickers = [MSSticker]()
 
-    func changeBrowserView(backgroundColor: UIColor){
+    func changeBrowserView(backgroundColor: UIColor) {
         stickerBrowserView.backgroundColor = backgroundColor
     }
 
@@ -21,16 +21,11 @@ class UCStickerBrowserViewController: MSStickerBrowserViewController {
         createSticker(asset: "Logo", localizedDescription: "Logo")
     }
 
-    func createSticker(asset: String, localizedDescription: String){
-        if let stickerPath = Bundle.main.path(forResource: asset, ofType: "png")
-        {
+    func createSticker(asset: String, localizedDescription: String) {
+        if let stickerPath = Bundle.main.path(forResource: asset, ofType: "png") {
             let stickerURL = URL(fileURLWithPath: stickerPath)
-            let sticker : MSSticker
-            do{
-                try sticker = MSSticker(contentsOfFileURL: stickerURL, localizedDescription: localizedDescription)
+            if let sticker = try? MSSticker(contentsOfFileURL: stickerURL, localizedDescription: localizedDescription) {
                 stickers.append(sticker)
-            } catch{
-                return
             }
         }
     }

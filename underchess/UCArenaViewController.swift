@@ -15,7 +15,7 @@ extension UCUserInputError: CustomStringConvertible{
         get{
             switch self{
             case .controlUnownedPiece: return "Control unowned piece"
-            case .noValidMove: return "No invalid move for the selcted piece"
+            case .noValidMove: return "No valid move for the selcted piece"
             case .needUserSelection: return "Need to select the piece to move by the player"
             }
         }
@@ -76,7 +76,7 @@ class UCArenaViewController: UIViewController, UCPieceDataSource, UCPieceViewDel
         animateMovablePieces(for: theOtherPlayer)
     }
 
-    private func setMovablePieces(for player: Bool){
+    private func setMovablePieces(for player: Bool) {
         movablePieces.removeAll()
         for i in 0...4 {
             if boardStatus[i] == !player && hasValidMove(forPiece: i) {
