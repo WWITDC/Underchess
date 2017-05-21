@@ -10,7 +10,7 @@
 
 enum UCInterfaceOrientation{
     case potrait, landscape
-    
+
     init(input: UIInterfaceOrientation){
         switch input{
         case .portrait, .portraitUpsideDown: self = .potrait
@@ -25,21 +25,21 @@ import UIKit
 
 // Creat a 3 * 4 (potrait) or 4 * 3 (landscape) view in the center of the superview
 @IBDesignable class UCStandardView: UIView {
-    
+
     var margin: CGFloat = 5 {
         didSet{
             setup(frame: superview?.frame)
         }
     }
-    
+
     init(father: UIView){
         let superFrame = father.frame
         super.init(frame: superFrame)
         setup(frame: superFrame)
     }
-    
+
     func setup(frame temp: CGRect?){
-        let fatherFrame = temp ?? superview?.frame ?? UIScreen.main().bounds
+        let fatherFrame = temp ?? superview?.frame ?? UIScreen.main.bounds
         var targetWidth, targetHeight: CGFloat
         if fatherFrame.height > fatherFrame.width{
             let arg1 = Int(fatherFrame.height - 2 * margin) / 4
@@ -58,9 +58,9 @@ import UIKit
         let targetY = fatherFrame.midY - targetHeight / 2
         self.frame = CGRect(x: targetX, y: targetY, width: targetWidth, height: targetHeight)
     }
-    
+
     func standardFrame(inRect superFrame: CGRect?) -> CGRect{
-        let fatherFrame = superFrame ?? superview?.frame ?? UIScreen.main().bounds
+        let fatherFrame = superFrame ?? superview?.frame ?? UIScreen.main.bounds
         var targetWidth, targetHeight: CGFloat
         if fatherFrame.height > fatherFrame.width{
             let arg1 = Int(fatherFrame.height - 2 * margin) / 4
@@ -79,7 +79,7 @@ import UIKit
         let targetY = fatherFrame.midY - targetHeight / 2
         return CGRect(x: targetX, y: targetY, width: targetWidth, height: targetHeight)
     }
-    
+
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

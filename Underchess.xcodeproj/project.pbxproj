@@ -17,9 +17,10 @@
 		528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219CD1C6F0FB2003B9307 /* UCSplashViewController.swift */; };
 		528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D11C6FCCA6003B9307 /* UCMainViewController.swift */; };
 		528219D41C6FCCE6003B9307 /* UCArenaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */; };
-		529A9A511CA8C32F0039D5E6 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529A9A501CA8C32F0039D5E6 /* LLDialog.swift */; };
 		52B3D0B81CA6261E009136C4 /* UCLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B3D0B71CA6261D009136C4 /* UCLineView.swift */; };
 		52B9D1911CFBA57B007088D8 /* QCMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52B9D1901CFBA57B007088D8 /* QCMethod.swift */; };
+		52C58BEF1ED06E3F00237259 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C58BEE1ED06E3F00237259 /* LLDialog.swift */; };
+		52C58BF01ED093CF00237259 /* LLDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52C58BEE1ED06E3F00237259 /* LLDialog.swift */; };
 		52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CF37711C8DF6F4006DD698 /* UCStandardView.swift */; };
 		52D268A51C7005E300AA7217 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D268A41C7005E300AA7217 /* Assets.xcassets */; };
 		52D757291D13227B003372DB /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D757281D13227B003372DB /* MessagesViewController.swift */; };
@@ -88,9 +89,9 @@
 		528219D31C6FCCE6003B9307 /* UCArenaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCArenaViewController.swift; sourceTree = "<group>"; };
 		528219D51C6FCD51003B9307 /* UCPodiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCPodiumViewController.swift; sourceTree = "<group>"; };
 		528219D91C6FCDAF003B9307 /* UCSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCSettingsViewController.swift; sourceTree = "<group>"; };
-		529A9A501CA8C32F0039D5E6 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52B3D0B71CA6261D009136C4 /* UCLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCLineView.swift; sourceTree = "<group>"; };
 		52B9D1901CFBA57B007088D8 /* QCMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QCMethod.swift; sourceTree = "<group>"; };
+		52C58BEE1ED06E3F00237259 /* LLDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LLDialog.swift; sourceTree = "<group>"; };
 		52CF37711C8DF6F4006DD698 /* UCStandardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UCStandardView.swift; sourceTree = "<group>"; };
 		52D268A41C7005E300AA7217 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = underchess/Assets.xcassets; sourceTree = "<group>"; };
 		52D757251D13227A003372DB /* iMessages.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = iMessages.appex; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -181,7 +182,7 @@
 			children = (
 				525CD97B1C79308100C04862 /* UCUtility.swift */,
 				52D268A41C7005E300AA7217 /* Assets.xcassets */,
-				529A9A501CA8C32F0039D5E6 /* LLDialog.swift */,
+				52C58BEE1ED06E3F00237259 /* LLDialog.swift */,
 				52B9D1901CFBA57B007088D8 /* QCMethod.swift */,
 				528219B51C6F0D0A003B9307 /* AppDelegate.swift */,
 				528219C11C6F0D0B003B9307 /* Info.plist */,
@@ -311,7 +312,7 @@
 			attributes = {
 				CLASSPREFIX = UC;
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = WWITDC;
 				TargetAttributes = {
 					528219B11C6F0D0A003B9307 = {
@@ -394,6 +395,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				528219B61C6F0D0A003B9307 /* AppDelegate.swift in Sources */,
+				52C58BEF1ED06E3F00237259 /* LLDialog.swift in Sources */,
 				525CD97C1C79308100C04862 /* UCUtility.swift in Sources */,
 				52CF37721C8DF6F4006DD698 /* UCStandardView.swift in Sources */,
 				528219CE1C6F0FB2003B9307 /* UCSplashViewController.swift in Sources */,
@@ -404,7 +406,6 @@
 				528219D21C6FCCA6003B9307 /* UCMainViewController.swift in Sources */,
 				52B9D1911CFBA57B007088D8 /* QCMethod.swift in Sources */,
 				52622B1C1D13291300F3E945 /* UCiOSArenaViewController.swift in Sources */,
-				529A9A511CA8C32F0039D5E6 /* LLDialog.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +415,7 @@
 			files = (
 				52D757421D13283F003372DB /* UCUtility.swift in Sources */,
 				52D757411D132625003372DB /* QCMethod.swift in Sources */,
+				52C58BF01ED093CF00237259 /* LLDialog.swift in Sources */,
 				52D757431D13287A003372DB /* UCLineView.swift in Sources */,
 				52EAD5851D14152D00BE92D9 /* UCStickerBrowserViewController.swift in Sources */,
 				52D757441D132885003372DB /* UCPieceView.swift in Sources */,
@@ -456,7 +458,9 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -481,7 +485,9 @@
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -632,7 +638,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG NS_EXTENSION_UNAVAILABLE";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -668,6 +674,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = NS_EXTENSION_UNAVAILABLE;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

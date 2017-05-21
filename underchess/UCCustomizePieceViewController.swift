@@ -15,5 +15,5 @@ class UCCustomizePieceViewController: UIViewController {
         // FIXME: Add Feature Later
         UIApplication.shared().keyWindow?.rootViewController = UCArenaViewController()
     }
-
+    
 }

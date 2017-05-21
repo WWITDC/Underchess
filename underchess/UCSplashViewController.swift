@@ -15,14 +15,11 @@ class UCSplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.contentMode = .redraw
-        view.backgroundColor = .tianyiBlue()
-        //        arenaView = UCArenaView(father: view)
-        //        view.addSubview(arenaView!)
+        view.backgroundColor = .tianyiBlue
     }
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //        arenaView?.setupAgain(frame: view.frame)
         arenaView = UCArenaView(father: view)
         arenaView?.performAnimationOnAllPiece(.expand, completion: { (_) in
             sleep(1)
@@ -34,7 +31,7 @@ class UCSplashViewController: UIViewController {
             dialog.message = "Player controlling red pieces will go first. If you shake your device before tapping any pieces, the other player will go first."
 
             // Set the buttons
-            dialog.setPositiveButton(title: "OK", target: self, action: #selector(UCSplashViewController.startGame))
+            dialog.setPositiveButton(withTitle: "OK", target: self, action: #selector(UCSplashViewController.startGame))
             dialog.setNegativeButton()
 
             dialog.show()
@@ -42,20 +39,13 @@ class UCSplashViewController: UIViewController {
     }
 
     func startGame(){
-        UIApplication.shared().keyWindow?.rootViewController = UCiOSArenaViewController()
+        UIApplication.shared.keyWindow?.rootViewController = UCiOSArenaViewController()
     }
 
+    override var prefersStatusBarHidden: Bool { return true }
 
-    override func prefersStatusBarHidden() -> Bool {
-        return true
-    }
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask { return .portrait }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return .portrait
-    }
-
-    override func preferredInterfaceOrientationForPresentation() -> UIInterfaceOrientation {
-        return .portrait
-    }
+    override var preferredInterfaceOrientationForPresentation: UIInterfaceOrientation { return .portrait }
     
 }

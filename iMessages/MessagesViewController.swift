@@ -11,8 +11,23 @@ import Messages
 
 class MessagesViewController: MSMessagesAppViewController {
 
-    var browserViewController:UCStickerBrowserViewController!
+    var browserViewController: UCStickerBrowserViewController!
     var arenaViewController: UCMessagesExtensionArenaViewController!
+
+    lazy var dialog: LLDialog = {
+        let dialog = LLDialog()
+        // Set title. (Not required)
+        dialog.title = "Use Google's location service?"
+
+        // Set message. (Not required)
+        dialog.message = "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
+
+        // Set the buttons.
+        // Title for positive button is required. If set it to be a "blank" string, it will automatically change to "OK"
+        dialog.setPositiveButton(withTitle: "AGREE", target: self, action: nil)
+        dialog.setNegativeButton(withTitle: "DISAGREE", target: self, action: nil)
+        return dialog
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +88,7 @@ class MessagesViewController: MSMessagesAppViewController {
         case .expanded:
             arenaViewController = UCMessagesExtensionArenaViewController()
             arenaViewController.base = self
+            dialog.show(in: view)
         }
     }
     

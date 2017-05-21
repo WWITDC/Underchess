@@ -8,7 +8,7 @@
 
 import UIKit
 
-enum UCUserInputError:ErrorProtocol{
+enum UCUserInputError: Error {
     case controlUnownedPiece
     case noValidMove
     case needUserSelection
@@ -29,7 +29,7 @@ protocol UCPieceViewDelegate{
         backgroundColor = color
         alpha = 0
         layer.borderWidth = 5
-        layer.borderColor = UIColor.white().cgColor
+        layer.borderColor = UIColor.white.cgColor
     }
 
     init(color: UIColor, strokeColor: UIColor, strokeWdith: CGFloat){
@@ -97,7 +97,7 @@ protocol UCPieceViewDelegate{
         addRainbowSparkingAnimationCompletionBlock(nil)
     }
 
-    func addRainbowSparkingAnimationCompletionBlock(_ completionBlock: ((finished: Bool) -> Void)?){
+    func addRainbowSparkingAnimationCompletionBlock(_ completionBlock: ((_ finished: Bool) -> Void)?){
         if completionBlock != nil{
             let completionAnim = CABasicAnimation(keyPath:"completionAnim")
             completionAnim.duration = 2
@@ -114,15 +114,15 @@ protocol UCPieceViewDelegate{
 
         ////Animation
         let strokeColorAnim      = CAKeyframeAnimation(keyPath:"borderColor")
-        strokeColorAnim.values   = [UIColor.white().cgColor,
-                                    UIColor.red().cgColor,
-                                    UIColor.orange().cgColor,
-                                    UIColor.yellow().cgColor,
-                                    UIColor.green().cgColor,
-                                    UIColor.cyan().cgColor,
-                                    UIColor.blue().cgColor,
-                                    UIColor.purple().cgColor,
-                                    UIColor.white().cgColor]
+        strokeColorAnim.values   = [UIColor.white.cgColor,
+                                    UIColor.red.cgColor,
+                                    UIColor.orange.cgColor,
+                                    UIColor.yellow.cgColor,
+                                    UIColor.green.cgColor,
+                                    UIColor.cyan.cgColor,
+                                    UIColor.blue.cgColor,
+                                    UIColor.purple.cgColor,
+                                    UIColor.white.cgColor]
         strokeColorAnim.keyTimes = [0, 0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2]
         strokeColorAnim.duration = 2
 
@@ -155,17 +155,17 @@ protocol UCPieceViewDelegate{
     }
 
     func updateLayerValuesForAnimationId(_ identifier: String? = "RainbowSparking"){
-        if identifier == "RainbowSparking"{
+        if identifier == "RainbowSparking" {
             QCMethod.updateValueFromPresentationLayerForAnimation(layer.animation(forKey: "rainbowSparkingAnim"), theLayer:(layer))
         }
     }
 
     func removeAnimationsForAnimationId(_ identifier: String? = "RainbowSparking"){
-        if identifier == "RainbowSparking"{
+        if identifier == "RainbowSparking" {
             layer.removeAnimation(forKey: "rainbowSparkingAnim")
         }
     }
-
+    
     func removeAllAnimations(){
         layer.removeAllAnimations()
     }
